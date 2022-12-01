@@ -84,3 +84,13 @@
     End If
   End Sub
 End Class
+
+
+'_items(2, 1)._sellW = 100
+'_items(2, 2)._sellW = 120
+'_items(2, 3)._sellW = 90
+'_items(2, 4)._sellW = 90
+'_items(2, 5)._sellW = 250
+'_items(2, 6)._sellW = 115
+'_items(2, 7)._sellW = 150
+'_items(2, 8)._sellW = 50
