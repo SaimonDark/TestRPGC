@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>testRPGC</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Cityes.vb~RF1a22104.TMP" />
+    <None Remove="Hero.vb~RF3d08c316.TMP" />
+    <None Remove="Main.vb~RF33367d2.TMP" />
+    <None Remove="map.vb~RF2c38a8d.TMP" />
+    <None Remove="Program.vb~RF318e47.TMP" />
+  </ItemGroup>
+
+</Project>
