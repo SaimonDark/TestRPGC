@@ -9,7 +9,7 @@ Public Class Cityes
     Public _nameweapons, _nameprotection, _nameitems As String
     Public _sellW, _sellP, _sellI As Integer
   End Structure
-  Public _items(10, 10) As _predmets
+  Public _items(10, 50) As _predmets
   Public _bag(10) As String
 
   Public Sub VivodCity2()
@@ -302,234 +302,8 @@ Public Class Cityes
     End While
     torgtime = 0
   End Sub
-
-  Public Sub Sell()
-    Dim payitems As String
-    payitems = 0
-    If _bag(1) = "|Пусто|" And _bag(2) = "|Пусто|" And _bag(3) = "|Пусто|" And _bag(4) = "|Пусто|" And _bag(5) = "|Пусто|" And _bag(6) = "|Пусто|" And _bag(7) = "|Пусто|" And _bag(8) = "|Пусто|" And _bag(9) = "|Пусто|" And _bag(10) = "|Пусто|" Then
-      Console.SetCursorPosition(0, 4)
-      Console.WriteLine()
-      Console.WriteLine()
-      _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-      Console.WriteLine("     _______________                                                   ")
-      Console.WriteLine("    ║ Прости, но тебе нечего мне продать           ")
-      Console.WriteLine("    └                                     ")
-      Console.WriteLine("                                        ")
-      Console.WriteLine("                                        ")
-      Console.WriteLine("                                        ")
-      Console.WriteLine("                                        ")
-      Console.ReadLine()
-    Else
-      Console.SetCursorPosition(0, 4)
-      Console.WriteLine()
-      Console.WriteLine()
-      _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-      Console.WriteLine("     _______________Торговец          ")
-      Console.Write("  1. ")
-      Visbag(_bag(1))
-      Console.Write(vbTab & vbTab & "2. ")
-      Visbag(_bag(2))
-      Console.WriteLine()
-      Console.Write("  3. ")
-      Visbag(_bag(3))
-      Console.Write(vbTab & vbTab & "4. ")
-      Visbag(_bag(4))
-      Console.WriteLine()
-      Console.Write("  5. ")
-      Visbag(_bag(5))
-      Console.Write(vbTab & vbTab & "6. ")
-      Visbag(_bag(6))
-      Console.WriteLine()
-      Console.Write("  7. ")
-      Visbag(_bag(7))
-      Console.Write(vbTab & vbTab & "8. ")
-      Visbag(_bag(8))
-      Console.WriteLine()
-      Console.Write("  9. ")
-      Visbag(_bag(9))
-      Console.Write(vbTab & vbTab & "0. ")
-      Visbag(_bag(10))
-      Console.WriteLine()
-      Dim infopay As ConsoleKeyInfo = Console.ReadKey()
-      Try
-        payitems = infopay.Key - 48
-      Catch ex As Exception
-
-      End Try
-      While payitems <> 11
-        Try
-          Select Case payitems
-            Case 1
-              _bag(1) = "|Пусто|"
-              Vispay(_bag(1))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 2
-              _bag(2) = "|Пусто|"
-              Vispay(_bag(2))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 3
-              _bag(3) = "|Пусто|"
-              Vispay(_bag(3))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 4
-              _bag(4) = "|Пусто|"
-              Vispay(_bag(4))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 5
-              _bag(5) = "|Пусто|"
-              Vispay(_bag(5))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 6
-              _bag(6) = "|Пусто|"
-              Vispay(_bag(6))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 7
-              _bag(7) = "|Пусто|"
-              Vispay(_bag(7))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 8
-              _bag(8) = "|Пусто|"
-              Vispay(_bag(8))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 9
-              _bag(9) = "|Пусто|"
-              Vispay(_bag(9))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-            Case 0
-              _bag(10) = "|Пусто|"
-              Vispay(_bag(10))
-              Console.SetCursorPosition(0, 4)
-              Console.WriteLine()
-              Console.WriteLine()
-              _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-              Console.WriteLine("     _______________Торговец          ")
-              Console.WriteLine("    ║ Продажа совершена.                  ")
-              Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.WriteLine("                                        ")
-              Console.ReadLine()
-              payitems = 11
-          End Select
-        Catch ex As Exception
-
-        End Try
-
-      End While
-    End If
-
-  End Sub
-
-  Public Sub Torggorod2(ByVal _punkt As Integer)
+  'Покупка
+  Private Sub Torggorod2(ByVal _punkt As Integer)
     Dim byitems As String
     byitems = 0
     If _bag(1) <> "|Пусто|" And _bag(2) <> "|Пусто|" And _bag(3) <> "|Пусто|" And _bag(4) <> "|Пусто|" And _bag(5) <> "|Пусто|" And _bag(6) <> "|Пусто|" And _bag(7) <> "|Пусто|" And _bag(8) <> "|Пусто|" And _bag(9) <> "|Пусто|" And _bag(10) <> "|Пусто|" Then
@@ -555,12 +329,12 @@ Public Class Cityes
             Console.WriteLine()
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Торговец          ")
-            viaponRand(1) = viRand.Next(1, 8)
-            Console.WriteLine("    ║ 1. " & _items(2, viaponRand(1))._nameweapons & "  " & _items(2, viaponRand(1))._sellW & "          ")
-            viaponRand(2) = viRand.Next(1, 8)
-            Console.WriteLine("    │ 2. " & _items(2, viaponRand(2))._nameweapons & "  " & _items(2, viaponRand(2))._sellW & "          ")
-            viaponRand(3) = viRand.Next(1, 8)
-            Console.WriteLine("    │ 3. " & _items(2, viaponRand(3))._nameweapons & "  " & _items(2, viaponRand(3))._sellW & "          ")
+            viaponRand(1) = viRand.Next(1, 20)
+            Console.WriteLine("    ║ 1. " & _items(2, viaponRand(1))._nameweapons & "  " & _items(2, viaponRand(1))._sellW & "            ")
+            viaponRand(2) = viRand.Next(1, 20)
+            Console.WriteLine("    │ 2. " & _items(2, viaponRand(2))._nameweapons & "  " & _items(2, viaponRand(2))._sellW & "            ")
+            viaponRand(3) = viRand.Next(1, 20)
+            Console.WriteLine("    │ 3. " & _items(2, viaponRand(3))._nameweapons & "  " & _items(2, viaponRand(3))._sellW & "            ")
             Console.WriteLine("    │ 4. Обновить                          ")
             Console.WriteLine("    │ 5. Уйти                             ")
             Console.WriteLine("    └                                     ")
@@ -610,7 +384,7 @@ Public Class Cityes
                   Console.WriteLine()
                   _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
                   Console.WriteLine("     _______________Торговец          ")
-                  Console.WriteLine("    ║ Покупка совершена.")
+                  Console.WriteLine("    ║ Покупка совершена.                  ")
                   Console.WriteLine("    └                                     ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
@@ -635,7 +409,7 @@ Public Class Cityes
                   Console.WriteLine()
                   _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
                   Console.WriteLine("     _______________Торговец          ")
-                  Console.WriteLine("    ║ Покупка совершена.")
+                  Console.WriteLine("    ║ Покупка совершена.                  ")
                   Console.WriteLine("    └                                     ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
@@ -660,42 +434,198 @@ Public Class Cityes
       End Select
     End If
   End Sub
+  'Основной метод Продажи
+  Private Sub Sell()
+    Dim payitems As String
+    payitems = 0
+    If _bag(1) = "|Пусто|" And _bag(2) = "|Пусто|" And _bag(3) = "|Пусто|" And _bag(4) = "|Пусто|" And _bag(5) = "|Пусто|" And _bag(6) = "|Пусто|" And _bag(7) = "|Пусто|" And _bag(8) = "|Пусто|" And _bag(9) = "|Пусто|" And _bag(10) = "|Пусто|" Then
+      Console.SetCursorPosition(0, 8)
+      Console.WriteLine("    ║ Прости, но тебе нечего мне продать           ")
+      Console.WriteLine("    └                                              ")
+      Console.WriteLine("                                                   ")
+      Console.WriteLine("                                                   ")
+      Console.WriteLine("                                                   ")
+      Console.WriteLine("                                                   ")
+      Console.ReadLine()
+    Else
+      Console.SetCursorPosition(0, 8)
+      Console.WriteLine("    ║                                                   ")
+      Console.WriteLine("    │                                                   ")
+      Console.WriteLine("    │                                                   ")
+      Console.WriteLine("    │                                                   ")
+      Console.WriteLine("    │                                                   ")
+      Console.WriteLine("    └                                                   ")
+      Console.SetCursorPosition(0, 4)
+      Console.WriteLine()
+      Console.WriteLine()
+      _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+      Console.WriteLine("     _______________Торговец          ")
+      Console.Write("   1.")
+      Visbag(_bag(1))
+      Console.Write(vbTab & vbTab & "2.")
+      Visbag(_bag(2))
+      Console.WriteLine()
+      Console.Write("   3.")
+      Visbag(_bag(3))
+      Console.Write(vbTab & vbTab & "4.")
+      Visbag(_bag(4))
+      Console.WriteLine()
+      Console.Write("   5.")
+      Visbag(_bag(5))
+      Console.Write(vbTab & vbTab & "6.")
+      Visbag(_bag(6))
+      Console.WriteLine()
+      Console.Write("   7.")
+      Visbag(_bag(7))
+      Console.Write(vbTab & vbTab & "8.")
+      Visbag(_bag(8))
+      Console.WriteLine()
+      Console.Write("   9.")
+      Visbag(_bag(9))
+      Console.Write(vbTab & vbTab & "0.")
+      Visbag(_bag(10))
+      Console.WriteLine()
+      Dim infopay As ConsoleKeyInfo = Console.ReadKey()
+      Try
+        payitems = infopay.Key - 48
+      Catch ex As Exception
 
-  Public Sub Liveflac(ByVal _local As Integer)
-    If _local = 2 Then _money -= 15
-    _botleLive += 1
-    Console.SetCursorPosition(0, 4)
-    Console.WriteLine()
-    Console.WriteLine()
-    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-    Console.WriteLine("     _______________                                                   ")
-    Console.WriteLine("    ║ Флаконы пополнились.                ")
-    Console.WriteLine("    └                                     ")
-    Console.WriteLine("                                        ")
-    Console.WriteLine("                                        ")
-    Console.WriteLine("                                        ")
-    Console.WriteLine("                                        ")
-    Console.ReadLine()
+      End Try
+      While payitems <> 11
+        Try
+          Select Case payitems
+            Case 1
+              _bag(1) = "|Пусто|"
+              Vispay(_bag(1))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 2
+              _bag(2) = "|Пусто|"
+              Vispay(_bag(2))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 3
+              _bag(3) = "|Пусто|"
+              Vispay(_bag(3))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 4
+              _bag(4) = "|Пусто|"
+              Vispay(_bag(4))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 5
+              _bag(5) = "|Пусто|"
+              Vispay(_bag(5))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 6
+              _bag(6) = "|Пусто|"
+              Vispay(_bag(6))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 7
+              _bag(7) = "|Пусто|"
+              Vispay(_bag(7))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 8
+              _bag(8) = "|Пусто|"
+              Vispay(_bag(8))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 9
+              _bag(9) = "|Пусто|"
+              Vispay(_bag(9))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+            Case 0
+              _bag(10) = "|Пусто|"
+              Vispay(_bag(10))
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Продажа совершена.                                                  ")
+              Console.WriteLine("    └                                                                     ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.WriteLine("                                                                          ")
+              Console.ReadLine()
+              payitems = 11
+          End Select
+        Catch ex As Exception
+
+        End Try
+
+      End While
+    End If
+
   End Sub
 
-  Public Sub manaflac(ByVal _local As Integer)
-    If _local = 2 Then _money -= 20
-    _botleMana += 1
-    Console.SetCursorPosition(0, 4)
-    Console.WriteLine()
-    Console.WriteLine()
-    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-    Console.WriteLine("     _______________                                                   ")
-    Console.WriteLine("    ║ Флаконы пополнились.                  ")
-    Console.WriteLine("    └                                       ")
-    Console.WriteLine("                                          ")
-    Console.WriteLine("                                          ")
-    Console.WriteLine("                                          ")
-    Console.WriteLine("                                          ")
-    Console.ReadLine()
-  End Sub
-
-  Private Sub Vispay(ByVal _item As String)
+  'Продажа предметов
+  Private Sub Vispay(ByVal _item As String) 'Расчёт продажи предметов
     Select Case _item
       Case "Ржавый кованый меч"
         _money += Int(_items(2, 1)._sellW / 4)
@@ -713,16 +643,38 @@ Public Class Cityes
         _money += Int(_items(2, 7)._sellW / 4)
       Case "Нож для мяса"
         _money += Int(_items(2, 8)._sellW / 4)
+      Case "Острый нож"
+        _money += Int(_items(2, 9)._sellW / 4)
+      Case "Медный кинжал"
+        _money += Int(_items(2, 10)._sellW / 4)
+      Case "Ветхий скипетр"
+        _money += Int(_items(2, 11)._sellW / 4)
+      Case "Треснутая палочка"
+        _money += Int(_items(2, 12)._sellW / 4)
+      Case "Треснутый посох"
+        _money += Int(_items(2, 13)._sellW / 4)
+      Case "Жезл новичка"
+        _money += Int(_items(2, 14)._sellW / 4)
+      Case "Крепкий жезл"
+        _money += Int(_items(2, 15)._sellW / 4)
+      Case "Медный жезл"
+        _money += Int(_items(2, 16)._sellW / 4)
+      Case "Палочка новичка"
+        _money += Int(_items(2, 17)._sellW / 4)
+      Case "Палочка из бурейника"
+        _money += Int(_items(2, 18)._sellW / 4)
+      Case "Поддержанный посох"
+        _money += Int(_items(2, 19)._sellW / 4)
+      Case "Фальшивый скипетр"
+        _money += Int(_items(2, 20)._sellW / 4)
 
     End Select
   End Sub
-  Private Sub Visbag(ByVal _bagchek As String)
+  Private Sub Visbag(ByVal _bagchek As String) 'Вывод продажи предметов
     If _bagchek = "|Пусто|" Then
-      _txtRGB.TxtRGB("DarkGray", "Black", " |Пусто| ", False)
+      _txtRGB.TxtRGB("DarkGray", "Black", " |Пусто|                ", False)
     Else
       Select Case _bagchek
-        Case " "
-
         Case "Ржавый кованый меч"
           _txtRGB.TxtRGB("White", "Black", "|Ржавый кованый меч|" & Int(_items(2, 1)._sellW / 4), False)
         Case "Ржавый двуручный меч"
@@ -739,14 +691,39 @@ Public Class Cityes
           _txtRGB.TxtRGB("White", "Black", "|Заляпаный тесак|" & Int(_items(2, 7)._sellW / 4), False)
         Case "Нож для мяса"
           _txtRGB.TxtRGB("White", "Black", "|Нож для мяса|" & Int(_items(2, 8)._sellW / 4), False)
+        Case "Острый нож"
+          _txtRGB.TxtRGB("White", "Black", "|Острый нож| " & Int(_items(2, 9)._sellW / 4), False)
+        Case "Медный кинжал"
+          _txtRGB.TxtRGB("White", "Black", "|Медный кинжал| " & Int(_items(2, 10)._sellW / 4), False)
+        Case "Ветхий скипетр"
+          _txtRGB.TxtRGB("White", "Black", "|Ветхий скипетр| " & Int(_items(2, 11)._sellW / 4), False)
+        Case "Треснутая палочка"
+          _txtRGB.TxtRGB("White", "Black", "|Треснутая палочка| " & Int(_items(2, 12)._sellW / 4), False)
+        Case "Треснутый посох"
+          _txtRGB.TxtRGB("White", "Black", "|Треснутый посох| " & Int(_items(2, 13)._sellW / 4), False)
+        Case "Жезл новичка"
+          _txtRGB.TxtRGB("White", "Black", "|Жезл новичка| " & Int(_items(2, 14)._sellW / 4), False)
+        Case "Крепкий жезл"
+          _txtRGB.TxtRGB("White", "Black", "|Крепкий жезл| " & Int(_items(2, 15)._sellW / 4), False)
+        Case "Медный жезл"
+          _txtRGB.TxtRGB("White", "Black", "|Медный жезл| " & Int(_items(2, 16)._sellW / 4), False)
+        Case "Палочка новичка"
+          _txtRGB.TxtRGB("White", "Black", "|Палочка новичка| " & Int(_items(2, 17)._sellW / 4), False)
+        Case "Палочка из бурейника"
+          _txtRGB.TxtRGB("White", "Black", "|Палочка из бурейника| " & Int(_items(2, 18)._sellW / 4), False)
+        Case "Поддержанный посох"
+          _txtRGB.TxtRGB("White", "Black", "|Поддержанный посох| " & Int(_items(2, 19)._sellW / 4), False)
+        Case "Фальшивый скипетр"
+          _txtRGB.TxtRGB("White", "Black", "|Фальшивый скипетр| " & Int(_items(2, 20)._sellW / 4), False)
 
       End Select
     End If
   End Sub
-
+  'Предметы
   Public Sub StatsItems()
     'Предметы города в гнилистых лесах.
     'Оружие
+    'Воин
     _items(2, 1)._nameweapons = "Ржавый кованый меч"
     _items(2, 2)._nameweapons = "Ржавый двуручный меч"
     _items(2, 3)._nameweapons = "Ржавый стальной кинжал"
@@ -755,11 +732,25 @@ Public Class Cityes
     _items(2, 6)._nameweapons = "Гнутый двуручный меч"
     _items(2, 7)._nameweapons = "Заляпаный тесак"
     _items(2, 8)._nameweapons = "Нож для мяса"
+    _items(2, 9)._nameweapons = "Острый нож"
+    _items(2, 10)._nameweapons = "Медный кинжал"
+    'Маг
+    _items(2, 11)._nameweapons = "Ветхий скипетр"
+    _items(2, 12)._nameweapons = "Треснутая палочка"
+    _items(2, 13)._nameweapons = "Треснутый посох"
+    _items(2, 14)._nameweapons = "Жезл новичка"
+    _items(2, 15)._nameweapons = "Крепкий жезл"
+    _items(2, 16)._nameweapons = "Медный жезл"
+    _items(2, 17)._nameweapons = "Палочка новичка"
+    _items(2, 18)._nameweapons = "Палочка из бурейника"
+    _items(2, 19)._nameweapons = "Поддержанный посох"
+    _items(2, 20)._nameweapons = "Фальшивый скипетр"
     'Доспехи
 
     'Предметы
 
     'Цена
+    'За оружие
     _items(2, 1)._sellW = 100
     _items(2, 2)._sellW = 120
     _items(2, 3)._sellW = 90
@@ -768,10 +759,23 @@ Public Class Cityes
     _items(2, 6)._sellW = 115
     _items(2, 7)._sellW = 150
     _items(2, 8)._sellW = 50
+    _items(2, 9)._sellW = 120
+    _items(2, 11)._sellW = 70
+    _items(2, 11)._sellW = 100
+    _items(2, 12)._sellW = 120
+    _items(2, 13)._sellW = 90
+    _items(2, 14)._sellW = 90
+    _items(2, 15)._sellW = 250
+    _items(2, 16)._sellW = 115
+    _items(2, 17)._sellW = 150
+    _items(2, 18)._sellW = 50
+    _items(2, 19)._sellW = 120
+    _items(2, 20)._sellW = 70
 
 
 
   End Sub
+  'Операции проходящие внутри городов
   Public Sub Perechen(ByVal _b1 As String, ByVal _b2 As String, ByVal _b3 As String, ByVal _b4 As String, ByVal _b5 As String, ByVal _b6 As String, ByVal _b7 As String, ByVal _b8 As String, ByVal _b9 As String, ByVal _b10 As String)
     _bag(1) = _b1
     _bag(2) = _b2
@@ -783,6 +787,40 @@ Public Class Cityes
     _bag(8) = _b8
     _bag(9) = _b9
     _bag(10) = _b10
+  End Sub
+  'Флаконы жизни
+  Private Sub Liveflac(ByVal _local As Integer)
+    If _local = 2 Then _money -= 15
+    _botleLive += 1
+    Console.SetCursorPosition(0, 4)
+    Console.WriteLine()
+    Console.WriteLine()
+    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+    Console.WriteLine("     _______________                                                   ")
+    Console.WriteLine("    ║ Флаконы пополнились.                ")
+    Console.WriteLine("    └                                     ")
+    Console.WriteLine("                                        ")
+    Console.WriteLine("                                        ")
+    Console.WriteLine("                                        ")
+    Console.WriteLine("                                        ")
+    Console.ReadLine()
+  End Sub
+
+  Private Sub manaflac(ByVal _local As Integer)
+    If _local = 2 Then _money -= 20
+    _botleMana += 1
+    Console.SetCursorPosition(0, 4)
+    Console.WriteLine()
+    Console.WriteLine()
+    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+    Console.WriteLine("     _______________                                                   ")
+    Console.WriteLine("    ║ Флаконы пополнились.                  ")
+    Console.WriteLine("    └                                       ")
+    Console.WriteLine("                                          ")
+    Console.WriteLine("                                          ")
+    Console.WriteLine("                                          ")
+    Console.WriteLine("                                          ")
+    Console.ReadLine()
   End Sub
 
 End Class

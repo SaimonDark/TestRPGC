@@ -61,8 +61,6 @@
       _txtRGB.TxtRGB("DarkGray", "Black", " |Пусто| ", False)
     Else
       Select Case _bagchek
-        Case " "
-
         Case "Ржавый кованый меч"
           _txtRGB.TxtRGB("White", "Black", " |Ржавый кованый меч| ", False)
         Case "Ржавый двуручный меч"
@@ -79,6 +77,30 @@
           _txtRGB.TxtRGB("White", "Black", " |Заляпаный тесак| ", False)
         Case "Нож для мяса"
           _txtRGB.TxtRGB("White", "Black", " |Нож для мяса| ", False)
+        Case "Острый нож"
+          _txtRGB.TxtRGB("White", "Black", " |Острый нож| ", False)
+        Case "Медный кинжал"
+          _txtRGB.TxtRGB("White", "Black", " |Медный кинжал| ", False)
+        Case "Ветхий скипетр"
+          _txtRGB.TxtRGB("White", "Black", " |Ветхий скипетр| ", False)
+        Case "Треснутая палочка"
+          _txtRGB.TxtRGB("White", "Black", " |Треснутая палочка| ", False)
+        Case "Треснутый посох"
+          _txtRGB.TxtRGB("White", "Black", " |Треснутый посох| ", False)
+        Case "Жезл новичка"
+          _txtRGB.TxtRGB("White", "Black", " |Жезл новичка| ", False)
+        Case "Крепкий жезл"
+          _txtRGB.TxtRGB("White", "Black", " |Крепкий жезл| ", False)
+        Case "Медный жезл"
+          _txtRGB.TxtRGB("White", "Black", " |Медный жезл| ", False)
+        Case "Палочка новичка"
+          _txtRGB.TxtRGB("White", "Black", " |Палочка новичка| ", False)
+        Case "Палочка из бурейника"
+          _txtRGB.TxtRGB("White", "Black", " |Палочка из бурейника| ", False)
+        Case "Поддержанный посох"
+          _txtRGB.TxtRGB("White", "Black", " |Поддержанный посох| ", False)
+        Case "Фальшивый скипетр"
+          _txtRGB.TxtRGB("White", "Black", " |Фальшивый скипетр| ", False)
 
       End Select
     End If
