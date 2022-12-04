@@ -15,9 +15,7 @@ Public Class Cityes
   Public Sub VivodCity2()
     Dim citylive, personslive, sayPerson As Integer
     While citylive <> 5
-      Console.SetCursorPosition(0, 4)
-      Console.WriteLine()
-      Console.WriteLine()
+      Console.SetCursorPosition(0, 6)
       _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
       Console.WriteLine("     _______________                                             ")
       Console.WriteLine("    ║ 1. Осмотреть город                                         ")
@@ -42,9 +40,7 @@ Public Class Cityes
 
         Case 3
           While personslive <> 5
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Жители                                       ")
             Console.WriteLine("    ║ 1. Зельевар                                                ")
@@ -152,9 +148,7 @@ Public Class Cityes
       Case 2
         Select Case _namePers
           Case "Зельевар"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Зельевар                               ")
             Console.WriteLine("    ║ 1. Осмотреть                                         ")
@@ -164,9 +158,7 @@ Public Class Cityes
             Console.WriteLine("    │ 5. Уйти                                              ")
             Console.WriteLine("    └                                                      ")
           Case "Ремесленник"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Печальный ремесленник                           ")
             Console.WriteLine("    ║ 1. Осмотреть                                         ")
@@ -176,9 +168,7 @@ Public Class Cityes
             Console.WriteLine("                                                         ")
             Console.WriteLine("                                                         ")
           Case "Кузнец"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Кузнец                           ")
             Console.WriteLine("    ║ 1. Осмотреть                                         ")
@@ -188,9 +178,7 @@ Public Class Cityes
             Console.WriteLine("    └                                                    ")
             Console.WriteLine("                                                         ")
           Case "Торговец"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Торговец                                            ")
             Console.WriteLine("    ║ 1. Осмотреть                                         ")
@@ -209,9 +197,7 @@ Public Class Cityes
       Case 2
         Select Case _namePers
           Case "Зельевар"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Зельевар              ")
             Console.WriteLine("    ║                                     ")
@@ -222,9 +208,7 @@ Public Class Cityes
             Console.WriteLine("    └                                     ")
             Console.ReadLine()
           Case "Ремесленник"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Печальный ремесленник          ")
             Console.WriteLine("    ║                                     ")
@@ -235,9 +219,7 @@ Public Class Cityes
             Console.WriteLine("    └                                     ")
             Console.ReadLine()
           Case "Кузнец"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Кузнец          ")
             Console.WriteLine("    ║                                     ")
@@ -248,9 +230,7 @@ Public Class Cityes
             Console.WriteLine("    └                                     ")
             Console.ReadLine()
           Case "Торговец"
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Торговец          ")
             Console.WriteLine("    ║                                     ")
@@ -271,9 +251,7 @@ Public Class Cityes
     While torgtime <> 5
       Select Case _number
         Case 2
-          Console.SetCursorPosition(0, 4)
-          Console.WriteLine()
-          Console.WriteLine()
+          Console.SetCursorPosition(0, 6)
           _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
           Console.WriteLine("     _______________Торговец          ")
           Console.WriteLine("    ║ 1. Оружие                                                                      ")
@@ -307,9 +285,7 @@ Public Class Cityes
     Dim byitems As String
     byitems = 0
     If _bag(1) <> "|Пусто|" And _bag(2) <> "|Пусто|" And _bag(3) <> "|Пусто|" And _bag(4) <> "|Пусто|" And _bag(5) <> "|Пусто|" And _bag(6) <> "|Пусто|" And _bag(7) <> "|Пусто|" And _bag(8) <> "|Пусто|" And _bag(9) <> "|Пусто|" And _bag(10) <> "|Пусто|" Then
-      Console.SetCursorPosition(0, 4)
-      Console.WriteLine()
-      Console.WriteLine()
+      Console.SetCursorPosition(0, 6)
       _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
       Console.WriteLine("     _______________Торговец          ")
       Console.WriteLine("    ║ Прости друг, но я тебе нечего не           ")
@@ -324,9 +300,7 @@ Public Class Cityes
         Case 1
           While byitems <> 5
             Dim viRand = New Random(DateTime.Now.Millisecond)
-            Console.SetCursorPosition(0, 4)
-            Console.WriteLine()
-            Console.WriteLine()
+            Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Торговец          ")
             viaponRand(1) = viRand.Next(1, 20)
@@ -354,9 +328,7 @@ Public Class Cityes
                       Exit For
                     End If
                   Next
-                  Console.SetCursorPosition(0, 4)
-                  Console.WriteLine()
-                  Console.WriteLine()
+                  Console.SetCursorPosition(0, 6)
                   _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
                   Console.WriteLine("     _______________Торговец          ")
                   Console.WriteLine("    ║ Покупка совершена.                  ")
@@ -379,9 +351,7 @@ Public Class Cityes
                       Exit For
                     End If
                   Next
-                  Console.SetCursorPosition(0, 4)
-                  Console.WriteLine()
-                  Console.WriteLine()
+                  Console.SetCursorPosition(0, 6)
                   _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
                   Console.WriteLine("     _______________Торговец          ")
                   Console.WriteLine("    ║ Покупка совершена.                  ")
@@ -404,9 +374,7 @@ Public Class Cityes
                       Exit For
                     End If
                   Next
-                  Console.SetCursorPosition(0, 4)
-                  Console.WriteLine()
-                  Console.WriteLine()
+                  Console.SetCursorPosition(0, 6)
                   _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
                   Console.WriteLine("     _______________Торговец          ")
                   Console.WriteLine("    ║ Покупка совершена.                  ")
@@ -448,50 +416,49 @@ Public Class Cityes
       Console.WriteLine("                                                   ")
       Console.ReadLine()
     Else
-      Console.SetCursorPosition(0, 8)
-      Console.WriteLine("    ║                                                   ")
-      Console.WriteLine("    │                                                   ")
-      Console.WriteLine("    │                                                   ")
-      Console.WriteLine("    │                                                   ")
-      Console.WriteLine("    │                                                   ")
-      Console.WriteLine("    └                                                   ")
-      Console.SetCursorPosition(0, 4)
-      Console.WriteLine()
-      Console.WriteLine()
-      _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-      Console.WriteLine("     _______________Торговец          ")
-      Console.Write("   1.")
-      Visbag(_bag(1))
-      Console.Write(vbTab & vbTab & "2.")
-      Visbag(_bag(2))
-      Console.WriteLine()
-      Console.Write("   3.")
-      Visbag(_bag(3))
-      Console.Write(vbTab & vbTab & "4.")
-      Visbag(_bag(4))
-      Console.WriteLine()
-      Console.Write("   5.")
-      Visbag(_bag(5))
-      Console.Write(vbTab & vbTab & "6.")
-      Visbag(_bag(6))
-      Console.WriteLine()
-      Console.Write("   7.")
-      Visbag(_bag(7))
-      Console.Write(vbTab & vbTab & "8.")
-      Visbag(_bag(8))
-      Console.WriteLine()
-      Console.Write("   9.")
-      Visbag(_bag(9))
-      Console.Write(vbTab & vbTab & "0.")
-      Visbag(_bag(10))
-      Console.WriteLine()
-      Dim infopay As ConsoleKeyInfo = Console.ReadKey()
-      Try
-        payitems = infopay.Key - 48
-      Catch ex As Exception
-
-      End Try
       While payitems <> 11
+        Console.SetCursorPosition(0, 8)
+        Console.WriteLine("    ║                                                   ")
+        Console.WriteLine("    │                                                   ")
+        Console.WriteLine("    │                                                   ")
+        Console.WriteLine("    │                                                   ")
+        Console.WriteLine("    │                                                   ")
+        Console.WriteLine("    └                                                   ")
+        Console.SetCursorPosition(0, 6)
+        _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+        Console.WriteLine("     _______________Торговец                            ")
+        Console.Write("   1.")
+        Visbag(_bag(1))
+        Console.Write(vbTab & vbTab & "2.")
+        Visbag(_bag(2))
+        Console.WriteLine()
+        Console.Write("   3.")
+        Visbag(_bag(3))
+        Console.Write(vbTab & vbTab & "4.")
+        Visbag(_bag(4))
+        Console.WriteLine()
+        Console.Write("   5.")
+        Visbag(_bag(5))
+        Console.Write(vbTab & vbTab & "6.")
+        Visbag(_bag(6))
+        Console.WriteLine()
+        Console.Write("   7.")
+        Visbag(_bag(7))
+        Console.Write(vbTab & vbTab & "8.")
+        Visbag(_bag(8))
+        Console.WriteLine()
+        Console.Write("   9.")
+        Visbag(_bag(9))
+        Console.Write(vbTab & vbTab & "0.")
+        Visbag(_bag(10))
+        Console.WriteLine()
+        Dim infopay As ConsoleKeyInfo = Console.ReadKey()
+        Try
+          payitems = infopay.Key - 48
+        Catch ex As Exception
+
+        End Try
+
         Try
           Select Case payitems
             Case 1
@@ -614,6 +581,8 @@ Public Class Cityes
               Console.WriteLine("                                                                          ")
               Console.ReadLine()
               payitems = 11
+            Case 13
+
           End Select
         Catch ex As Exception
 
@@ -760,7 +729,7 @@ Public Class Cityes
     _items(2, 7)._sellW = 150
     _items(2, 8)._sellW = 50
     _items(2, 9)._sellW = 120
-    _items(2, 11)._sellW = 70
+    _items(2, 10)._sellW = 70
     _items(2, 11)._sellW = 100
     _items(2, 12)._sellW = 120
     _items(2, 13)._sellW = 90

@@ -18,10 +18,12 @@ Module Main
   Public _bag As New Bagpack
   Public _book As New BookSkils
   ReadOnly _System As New SystemColorConsole
+
   Dim _AdventureSave, _save, _saveMap, _pointX, _pointY As Integer 'Временный показатель наличия сохранения, позиция персонажа на карте по X и Y
   Dim _figthTime As Integer 'Тригер активности боя
-  Dim _Perks, _PerksSkils As Integer 'Доступные очки для характеристиков
+  Public _Perks, _PerksSkils, _statshero(5) As Integer 'Доступные очки для характеристиков
   Public _botleLive, _botleMana, _money As Integer 'Бутылки жизни и маны и деньги.
+  Public _equip(5) As String
 
   'Public _interf As New Interfuce()
   Sub Main()
@@ -51,6 +53,17 @@ Module Main
     _money = 0 'Костыль для монет
     Console.Title = "The Relight of Eternity"
     LoadData()
+    'Инициализация параметров героя и его экипировки для инвентаря
+    _statshero(1) = _hero._h._strength
+    _statshero(2) = _hero._h._intelligece
+    _statshero(3) = _hero._h._defense
+    _statshero(4) = _hero._h._agility
+    _statshero(5) = _hero._h._accuracy
+    _equip(1) = _hero._Equip(1)
+    _equip(2) = _hero._Equip(2)
+    _equip(3) = _hero._Equip(3)
+    _equip(4) = _hero._Equip(4)
+    _equip(5) = _hero._Equip(5)
 
     While _vibor(0) <> 4
       Console.Clear()
@@ -158,15 +171,34 @@ Module Main
           End If
           _vibor(6) = 0
         Case 3 'Инвентарь
-          Try
-            _bag.Perechen(_hero._Bagcheck(1), _hero._Bagcheck(2), _hero._Bagcheck(3), _hero._Bagcheck(4), _hero._Bagcheck(5), _hero._Bagcheck(6), _hero._Bagcheck(7), _hero._Bagcheck(8), _hero._Bagcheck(9), _hero._Bagcheck(10))
-          Catch ex As Exception
+          'Инициализация параметров героя и его экипировки для инвентаря и его методов
+          _statshero(1) = _hero._h._strength
+          _statshero(2) = _hero._h._intelligece
+          _statshero(3) = _hero._h._defense
+          _statshero(4) = _hero._h._agility
+          _statshero(5) = _hero._h._accuracy
+          _equip(1) = _hero._Equip(1)
+          _equip(2) = _hero._Equip(2)
+          _equip(3) = _hero._Equip(3)
+          _equip(4) = _hero._Equip(4)
+          _equip(5) = _hero._Equip(5)
 
-          End Try
           Console.Clear()
           _hero.InfoBar(0)
-          _bag.Inventary(_hero._Equip(1), _hero._Equip(2), _hero._Equip(3), _hero._Equip(4), _hero._Equip(5), _money)
-          Console.ReadLine()
+          _bag.Perechen(_hero._Bagcheck(1), _hero._Bagcheck(2), _hero._Bagcheck(3), _hero._Bagcheck(4), _hero._Bagcheck(5), _hero._Bagcheck(6), _hero._Bagcheck(7), _hero._Bagcheck(8), _hero._Bagcheck(9), _hero._Bagcheck(10))
+          _bag.Inventary(_money)
+          'Перевод параметров и вещей из методов инвентаря в методы героя
+          _hero._h._strength = _statshero(1)
+          _hero._h._intelligece = _statshero(2)
+          _hero._h._defense = _statshero(3)
+          _hero._h._agility = _statshero(4)
+          _hero._h._accuracy = _statshero(5)
+          _hero._Equip(1) = _equip(1)
+          _hero._Equip(2) = _equip(2)
+          _hero._Equip(3) = _equip(3)
+          _hero._Equip(4) = _equip(4)
+          _hero._Equip(5) = _equip(5)
+
         Case 4 'Книга талантов
           Console.Clear()
           _hero.InfoBar(1)
@@ -877,11 +909,35 @@ Module Main
             Console.Clear()
           End If
           _vibor(8) = 0
-        Case 66 'Сумка
+        Case 66 'Инвентарь
+          'Инициализация параметров героя и его экипировки для инвентаря и его методов
+          _statshero(1) = _hero._h._strength
+          _statshero(2) = _hero._h._intelligece
+          _statshero(3) = _hero._h._defense
+          _statshero(4) = _hero._h._agility
+          _statshero(5) = _hero._h._accuracy
+          _equip(1) = _hero._Equip(1)
+          _equip(2) = _hero._Equip(2)
+          _equip(3) = _hero._Equip(3)
+          _equip(4) = _hero._Equip(4)
+          _equip(5) = _hero._Equip(5)
+
           Console.Clear()
           _hero.InfoBar(0)
-          _bag.Inventary(_hero._Equip(1), _hero._Equip(2), _hero._Equip(3), _hero._Equip(4), _hero._Equip(5), _money)
-          Console.ReadLine()
+          _bag.Perechen(_hero._Bagcheck(1), _hero._Bagcheck(2), _hero._Bagcheck(3), _hero._Bagcheck(4), _hero._Bagcheck(5), _hero._Bagcheck(6), _hero._Bagcheck(7), _hero._Bagcheck(8), _hero._Bagcheck(9), _hero._Bagcheck(10))
+          _bag.Inventary(_money)
+          'Перевод параметров и вещей из методов инвентаря в методы героя
+          _hero._h._strength = _statshero(1)
+          _hero._h._intelligece = _statshero(2)
+          _hero._h._defense = _statshero(3)
+          _hero._h._agility = _statshero(4)
+          _hero._h._accuracy = _statshero(5)
+          _hero._Equip(1) = _equip(1)
+          _hero._Equip(2) = _equip(2)
+          _hero._Equip(3) = _equip(3)
+          _hero._Equip(4) = _equip(4)
+          _hero._Equip(5) = _equip(5)
+
           Console.Clear()
       End Select
 
