@@ -189,7 +189,7 @@
     _h._agility = _h._warrior._agility
     _h._defense = _h._warrior._defense
     _h._accuracy = _h._warrior._accuracy
-    _Equip(1) = "Ржавый меч"
+    _Equip(1) = "Ржавый кованый меч"
     _Equip(2) = "|Пусто|"
     _Equip(3) = "Потрёпанная стёганка"
     _Equip(4) = "|Пусто|"

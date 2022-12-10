@@ -303,11 +303,11 @@ Public Class Cityes
             Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
             Console.WriteLine("     _______________Торговец          ")
-            viaponRand(1) = viRand.Next(1, 20)
+            viaponRand(1) = viRand.Next(1, 41)
             Console.WriteLine("    ║ 1. " & _items(2, viaponRand(1))._nameweapons & "  " & _items(2, viaponRand(1))._sellW & "            ")
-            viaponRand(2) = viRand.Next(1, 20)
+            viaponRand(2) = viRand.Next(1, 41)
             Console.WriteLine("    │ 2. " & _items(2, viaponRand(2))._nameweapons & "  " & _items(2, viaponRand(2))._sellW & "            ")
-            viaponRand(3) = viRand.Next(1, 20)
+            viaponRand(3) = viRand.Next(1, 41)
             Console.WriteLine("    │ 3. " & _items(2, viaponRand(3))._nameweapons & "  " & _items(2, viaponRand(3))._sellW & "            ")
             Console.WriteLine("    │ 4. Обновить                          ")
             Console.WriteLine("    │ 5. Уйти                             ")
@@ -628,7 +628,7 @@ Public Class Cityes
         _money += Int(_items(2, 15)._sellW / 4)
       Case "Медный жезл"
         _money += Int(_items(2, 16)._sellW / 4)
-      Case "Палочка новичка"
+      Case "Палочка ученика"
         _money += Int(_items(2, 17)._sellW / 4)
       Case "Палочка из бурейника"
         _money += Int(_items(2, 18)._sellW / 4)
@@ -636,7 +636,46 @@ Public Class Cityes
         _money += Int(_items(2, 19)._sellW / 4)
       Case "Фальшивый скипетр"
         _money += Int(_items(2, 20)._sellW / 4)
-
+      Case "Лук лесника"
+        _money += Int(_items(2, 21)._sellW / 4)
+      Case "Лук ученика"
+        _money += Int(_items(2, 22)._sellW / 4)
+      Case "Лук из бурейника"
+        _money += Int(_items(2, 23)._sellW / 4)
+      Case "Треснутый лук"
+        _money += Int(_items(2, 24)._sellW / 4)
+      Case "Старый арбалет"
+        _money += Int(_items(2, 25)._sellW / 4)
+      Case "Старый лук"
+        _money += Int(_items(2, 26)._sellW / 4)
+      Case "Прогнивший лук"
+        _money += Int(_items(2, 27)._sellW / 4)
+      Case "Треснутый арбалет"
+        _money += Int(_items(2, 28)._sellW / 4)
+      Case "Самодельный лук"
+        _money += Int(_items(2, 29)._sellW / 4)
+      Case "Большой скрипучий лук"
+        _money += Int(_items(2, 30)._sellW / 4)
+      Case "Короткие кинжалы"
+        _money += Int(_items(2, 31)._sellW / 4)
+      Case "Короткий ржавый меч"
+        _money += Int(_items(2, 32)._sellW / 4)
+      Case "Короткий лук"
+        _money += Int(_items(2, 33)._sellW / 4)
+      Case "Обрубок двуручного меча"
+        _money += Int(_items(2, 34)._sellW / 4)
+      Case "Ядовитый сломаный дротик"
+        _money += Int(_items(2, 35)._sellW / 4)
+      Case "Сломаная рапира"
+        _money += Int(_items(2, 36)._sellW / 4)
+      Case "Обрубок тесака"
+        _money += Int(_items(2, 37)._sellW / 4)
+      Case "Тупой нож"
+        _money += Int(_items(2, 38)._sellW / 4)
+      Case "Гнущийся лук"
+        _money += Int(_items(2, 39)._sellW / 4)
+      Case "Прочный кинжал"
+        _money += Int(_items(2, 40)._sellW / 4)
     End Select
   End Sub
   Private Sub Visbag(ByVal _bagchek As String) 'Вывод продажи предметов
@@ -676,15 +715,54 @@ Public Class Cityes
           _txtRGB.TxtRGB("White", "Black", "|Старый посох| " & Int(_items(2, 15)._sellW / 4), False)
         Case "Медный жезл"
           _txtRGB.TxtRGB("White", "Black", "|Медный жезл| " & Int(_items(2, 16)._sellW / 4), False)
-        Case "Палочка новичка"
-          _txtRGB.TxtRGB("White", "Black", "|Палочка новичка| " & Int(_items(2, 17)._sellW / 4), False)
+        Case "Палочка ученика"
+          _txtRGB.TxtRGB("White", "Black", "|Палочка ученика| " & Int(_items(2, 17)._sellW / 4), False)
         Case "Палочка из бурейника"
           _txtRGB.TxtRGB("White", "Black", "|Палочка из бурейника| " & Int(_items(2, 18)._sellW / 4), False)
         Case "Поддержанный посох"
           _txtRGB.TxtRGB("White", "Black", "|Поддержанный посох| " & Int(_items(2, 19)._sellW / 4), False)
         Case "Фальшивый скипетр"
           _txtRGB.TxtRGB("White", "Black", "|Фальшивый скипетр| " & Int(_items(2, 20)._sellW / 4), False)
-
+        Case "Лук лесника"
+          _txtRGB.TxtRGB("White", "Black", "|Лук лесника| " & Int(_items(2, 21)._sellW / 4), False)
+        Case "Лук ученика"
+          _txtRGB.TxtRGB("White", "Black", "|Лук ученика| " & Int(_items(2, 22)._sellW / 4), False)
+        Case "Лук из бурейника"
+          _txtRGB.TxtRGB("White", "Black", "|Лук из бурейника| " & Int(_items(2, 23)._sellW / 4), False)
+        Case "Треснутый лук"
+          _txtRGB.TxtRGB("White", "Black", "|Треснутый лук| " & Int(_items(2, 24)._sellW / 4), False)
+        Case "Старый арбалет"
+          _txtRGB.TxtRGB("White", "Black", "|Старый арбалет| " & Int(_items(2, 25)._sellW / 4), False)
+        Case "Старый лук"
+          _txtRGB.TxtRGB("White", "Black", "|Старый лук| " & Int(_items(2, 26)._sellW / 4), False)
+        Case "Прогнивший лук"
+          _txtRGB.TxtRGB("White", "Black", "|Прогнувшийся лук| " & Int(_items(2, 27)._sellW / 4), False)
+        Case "Треснутый арбалет"
+          _txtRGB.TxtRGB("White", "Black", "|Треснутый арбалет| " & Int(_items(2, 28)._sellW / 4), False)
+        Case "Самодельный лук"
+          _txtRGB.TxtRGB("White", "Black", "|Самодельный лук| " & Int(_items(2, 29)._sellW / 4), False)
+        Case "Большой скрипучий лук"
+          _txtRGB.TxtRGB("White", "Black", "|Большой срипучий лук| " & Int(_items(2, 30)._sellW / 4), False)
+        Case "Короткие кинжалы"
+          _txtRGB.TxtRGB("White", "Black", "|Короткий кинжал| " & Int(_items(2, 31)._sellW / 4), False)
+        Case "Короткий ржавый меч"
+          _txtRGB.TxtRGB("White", "Black", "|Короткий ржавый меч| " & Int(_items(2, 32)._sellW / 4), False)
+        Case "Короткий лук"
+          _txtRGB.TxtRGB("White", "Black", "|Короткий лук| " & Int(_items(2, 33)._sellW / 4), False)
+        Case "Обрубок двуручного меча"
+          _txtRGB.TxtRGB("White", "Black", "|Обрубок двуручного меча| " & Int(_items(2, 34)._sellW / 4), False)
+        Case "Ядовитый сломаный дротик"
+          _txtRGB.TxtRGB("White", "Black", "|Ядовитый сломаный дротик| " & Int(_items(2, 35)._sellW / 4), False)
+        Case "Сломаная рапира"
+          _txtRGB.TxtRGB("White", "Black", "|Сломаная рапира| " & Int(_items(2, 36)._sellW / 4), False)
+        Case "Обрубок тесака"
+          _txtRGB.TxtRGB("White", "Black", "|Обрубок тесака| " & Int(_items(2, 37)._sellW / 4), False)
+        Case "Тупой нож"
+          _txtRGB.TxtRGB("White", "Black", "|Тупой нож| " & Int(_items(2, 38)._sellW / 4), False)
+        Case "Гнущийся лук"
+          _txtRGB.TxtRGB("White", "Black", "|Гнущийся лук| " & Int(_items(2, 39)._sellW / 4), False)
+        Case "Прочный кинжал"
+          _txtRGB.TxtRGB("White", "Black", "|Прочный кинжал| " & Int(_items(2, 40)._sellW / 4), False)
       End Select
     End If
   End Sub
@@ -710,10 +788,32 @@ Public Class Cityes
     _items(2, 14)._nameweapons = "Жезл новичка"
     _items(2, 15)._nameweapons = "Старый посох"
     _items(2, 16)._nameweapons = "Медный жезл"
-    _items(2, 17)._nameweapons = "Палочка новичка"
+    _items(2, 17)._nameweapons = "Палочка ученика"
     _items(2, 18)._nameweapons = "Палочка из бурейника"
     _items(2, 19)._nameweapons = "Поддержанный посох"
     _items(2, 20)._nameweapons = "Фальшивый скипетр"
+    'Лучник
+    _items(2, 21)._nameweapons = "Лук лесника"
+    _items(2, 22)._nameweapons = "Лук ученика"
+    _items(2, 23)._nameweapons = "Лук из бурейника"
+    _items(2, 24)._nameweapons = "Треснутый лук"
+    _items(2, 25)._nameweapons = "Старый арбалет"
+    _items(2, 26)._nameweapons = "Старый лук"
+    _items(2, 27)._nameweapons = "Прогнивший лук"
+    _items(2, 28)._nameweapons = "Треснутый арбалет"
+    _items(2, 29)._nameweapons = "Самодельный лук"
+    _items(2, 30)._nameweapons = "Большой скрипучий лук"
+    'Плут
+    _items(2, 31)._nameweapons = "Короткие кинжалы"
+    _items(2, 32)._nameweapons = "Короткий ржавый меч"
+    _items(2, 33)._nameweapons = "Короткий лук"
+    _items(2, 34)._nameweapons = "Обрубок двуручного меча"
+    _items(2, 35)._nameweapons = "Ядовитый сломаный дротик"
+    _items(2, 36)._nameweapons = "Сломаная рапира"
+    _items(2, 37)._nameweapons = "Обрубок тесака"
+    _items(2, 38)._nameweapons = "Тупой нож"
+    _items(2, 39)._nameweapons = "Гнущийся лук"
+    _items(2, 40)._nameweapons = "Прочный кинжал"
     'Доспехи
 
     'Предметы
@@ -734,12 +834,32 @@ Public Class Cityes
     _items(2, 12)._sellW = 120
     _items(2, 13)._sellW = 90
     _items(2, 14)._sellW = 90
-    _items(2, 15)._sellW = 250
+    _items(2, 15)._sellW = 120
     _items(2, 16)._sellW = 115
     _items(2, 17)._sellW = 150
     _items(2, 18)._sellW = 50
-    _items(2, 19)._sellW = 120
+    _items(2, 19)._sellW = 250
     _items(2, 20)._sellW = 70
+    _items(2, 21)._sellW = 80
+    _items(2, 22)._sellW = 110
+    _items(2, 23)._sellW = 130
+    _items(2, 24)._sellW = 85
+    _items(2, 25)._sellW = 270
+    _items(2, 26)._sellW = 130
+    _items(2, 27)._sellW = 90
+    _items(2, 28)._sellW = 60
+    _items(2, 29)._sellW = 75
+    _items(2, 30)._sellW = 130
+    _items(2, 31)._sellW = 80
+    _items(2, 32)._sellW = 70
+    _items(2, 33)._sellW = 90
+    _items(2, 34)._sellW = 140
+    _items(2, 35)._sellW = 150
+    _items(2, 36)._sellW = 50
+    _items(2, 37)._sellW = 150
+    _items(2, 38)._sellW = 165
+    _items(2, 39)._sellW = 120
+    _items(2, 40)._sellW = 265
 
 
 

@@ -172,16 +172,7 @@ Module Main
           _vibor(6) = 0
         Case 3 'Инвентарь
           'Инициализация параметров героя и его экипировки для инвентаря и его методов
-          _statshero(1) = _hero._h._strength
-          _statshero(2) = _hero._h._intelligece
-          _statshero(3) = _hero._h._defense
-          _statshero(4) = _hero._h._agility
-          _statshero(5) = _hero._h._accuracy
-          _equip(1) = _hero._Equip(1)
-          _equip(2) = _hero._Equip(2)
-          _equip(3) = _hero._Equip(3)
-          _equip(4) = _hero._Equip(4)
-          _equip(5) = _hero._Equip(5)
+          UpdateStatsHero(1)
           For _bagitemset As Integer = 1 To 10
             _bagitem(_bagitemset) = _hero._Bagcheck(_bagitemset)
           Next
@@ -190,16 +181,7 @@ Module Main
           _bag.Perechen()
           _bag.Inventary(_money)
           'Перевод параметров и вещей из методов инвентаря в методы героя
-          _hero._h._strength = _statshero(1)
-          _hero._h._intelligece = _statshero(2)
-          _hero._h._defense = _statshero(3)
-          _hero._h._agility = _statshero(4)
-          _hero._h._accuracy = _statshero(5)
-          _hero._Equip(1) = _equip(1)
-          _hero._Equip(2) = _equip(2)
-          _hero._Equip(3) = _equip(3)
-          _hero._Equip(4) = _equip(4)
-          _hero._Equip(5) = _equip(5)
+          UpdateStatsHero(2)
           For _bagitemset As Integer = 1 To 10
             _hero._Bagcheck(_bagitemset) = _bagitem(_bagitemset)
           Next
@@ -916,16 +898,7 @@ Module Main
           _vibor(8) = 0
         Case 66 'Инвентарь
           'Инициализация параметров героя и его экипировки для инвентаря и его методов
-          _statshero(1) = _hero._h._strength
-          _statshero(2) = _hero._h._intelligece
-          _statshero(3) = _hero._h._defense
-          _statshero(4) = _hero._h._agility
-          _statshero(5) = _hero._h._accuracy
-          _equip(1) = _hero._Equip(1)
-          _equip(2) = _hero._Equip(2)
-          _equip(3) = _hero._Equip(3)
-          _equip(4) = _hero._Equip(4)
-          _equip(5) = _hero._Equip(5)
+          UpdateStatsHero(1)
           For _bagitemset As Integer = 1 To 10
             _bagitem(_bagitemset) = _hero._Bagcheck(_bagitemset)
           Next
@@ -934,16 +907,7 @@ Module Main
           _bag.Perechen()
           _bag.Inventary(_money)
           'Перевод параметров и вещей из методов инвентаря в методы героя
-          _hero._h._strength = _statshero(1)
-          _hero._h._intelligece = _statshero(2)
-          _hero._h._defense = _statshero(3)
-          _hero._h._agility = _statshero(4)
-          _hero._h._accuracy = _statshero(5)
-          _hero._Equip(1) = _equip(1)
-          _hero._Equip(2) = _equip(2)
-          _hero._Equip(3) = _equip(3)
-          _hero._Equip(4) = _equip(4)
-          _hero._Equip(5) = _equip(5)
+          UpdateStatsHero(2)
           For _bagitemset As Integer = 1 To 10
             _hero._Bagcheck(_bagitemset) = _bagitem(_bagitemset)
           Next
@@ -954,6 +918,45 @@ Module Main
     Catch ex As Exception
 
     End Try
+  End Sub
+
+  Public Sub UpdateStatsHero(ByVal _setpos As Integer)
+    Select Case _setpos
+      Case 1
+        _hero._h._strength -= _hero._strength_Equip
+        _hero._h._intelligece -= _hero._intelligece_Equip
+        _hero._h._agility_Class -= _hero._agility_Equip
+        _hero._h._defense_Class -= _hero._defense_Equip
+        _hero._h._accuracy_Class -= _hero._accuracy_Equip
+        _statshero(1) = _hero._strength_Equip
+        _statshero(2) = _hero._intelligece_Equip
+        _statshero(3) = _hero._defense_Equip
+        _statshero(4) = _hero._agility_Equip
+        _statshero(5) = _hero._accuracy_Equip
+        _equip(1) = _hero._Equip(1)
+        _equip(2) = _hero._Equip(2)
+        _equip(3) = _hero._Equip(3)
+        _equip(4) = _hero._Equip(4)
+        _equip(5) = _hero._Equip(5)
+
+      Case 2
+        _hero._strength_Equip = _statshero(1)
+        _hero._intelligece_Equip = _statshero(2)
+        _hero._defense_Equip = _statshero(3)
+        _hero._agility_Equip = _statshero(4)
+        _hero._accuracy_Equip = _statshero(5)
+        _hero._Equip(1) = _equip(1)
+        _hero._Equip(2) = _equip(2)
+        _hero._Equip(3) = _equip(3)
+        _hero._Equip(4) = _equip(4)
+        _hero._Equip(5) = _equip(5)
+        _hero._h._strength += _hero._strength_Equip
+        _hero._h._intelligece += _hero._intelligece_Equip
+        _hero._h._agility_Class += _hero._agility_Equip
+        _hero._h._defense_Class += _hero._defense_Equip
+        _hero._h._accuracy_Class += _hero._accuracy_Equip
+        Perks_stats(_hero._h._RPclass, _hero._h._RPrace)
+    End Select
   End Sub
 
   Public Sub Perks_stats(ByVal _classes As String, ByVal _races As String) 'Нужно скорректировать распределение очков на дополнительные параметры, криты и способности
@@ -1032,8 +1035,9 @@ Module Main
 
           End If
       End Select
+    End While
 
-      Select Case _classes
+    Select Case _classes
         Case "Воин"
           _hero._skl(0)._damage = (_hero._h._strength / 2) * (_hero._h._accuracy * 0.35)
           _hero._skl(1)._damage = (_hero._h._strength / 1.8) * (_hero._h._accuracy * 0.55)
@@ -1080,7 +1084,7 @@ Module Main
 
 
       End Select
-    End While
+
   End Sub
 
   Public Sub Perks_Skils()
