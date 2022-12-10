@@ -1,18 +1,8 @@
 ﻿Public Class Bagpack
   ReadOnly _txtRGB As New SystemColorConsole
-  Public _bag(10), _equipbag(5) As String
+  Public _equipbag(5), _chekbagitem As String
   Public _getbag, _statsGet(5) As Integer
-  Public Sub Perechen(ByVal _b1 As String, ByVal _b2 As String, ByVal _b3 As String, ByVal _b4 As String, ByVal _b5 As String, ByVal _b6 As String, ByVal _b7 As String, ByVal _b8 As String, ByVal _b9 As String, ByVal _b10 As String)
-    _bag(1) = _b1
-    _bag(2) = _b2
-    _bag(3) = _b3
-    _bag(4) = _b4
-    _bag(5) = _b5
-    _bag(6) = _b6
-    _bag(7) = _b7
-    _bag(8) = _b8
-    _bag(9) = _b9
-    _bag(10) = _b10
+  Public Sub Perechen()
     _statsGet(1) = _statshero(1)
     _statsGet(2) = _statshero(2)
     _statsGet(3) = _statshero(3)
@@ -29,40 +19,40 @@
     While _getbag <> 3
       Console.SetCursorPosition(0, 6)
       _txtRGB.TxtRGB("DarkGray", "Black", "    Оружие| ", False)
-      _txtRGB.TxtRGB("White", "Black", _equipbag(1), True)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(1) & "         ", True)
       _txtRGB.TxtRGB("DarkGray", "Black", "    Голова| ", False)
-      _txtRGB.TxtRGB("White", "Black", _equipbag(2), True)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(2) & "         ", True)
       _txtRGB.TxtRGB("DarkGray", "Black", "      Тело| ", False)
-      _txtRGB.TxtRGB("White", "Black", _equipbag(3), True)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(3) & "         ", True)
       _txtRGB.TxtRGB("DarkGray", "Black", "  Перчатки| ", False)
-      _txtRGB.TxtRGB("White", "Black", _equipbag(4), True)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(4) & "         ", True)
       _txtRGB.TxtRGB("DarkGray", "Black", "     Обувь| ", False)
-      _txtRGB.TxtRGB("White", "Black", _equipbag(5), True)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(5) & "         ", True)
       _txtRGB.TxtRGB("Red", "Black", "  ________________________________________________________________________", True)
       Console.Write("    ")
-      Visbag(_bag(1))
+      Visbag(_bagitem(1))
       Console.Write(vbTab & vbTab)
-      Visbag(_bag(2))
+      Visbag(_bagitem(2))
       Console.WriteLine()
       Console.Write("    ")
-      Visbag(_bag(3))
+      Visbag(_bagitem(3))
       Console.Write(vbTab & vbTab)
-      Visbag(_bag(4))
+      Visbag(_bagitem(4))
       Console.WriteLine()
       Console.Write("    ")
-      Visbag(_bag(5))
+      Visbag(_bagitem(5))
       Console.Write(vbTab & vbTab)
-      Visbag(_bag(6))
+      Visbag(_bagitem(6))
       Console.WriteLine()
       Console.Write("    ")
-      Visbag(_bag(7))
+      Visbag(_bagitem(7))
       Console.Write(vbTab & vbTab)
-      Visbag(_bag(8))
+      Visbag(_bagitem(8))
       Console.WriteLine()
       Console.Write("    ")
-      Visbag(_bag(9))
+      Visbag(_bagitem(9))
       Console.Write(vbTab & vbTab)
-      Visbag(_bag(10))
+      Visbag(_bagitem(10))
       Console.WriteLine()
       _txtRGB.TxtRGB("Red", "Black", "  ________________________________________________________________________", True)
       Console.Write("  | ")
@@ -83,40 +73,514 @@
         Case 1
           SeenItem()
         Case 2
-
+          GetItem()
       End Select
     End While
 
   End Sub
+
+  Private Sub GetItem()  'Метод замены предметов.
+    Dim _getGetItem As String
+    _getGetItem = 0
+    While _getGetItem <> 7
+      Console.SetCursorPosition(0, 6)
+      _txtRGB.TxtRGB("DarkGray", "Black", "    Оружие| 1. ", False)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(1) & "         ", True)
+      _txtRGB.TxtRGB("DarkGray", "Black", "    Голова| 2. ", False)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(2) & "         ", True)
+      _txtRGB.TxtRGB("DarkGray", "Black", "      Тело| 3. ", False)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(3) & "         ", True)
+      _txtRGB.TxtRGB("DarkGray", "Black", "  Перчатки| 4. ", False)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(4) & "         ", True)
+      _txtRGB.TxtRGB("DarkGray", "Black", "     Обувь| 5. ", False)
+      _txtRGB.TxtRGB("White", "Black", _equipbag(5) & "         ", True)
+      _txtRGB.TxtRGB("Red", "Black", "  ________________________________________________________________________", True)
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Dim infogetnatbag As ConsoleKeyInfo = Console.ReadKey()
+      Try
+        _getGetItem = infogetnatbag.Key - 48
+        Select Case _getGetItem
+          Case 1
+            CheckGetItem(1)
+            _getGetItem = 7
+          Case 2
+            CheckGetItem(2)
+            _getGetItem = 7
+          Case 3
+            CheckGetItem(3)
+            _getGetItem = 7
+          Case 4
+            CheckGetItem(4)
+            _getGetItem = 7
+          Case 5
+            CheckGetItem(5)
+            _getGetItem = 7
+        End Select
+      Catch ex As Exception
+      End Try
+    End While
+  End Sub
+
+  Private Sub CheckGetItem(ByVal _itemchekget As Integer)
+    Dim _getChekGetItem As String
+    _getChekGetItem = 0
+    While _getChekGetItem <> 12
+      Console.SetCursorPosition(0, 12)
+      Console.Write("   1.")
+      Visbag(_bagitem(1))
+      Console.Write(vbTab & vbTab & "2.")
+      Visbag(_bagitem(2))
+      Console.WriteLine()
+      Console.Write("   3.")
+      Visbag(_bagitem(3))
+      Console.Write(vbTab & vbTab & "4.")
+      Visbag(_bagitem(4))
+      Console.WriteLine()
+      Console.Write("   5.")
+      Visbag(_bagitem(5))
+      Console.Write(vbTab & vbTab & "6.")
+      Visbag(_bagitem(6))
+      Console.WriteLine()
+      Console.Write("   7.")
+      Visbag(_bagitem(7))
+      Console.Write(vbTab & vbTab & "8.")
+      Visbag(_bagitem(8))
+      Console.WriteLine()
+      Console.Write("   9.")
+      Visbag(_bagitem(9))
+      Console.Write(vbTab & vbTab & "0.")
+      Visbag(_bagitem(10))
+      Console.WriteLine()
+      _txtRGB.TxtRGB("Red", "Black", "  ________________________________________________________________________", True)
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Console.WriteLine("                                                                          ")
+      Dim infogetchecknatbag As ConsoleKeyInfo = Console.ReadKey()
+      Try
+        _getChekGetItem = infogetchecknatbag.Key - 48
+        Select Case _getChekGetItem
+          Case 1
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(1)
+                _bagitem(1) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(1)
+                _bagitem(1) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(1)
+                _bagitem(1) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(1)
+                _bagitem(1) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(1)
+                _bagitem(1) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 2
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(2)
+                _bagitem(2) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(2)
+                _bagitem(2) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(2)
+                _bagitem(2) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(2)
+                _bagitem(2) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(2)
+                _bagitem(2) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 3
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(3)
+                _bagitem(3) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(3)
+                _bagitem(3) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(3)
+                _bagitem(3) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(3)
+                _bagitem(3) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(3)
+                _bagitem(3) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 4
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(4)
+                _bagitem(4) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(4)
+                _bagitem(4) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(4)
+                _bagitem(4) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(4)
+                _bagitem(4) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(4)
+                _bagitem(4) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 5
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(5)
+                _bagitem(5) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(5)
+                _bagitem(5) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(5)
+                _bagitem(5) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(5)
+                _bagitem(5) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(5)
+                _bagitem(5) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 6
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(6)
+                _bagitem(6) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(6)
+                _bagitem(6) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(6)
+                _bagitem(6) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(6)
+                _bagitem(6) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(6)
+                _bagitem(6) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 7
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(7)
+                _bagitem(7) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(7)
+                _bagitem(7) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(7)
+                _bagitem(7) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(7)
+                _bagitem(7) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(7)
+                _bagitem(7) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 8
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(8)
+                _bagitem(8) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(8)
+                _bagitem(8) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(8)
+                _bagitem(8) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(8)
+                _bagitem(8) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(8)
+                _bagitem(8) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 9
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(9)
+                _bagitem(9) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(9)
+                _bagitem(9) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(9)
+                _bagitem(9) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(9)
+                _bagitem(9) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(9)
+                _bagitem(9) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+          Case 0
+            Select Case _itemchekget
+              Case 1
+                _chekbagitem = _bagitem(10)
+                _bagitem(10) = _equipbag(1)
+                _equipbag(1) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 2
+                _chekbagitem = _bagitem(10)
+                _bagitem(10) = _equipbag(2)
+                _equipbag(2) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 3
+                _chekbagitem = _bagitem(10)
+                _bagitem(10) = _equipbag(3)
+                _equipbag(3) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 4
+                _chekbagitem = _bagitem(10)
+                _bagitem(10) = _equipbag(4)
+                _equipbag(4) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+              Case 5
+                _chekbagitem = _bagitem(10)
+                _bagitem(10) = _equipbag(5)
+                _equipbag(5) = _chekbagitem
+                _chekbagitem = " "
+                _getChekGetItem = 12
+            End Select
+        End Select
+      Catch ex As Exception
+      End Try
+    End While
+    Console.SetCursorPosition(0, 4)
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    Console.WriteLine("                                                                          ")
+    _equip(1) = _equipbag(1)
+    _equip(2) = _equipbag(2)
+    _equip(3) = _equipbag(3)
+    _equip(4) = _equipbag(4)
+    _equip(5) = _equipbag(5)
+  End Sub
+
+
   Public Sub SeenItem() 'Метод осмотра описания предмета.
     Dim _getseenitem As String
     _getseenitem = 0
     While _getseenitem <> 12
       Console.SetCursorPosition(0, 12)
       Console.Write("   1.")
-      Visbag(_bag(1))
+      Visbag(_bagItem(1))
       Console.Write(vbTab & vbTab & "2.")
-      Visbag(_bag(2))
+      Visbag(_bagItem(2))
       Console.WriteLine()
       Console.Write("   3.")
-      Visbag(_bag(3))
+      Visbag(_bagItem(3))
       Console.Write(vbTab & vbTab & "4.")
-      Visbag(_bag(4))
+      Visbag(_bagItem(4))
       Console.WriteLine()
       Console.Write("   5.")
-      Visbag(_bag(5))
+      Visbag(_bagItem(5))
       Console.Write(vbTab & vbTab & "6.")
-      Visbag(_bag(6))
+      Visbag(_bagItem(6))
       Console.WriteLine()
       Console.Write("   7.")
-      Visbag(_bag(7))
+      Visbag(_bagItem(7))
       Console.Write(vbTab & vbTab & "8.")
-      Visbag(_bag(8))
+      Visbag(_bagItem(8))
       Console.WriteLine()
       Console.Write("   9.")
-      Visbag(_bag(9))
+      Visbag(_bagItem(9))
       Console.Write(vbTab & vbTab & "0.")
-      Visbag(_bag(10))
+      Visbag(_bagItem(10))
       Console.WriteLine()
       _txtRGB.TxtRGB("Red", "Black", "  ________________________________________________________________________", True)
       Console.WriteLine("                                                                          ")
@@ -134,43 +598,43 @@
         _getseenitem = infoseenatbag.Key - 48
         Select Case _getseenitem
           Case 1
-            Vivodinf(_bag(1))
+            Vivodinf(_bagItem(1))
             Console.ReadLine()
             _getseenitem = 12
           Case 2
-            Vivodinf(_bag(2))
+            Vivodinf(_bagItem(2))
             Console.ReadLine()
             _getseenitem = 12
           Case 3
-            Vivodinf(_bag(3))
+            Vivodinf(_bagItem(3))
             Console.ReadLine()
             _getseenitem = 12
           Case 4
-            Vivodinf(_bag(4))
+            Vivodinf(_bagItem(4))
             Console.ReadLine()
             _getseenitem = 12
           Case 5
-            Vivodinf(_bag(5))
+            Vivodinf(_bagItem(5))
             Console.ReadLine()
             _getseenitem = 12
           Case 6
-            Vivodinf(_bag(6))
+            Vivodinf(_bagItem(6))
             Console.ReadLine()
             _getseenitem = 12
           Case 7
-            Vivodinf(_bag(7))
+            Vivodinf(_bagItem(7))
             Console.ReadLine()
             _getseenitem = 12
           Case 8
-            Vivodinf(_bag(8))
+            Vivodinf(_bagItem(8))
             Console.ReadLine()
             _getseenitem = 12
           Case 9
-            Vivodinf(_bag(9))
+            Vivodinf(_bagItem(9))
             Console.ReadLine()
             _getseenitem = 12
           Case 0
-            Vivodinf(_bag(10))
+            Vivodinf(_bagItem(10))
             Console.ReadLine()
             _getseenitem = 12
         End Select
@@ -246,8 +710,8 @@
       Case "Жезл новичка"
         _txtRGB.TxtRGB("White", "Black", "   |Жезл новичка|     ", True)
 
-      Case "Крепкий жезл"
-        _txtRGB.TxtRGB("White", "Black", "   |Крепкий жезл|     ", True)
+      Case "Старый посох"
+        _txtRGB.TxtRGB("White", "Black", "   |Старый посох|     ", True)
 
       Case "Медный жезл"
         _txtRGB.TxtRGB("White", "Black", "   |Медный жезл|     ", True)
@@ -302,8 +766,8 @@
           _txtRGB.TxtRGB("White", "Black", " |Треснутый посох| ", False)
         Case "Жезл новичка"
           _txtRGB.TxtRGB("White", "Black", " |Жезл новичка| ", False)
-        Case "Крепкий жезл"
-          _txtRGB.TxtRGB("White", "Black", " |Крепкий жезл| ", False)
+        Case "Старый посох"
+          _txtRGB.TxtRGB("White", "Black", " |Старый посох| ", False)
         Case "Медный жезл"
           _txtRGB.TxtRGB("White", "Black", " |Медный жезл| ", False)
         Case "Палочка новичка"

@@ -624,7 +624,7 @@ Public Class Cityes
         _money += Int(_items(2, 13)._sellW / 4)
       Case "Жезл новичка"
         _money += Int(_items(2, 14)._sellW / 4)
-      Case "Крепкий жезл"
+      Case "Старый посох"
         _money += Int(_items(2, 15)._sellW / 4)
       Case "Медный жезл"
         _money += Int(_items(2, 16)._sellW / 4)
@@ -672,8 +672,8 @@ Public Class Cityes
           _txtRGB.TxtRGB("White", "Black", "|Треснутый посох| " & Int(_items(2, 13)._sellW / 4), False)
         Case "Жезл новичка"
           _txtRGB.TxtRGB("White", "Black", "|Жезл новичка| " & Int(_items(2, 14)._sellW / 4), False)
-        Case "Крепкий жезл"
-          _txtRGB.TxtRGB("White", "Black", "|Крепкий жезл| " & Int(_items(2, 15)._sellW / 4), False)
+        Case "Старый посох"
+          _txtRGB.TxtRGB("White", "Black", "|Старый посох| " & Int(_items(2, 15)._sellW / 4), False)
         Case "Медный жезл"
           _txtRGB.TxtRGB("White", "Black", "|Медный жезл| " & Int(_items(2, 16)._sellW / 4), False)
         Case "Палочка новичка"
@@ -708,7 +708,7 @@ Public Class Cityes
     _items(2, 12)._nameweapons = "Треснутая палочка"
     _items(2, 13)._nameweapons = "Треснутый посох"
     _items(2, 14)._nameweapons = "Жезл новичка"
-    _items(2, 15)._nameweapons = "Крепкий жезл"
+    _items(2, 15)._nameweapons = "Старый посох"
     _items(2, 16)._nameweapons = "Медный жезл"
     _items(2, 17)._nameweapons = "Палочка новичка"
     _items(2, 18)._nameweapons = "Палочка из бурейника"

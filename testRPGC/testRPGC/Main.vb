@@ -23,7 +23,7 @@ Module Main
   Dim _figthTime As Integer 'Тригер активности боя
   Public _Perks, _PerksSkils, _statshero(5) As Integer 'Доступные очки для характеристиков
   Public _botleLive, _botleMana, _money As Integer 'Бутылки жизни и маны и деньги.
-  Public _equip(5) As String
+  Public _equip(5), _bagitem(10) As String
 
   'Public _interf As New Interfuce()
   Sub Main()
@@ -182,10 +182,12 @@ Module Main
           _equip(3) = _hero._Equip(3)
           _equip(4) = _hero._Equip(4)
           _equip(5) = _hero._Equip(5)
-
+          For _bagitemset As Integer = 1 To 10
+            _bagitem(_bagitemset) = _hero._Bagcheck(_bagitemset)
+          Next
           Console.Clear()
           _hero.InfoBar(0)
-          _bag.Perechen(_hero._Bagcheck(1), _hero._Bagcheck(2), _hero._Bagcheck(3), _hero._Bagcheck(4), _hero._Bagcheck(5), _hero._Bagcheck(6), _hero._Bagcheck(7), _hero._Bagcheck(8), _hero._Bagcheck(9), _hero._Bagcheck(10))
+          _bag.Perechen()
           _bag.Inventary(_money)
           'Перевод параметров и вещей из методов инвентаря в методы героя
           _hero._h._strength = _statshero(1)
@@ -198,6 +200,9 @@ Module Main
           _hero._Equip(3) = _equip(3)
           _hero._Equip(4) = _equip(4)
           _hero._Equip(5) = _equip(5)
+          For _bagitemset As Integer = 1 To 10
+            _hero._Bagcheck(_bagitemset) = _bagitem(_bagitemset)
+          Next
 
         Case 4 'Книга талантов
           Console.Clear()
@@ -843,7 +848,7 @@ Module Main
           End If
           For _bagset = 1 To 10
             _hero._Bagcheck(_bagset) = _city._bag(_bagset)
-            _bag._bag(_bagset) = _hero._Bagcheck(_bagset)
+            _bagitem(_bagset) = _hero._Bagcheck(_bagset)
           Next
         Case 27 'Выход.
           If _saveMap = 1 Then _pointSet = "1"
@@ -921,10 +926,12 @@ Module Main
           _equip(3) = _hero._Equip(3)
           _equip(4) = _hero._Equip(4)
           _equip(5) = _hero._Equip(5)
-
+          For _bagitemset As Integer = 1 To 10
+            _bagitem(_bagitemset) = _hero._Bagcheck(_bagitemset)
+          Next
           Console.Clear()
           _hero.InfoBar(0)
-          _bag.Perechen(_hero._Bagcheck(1), _hero._Bagcheck(2), _hero._Bagcheck(3), _hero._Bagcheck(4), _hero._Bagcheck(5), _hero._Bagcheck(6), _hero._Bagcheck(7), _hero._Bagcheck(8), _hero._Bagcheck(9), _hero._Bagcheck(10))
+          _bag.Perechen()
           _bag.Inventary(_money)
           'Перевод параметров и вещей из методов инвентаря в методы героя
           _hero._h._strength = _statshero(1)
@@ -937,7 +944,9 @@ Module Main
           _hero._Equip(3) = _equip(3)
           _hero._Equip(4) = _equip(4)
           _hero._Equip(5) = _equip(5)
-
+          For _bagitemset As Integer = 1 To 10
+            _hero._Bagcheck(_bagitemset) = _bagitem(_bagitemset)
+          Next
           Console.Clear()
       End Select
 
