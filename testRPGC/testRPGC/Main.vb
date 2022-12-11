@@ -21,7 +21,7 @@ Module Main
 
   Dim _AdventureSave, _save, _saveMap, _pointX, _pointY As Integer 'Временный показатель наличия сохранения, позиция персонажа на карте по X и Y
   Dim _figthTime As Integer 'Тригер активности боя
-  Public _Perks, _PerksSkils, _statshero(5) As Integer 'Доступные очки для характеристиков
+  Public _Perks, _PerksSkils, _statshero(5), _dopperks(5) As Integer 'Доступные очки для характеристиков
   Public _botleLive, _botleMana, _money As Integer 'Бутылки жизни и маны и деньги.
   Public _equip(5), _bagitem(10) As String
 
@@ -41,6 +41,11 @@ Module Main
     _vibor(7) = 0
     _vibor(8) = 0
     _vibor(9) = 0
+    _dopperks(1) = 0
+    _dopperks(2) = 0
+    _dopperks(3) = 0
+    _dopperks(4) = 0
+    _dopperks(5) = 0
     _pointHero = 0 'Перемещение по начальной карте
     _pointSet = 0 'Перемещение по начальной карте
     _save = 0
@@ -65,7 +70,7 @@ Module Main
     _equip(4) = _hero._Equip(4)
     _equip(5) = _hero._Equip(5)
 
-    While _vibor(0) <> 4
+    While _vibor(0) <> 5
       Console.Clear()
       Console.WriteLine("  ")
       _System.TxtRGB("Yellow", "Black", "                  _                         _", True)
@@ -75,8 +80,9 @@ Module Main
       _System.TxtRGB("White", "Black", "                     1. Новая игра", True)
       If _save = 0 Then _System.TxtRGB("DarkBlue", "Black", "                     2. Загрузка", True)
       If _save = 1 Then _System.TxtRGB("White", "Black", "                     2. Загрузка", True)
-      _System.TxtRGB("White", "Black", "                     3. Авторы.", True)
-      _System.TxtRGB("White", "Black", "                     4. Выход.", True)
+      _System.TxtRGB("White", "Black", "                     3. Настройка.", True)
+      _System.TxtRGB("White", "Black", "                     4. Авторы.", True)
+      _System.TxtRGB("White", "Black", "                     5. Выход.", True)
       Dim info As ConsoleKeyInfo = Console.ReadKey()
       Try
         _vibor(0) = info.Key - 48
@@ -96,6 +102,11 @@ Module Main
             _vibor(7) = 0
             _vibor(8) = 0
             _vibor(9) = 0
+            _dopperks(1) = 0
+            _dopperks(2) = 0
+            _dopperks(3) = 0
+            _dopperks(4) = 0
+            _dopperks(5) = 0
             _pointHero = "a"
             _pointSet = "v"
             _saveMap = 0
@@ -113,7 +124,18 @@ Module Main
               _vibor(0) = 0
             End If
           Case 3 'Настройки
-
+            Console.Clear()
+            Console.SetCursorPosition(0, 0)
+            _System.TxtRGB("Yellow", "Black", "▓▓", False)
+            Console.SetCursorPosition(104, 0)
+            _System.TxtRGB("Yellow", "Black", "▓▓", False)
+            Console.SetCursorPosition(0, 30)
+            _System.TxtRGB("Yellow", "Black", "▓▓", False)
+            Console.SetCursorPosition(20, 12)
+            _System.TxtRGB("White", "Black", "Зажмите Ctrl и передвигайте колёсико мыши до границ экрана.", False)
+            Console.SetCursorPosition(40, 15)
+            _System.TxtRGB("White", "Black", "Затем, нажмите Enter.", False)
+            Console.ReadLine()
           Case 4 'авторы.
 
           Case Else
@@ -983,7 +1005,9 @@ Module Main
       End Try
       Select Case _vibor(7)
         Case 1 'Изменить параметр силы
-          _hero._h._strength += 1
+          _hero._h._strength -= _dopperks(1)
+          _dopperks(1) += 1
+          _hero._h._strength += _dopperks(1)
           _hero._h._defense = (_hero._h._strength / 2) + _hero._defense_Equip + _hero._h._defense_Class
           _hero._h._liveMax = 100 + (_hero._h._strength / 2) + _hero._live_Equip
 
@@ -1004,7 +1028,9 @@ Module Main
           End Select
 
         Case 2 'Изменить параметр интеллекта
-          _hero._h._intelligece += 1
+          _hero._h._intelligece -= _dopperks(2)
+          _dopperks(2) += 1
+          _hero._h._intelligece += _dopperks(2)
           _hero._h._agility = (_hero._h._intelligece / 2) + _hero._agility_Equip + _hero._h._agility_Class
           _hero._h._mana = (_hero._h._intelligece / 10) + 10
           _hero._h._manaMax = _hero._h._mana
@@ -1022,68 +1048,153 @@ Module Main
           End Select
 
         Case 3 'Изменить параметр Защиты
-          _hero._h._defense += 1
-          _hero._h._strength += 2
+          _hero._h._defense -= _dopperks(3)
+          _dopperks(3) += 1
+          _hero._h._defense += _dopperks(3)
+          _hero._h._strength -= _dopperks(1)
+          _dopperks(1) += 2
+          _hero._h._strength += _dopperks(1)
 
         Case 4 'Изменить параметр Ловкости
-          _hero._h._agility += 1
-          _hero._h._intelligece += 2
+          _hero._h._agility -= _dopperks(4)
+          _dopperks(4) += 1
+          _hero._h._agility += _dopperks(4)
+          _hero._h._intelligece -= _dopperks(2)
+          _dopperks(2) += 2
+          _hero._h._intelligece += _dopperks(2)
 
         Case 5 'Изменить параметр Точности
           If _hero._h._accuracy < 50 Then
-            _hero._h._accuracy += 1
+            _hero._h._accuracy -= _dopperks(5)
+            _dopperks(5) += 1
+            _hero._h._accuracy += _dopperks(5)
+
 
           End If
       End Select
     End While
+    'Без очков добавления, для обновления экипировки
+    'Обновление силы и интеллекта
+    Select Case _races
+      Case "Человек"
+        _hero._h._live = _hero._h._human._live
+        _hero._h._strength = _hero._h._human._strength
+        _hero._h._intelligece = _hero._h._human._intelligece
 
+      Case "Эльф"
+        _hero._h._live = _hero._h._elf._live
+        _hero._h._strength = _hero._h._elf._strength
+        _hero._h._intelligece = _hero._h._elf._intelligece
+
+      Case "Дворф"
+        _hero._h._live = _hero._h._dworf._live
+        _hero._h._strength = _hero._h._dworf._strength
+        _hero._h._intelligece = _hero._h._dworf._intelligece
+
+    End Select
+
+    _hero._h._strength += _hero._strength_Equip + _dopperks(1)
+    _hero._h._intelligece += _hero._intelligece_Equip + _dopperks(2)
+
+    'Обновление защиты, ловкости, точности
+    Select Case _races
+      Case "Человек"
+        _hero._h._agility = _hero._h._human._agility
+        _hero._h._defense = _hero._h._human._defense
+        _hero._h._accuracy = _hero._h._human._accuracy
+
+      Case "Эльф"
+        _hero._h._agility = _hero._h._elf._agility
+        _hero._h._defense = _hero._h._elf._defense
+        _hero._h._accuracy = _hero._h._elf._accuracy
+
+      Case "Дворф"
+        _hero._h._agility = _hero._h._dworf._agility
+        _hero._h._defense = _hero._h._dworf._defense
+        _hero._h._accuracy = _hero._h._dworf._accuracy
+
+    End Select
+    _hero._h._defense += (_hero._h._strength / 2) + _hero._defense_Equip + _dopperks(3)
+    _hero._h._agility += (_hero._h._intelligece / 2) + _hero._agility_Equip + _dopperks(4)
+    _hero._h._accuracy += _hero._accuracy_Equip + _dopperks(5)
+
+    'Обновление скилов и конечных параметров
     Select Case _classes
-        Case "Воин"
-          _hero._skl(0)._damage = (_hero._h._strength / 2) * (_hero._h._accuracy * 0.35)
-          _hero._skl(1)._damage = (_hero._h._strength / 1.8) * (_hero._h._accuracy * 0.55)
-          _hero._skl(2)._damage = (_hero._h._strength / 1.55) * (_hero._h._accuracy * 0.78)
-          _hero._skl(3)._damage = (_hero._h._strength / 1.2) * (_hero._h._accuracy * 0.95)
+      Case "Воин"
+        _hero._h._strength += _hero._h._warrior._strength
+        _hero._h._intelligece += _hero._h._warrior._intelligece
+        _hero._h._agility += _hero._h._warrior._agility
+        _hero._h._defense += _hero._h._warrior._defense
+        _hero._h._accuracy += _hero._h._warrior._accuracy
 
-          _hero._skl(0)._crit = (_hero._h._strength * 2.1 + _hero._h._defense * 2.1) * 2
-          _hero._skl(1)._crit = (_hero._h._strength * 3.25 + _hero._h._defense * 3.25) * 2.2
-          _hero._skl(2)._crit = (_hero._h._strength * 4.36 + _hero._h._defense * 4.36) * 2.6
-          _hero._skl(3)._crit = (_hero._h._strength * 5.45 + _hero._h._defense * 5.45) * 2.8 + (_hero._h._lvl * 10)
+        _hero._skl(0)._damage = (_hero._h._strength / 2) * (_hero._h._accuracy * 0.35)
+        _hero._skl(1)._damage = (_hero._h._strength / 1.8) * (_hero._h._accuracy * 0.55)
+        _hero._skl(2)._damage = (_hero._h._strength / 1.55) * (_hero._h._accuracy * 0.78)
+        _hero._skl(3)._damage = (_hero._h._strength / 1.2) * (_hero._h._accuracy * 0.95)
 
-        Case "Маг"
-          _hero._skl(0)._damage = (_hero._h._intelligece / 2) * (_hero._h._accuracy * 0.35)
-          _hero._skl(1)._damage = (_hero._h._intelligece / 1.8) * (_hero._h._accuracy * 0.55)
-          _hero._skl(2)._damage = (_hero._h._intelligece / 1.55) * (_hero._h._accuracy * 0.78)
-          _hero._skl(3)._damage = (_hero._h._intelligece / 1.2) * (_hero._h._accuracy * 0.95)
+        _hero._skl(0)._crit = (_hero._h._strength * 2.1 + _hero._h._defense * 2.1) * 2
+        _hero._skl(1)._crit = (_hero._h._strength * 3.25 + _hero._h._defense * 3.25) * 2.2
+        _hero._skl(2)._crit = (_hero._h._strength * 4.36 + _hero._h._defense * 4.36) * 2.6
+        _hero._skl(3)._crit = (_hero._h._strength * 5.45 + _hero._h._defense * 5.45) * 2.8 + (_hero._h._lvl * 10)
 
-          _hero._skl(0)._crit = (_hero._h._intelligece * 2.1 + _hero._h._agility * 2.1) * 2
-          _hero._skl(1)._crit = (_hero._h._intelligece * 3.25 + _hero._h._agility * 3.25) * 2.2
-          _hero._skl(2)._crit = (_hero._h._intelligece * 4.36 + _hero._h._agility * 4.36) * 2.6
-          _hero._skl(3)._crit = (_hero._h._intelligece * 5.45 + _hero._h._agility * 5.45) * 2.8 + (_hero._h._lvl * 10)
+      Case "Маг"
+        _hero._h._strength += _hero._h._mage._strength
+        _hero._h._intelligece += _hero._h._mage._intelligece
+        _hero._h._agility += _hero._h._mage._agility
+        _hero._h._defense += _hero._h._mage._defense
+        _hero._h._accuracy += _hero._h._mage._accuracy
 
+        _hero._skl(0)._damage = (_hero._h._intelligece / 2) * (_hero._h._accuracy * 0.35)
+        _hero._skl(1)._damage = (_hero._h._intelligece / 1.8) * (_hero._h._accuracy * 0.55)
+        _hero._skl(2)._damage = (_hero._h._intelligece / 1.55) * (_hero._h._accuracy * 0.78)
+        _hero._skl(3)._damage = (_hero._h._intelligece / 1.2) * (_hero._h._accuracy * 0.95)
 
-        Case "Лучник"
-          _hero._skl(0)._damage = (_hero._h._intelligece / 2) * (_hero._h._accuracy * 0.23)
-          _hero._skl(1)._damage = (_hero._h._intelligece / 1.8) * (_hero._h._accuracy * 0.48)
-          _hero._skl(2)._damage = (_hero._h._intelligece / 1.55) * (_hero._h._accuracy * 0.69)
-          _hero._skl(3)._damage = (_hero._h._intelligece / 1.2) * (_hero._h._accuracy * 0.91)
-
-          _hero._skl(0)._crit = 1.8 * ((_hero._h._strength + _hero._h._intelligece) + (10 * (_hero._h._agility / 5)))
-          _hero._skl(1)._crit = 2.5 * ((_hero._h._strength + _hero._h._intelligece) + (11 * (_hero._h._agility / 4)))
-          _hero._skl(2)._crit = 4.1 * ((_hero._h._strength + _hero._h._intelligece) + (15 * (_hero._h._agility / 2.5)))
-          _hero._skl(3)._crit = 6 * ((_hero._h._strength + _hero._h._intelligece) + (19.5 * (_hero._h._agility / 1.5)) + (_hero._h._lvl * 10))
-        Case "Плут"
-          _hero._skl(0)._damage = (_hero._h._strength / 2) * (_hero._h._accuracy * 0.23)
-          _hero._skl(1)._damage = (_hero._h._strength / 1.8) * (_hero._h._accuracy * 0.48)
-          _hero._skl(2)._damage = (_hero._h._strength / 1.55) * (_hero._h._accuracy * 0.69)
-          _hero._skl(3)._damage = (_hero._h._strength / 1.2) * (_hero._h._accuracy * 0.91)
-
-          _hero._skl(0)._crit = 1.8 * ((_hero._h._strength + _hero._h._intelligece) + (10 * (_hero._h._defense / 5)))
-          _hero._skl(1)._crit = 2.5 * ((_hero._h._strength + _hero._h._intelligece) + (11 * (_hero._h._defense / 4)))
-          _hero._skl(2)._crit = 4.1 * ((_hero._h._strength + _hero._h._intelligece) + (15 * (_hero._h._defense / 2.5)))
-          _hero._skl(3)._crit = 6 * ((_hero._h._strength + _hero._h._intelligece) + (19.5 * (_hero._h._defense / 1.5)) + (_hero._h._lvl * 10))
+        _hero._skl(0)._crit = (_hero._h._intelligece * 2.1 + _hero._h._agility * 2.1) * 2
+        _hero._skl(1)._crit = (_hero._h._intelligece * 3.25 + _hero._h._agility * 3.25) * 2.2
+        _hero._skl(2)._crit = (_hero._h._intelligece * 4.36 + _hero._h._agility * 4.36) * 2.6
+        _hero._skl(3)._crit = (_hero._h._intelligece * 5.45 + _hero._h._agility * 5.45) * 2.8 + (_hero._h._lvl * 10)
 
 
-      End Select
+      Case "Лучник"
+        _hero._h._strength += _hero._h._Archer._strength
+        _hero._h._intelligece += _hero._h._Archer._intelligece
+        _hero._h._agility += _hero._h._Archer._agility
+        _hero._h._defense += _hero._h._Archer._defense
+        _hero._h._accuracy += _hero._h._Archer._accuracy
+
+        _hero._skl(0)._damage = (_hero._h._intelligece / 2) * (_hero._h._accuracy * 0.23)
+        _hero._skl(1)._damage = (_hero._h._intelligece / 1.8) * (_hero._h._accuracy * 0.48)
+        _hero._skl(2)._damage = (_hero._h._intelligece / 1.55) * (_hero._h._accuracy * 0.69)
+        _hero._skl(3)._damage = (_hero._h._intelligece / 1.2) * (_hero._h._accuracy * 0.91)
+
+        _hero._skl(0)._crit = 1.8 * ((_hero._h._strength + _hero._h._intelligece) + (10 * (_hero._h._agility / 5)))
+        _hero._skl(1)._crit = 2.5 * ((_hero._h._strength + _hero._h._intelligece) + (11 * (_hero._h._agility / 4)))
+        _hero._skl(2)._crit = 4.1 * ((_hero._h._strength + _hero._h._intelligece) + (15 * (_hero._h._agility / 2.5)))
+        _hero._skl(3)._crit = 6 * ((_hero._h._strength + _hero._h._intelligece) + (19.5 * (_hero._h._agility / 1.5)) + (_hero._h._lvl * 10))
+
+      Case "Плут"
+        _hero._h._strength += _hero._h._Rogue._strength
+        _hero._h._intelligece += _hero._h._Rogue._intelligece
+        _hero._h._agility += _hero._h._Rogue._agility
+        _hero._h._defense += _hero._h._Rogue._defense
+        _hero._h._accuracy += _hero._h._Rogue._accuracy
+
+        _hero._skl(0)._damage = (_hero._h._strength / 2) * (_hero._h._accuracy * 0.23)
+        _hero._skl(1)._damage = (_hero._h._strength / 1.8) * (_hero._h._accuracy * 0.48)
+        _hero._skl(2)._damage = (_hero._h._strength / 1.55) * (_hero._h._accuracy * 0.69)
+        _hero._skl(3)._damage = (_hero._h._strength / 1.2) * (_hero._h._accuracy * 0.91)
+
+        _hero._skl(0)._crit = 1.8 * ((_hero._h._strength + _hero._h._intelligece) + (10 * (_hero._h._defense / 5)))
+        _hero._skl(1)._crit = 2.5 * ((_hero._h._strength + _hero._h._intelligece) + (11 * (_hero._h._defense / 4)))
+        _hero._skl(2)._crit = 4.1 * ((_hero._h._strength + _hero._h._intelligece) + (15 * (_hero._h._defense / 2.5)))
+        _hero._skl(3)._crit = 6 * ((_hero._h._strength + _hero._h._intelligece) + (19.5 * (_hero._h._defense / 1.5)) + (_hero._h._lvl * 10))
+
+    End Select
+
+    _hero._h._live += 100 + (_hero._h._strength / 2) + _hero._live_Equip
+    _hero._h._liveMax = _hero._h._live
+    _hero._h._mana = (_hero._h._intelligece / 10) + 10
+    _hero._h._manaMax = _hero._h._mana
 
   End Sub
 
@@ -1205,8 +1316,15 @@ Module Main
       End Try
       Console.Clear()
       _hero.InfoHero()
-      Console.WriteLine(" Продолжить? (Да\Нет) ")
-      _chekhero = Console.ReadLine()
+      Console.WriteLine(" Продолжить? (Y\N) ") '89
+      Dim infocheckplay As ConsoleKeyInfo = Console.ReadKey()
+      Dim chekpoint As Integer
+      Try
+        chekpoint = infocheckplay.Key - 48
+        If chekpoint = 41 Then _chekhero = "Да"
+      Catch ex As Exception
+
+      End Try
       Console.Clear()
     End While
     'Карта и передвижение
@@ -1331,6 +1449,12 @@ Module Main
       myFileWriter.WriteLine(_hero._h._mana)
       myFileWriter.WriteLine(_hero._h._liveMax)
       myFileWriter.WriteLine(_hero._h._manaMax)
+      'Дополнительные параметры
+      myFileWriter.WriteLine(_dopperks(1))
+      myFileWriter.WriteLine(_dopperks(2))
+      myFileWriter.WriteLine(_dopperks(3))
+      myFileWriter.WriteLine(_dopperks(4))
+      myFileWriter.WriteLine(_dopperks(5))
       'Дополнительные параметры расы
       myFileWriter.WriteLine(_hero._h._strength_race)
       myFileWriter.WriteLine(_hero._h._intelligece_race)
@@ -1435,6 +1559,12 @@ Module Main
       _hero._h._mana = myFileReader.ReadLine()
       _hero._h._liveMax = myFileReader.ReadLine()
       _hero._h._manaMax = myFileReader.ReadLine()
+      'Дополнительные параметры
+      _dopperks(1) = myFileReader.ReadLine()
+      _dopperks(2) = myFileReader.ReadLine()
+      _dopperks(3) = myFileReader.ReadLine()
+      _dopperks(4) = myFileReader.ReadLine()
+      _dopperks(5) = myFileReader.ReadLine()
       'Дополнительные параметры расы
       _hero._h._strength_race = myFileReader.ReadLine()
       _hero._h._intelligece_race = myFileReader.ReadLine()
