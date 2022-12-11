@@ -422,8 +422,9 @@
     If _moneyVis = 1 Then
       If _money > 0 Then
         _System.TxtRGB(_color, "Black", "  |  ", False)
-        _System.TxtRGB("Yellow", "Black", "монет: " & _money, True)
+        _System.TxtRGB("Yellow", "Black", "монет: " & _money, False)
       End If
+      Console.WriteLine("")
     ElseIf _moneyVis = 0 Then
       Console.WriteLine(" ")
     End If
