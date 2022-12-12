@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Bagpack.vb~RF1ae7647c.TMP" />
+    <None Remove="Bagpack.vb~RFc5b98d.TMP" />
     <None Remove="Cityes.vb~RF1a22104.TMP" />
     <None Remove="Cityes.vb~RF1ac43538.TMP" />
     <None Remove="Cityes.vb~RF693e3be.TMP" />

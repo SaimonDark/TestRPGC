@@ -134,6 +134,7 @@
     End While
   End Sub
 
+  'Замена предмета
   Private Sub CheckGetItem(ByVal _itemchekget As Integer)
     Dim _getChekGetItem As String
     _getChekGetItem = 0
@@ -202,10 +203,6 @@
                 _bagitem(1) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 2
             Select Case _itemchekget
               Case 1
@@ -229,10 +226,6 @@
                 _bagitem(2) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 3
             Select Case _itemchekget
               Case 1
@@ -256,10 +249,6 @@
                 _bagitem(3) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 4
             Select Case _itemchekget
               Case 1
@@ -285,10 +274,6 @@
                 _bagitem(4) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 5
             Select Case _itemchekget
               Case 1
@@ -312,10 +297,6 @@
                 _bagitem(5) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 6
             Select Case _itemchekget
               Case 1
@@ -339,10 +320,6 @@
                 _bagitem(6) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 7
             Select Case _itemchekget
               Case 1
@@ -366,10 +343,6 @@
                 _bagitem(7) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 8
             Select Case _itemchekget
               Case 1
@@ -393,10 +366,6 @@
                 _bagitem(8) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 9
             Select Case _itemchekget
               Case 1
@@ -420,10 +389,6 @@
                 _bagitem(9) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
           Case 0
             Select Case _itemchekget
               Case 1
@@ -447,11 +412,11 @@
                 _bagitem(10) = _equipbag(5)
                 _equipbag(5) = _chekbagitem
             End Select
-            DelletItem(_bagitem(1))
-            StayItem(_equipbag(_itemchekget))
-            _chekbagitem = Nothing
-            _getChekGetItem = 12
         End Select
+        DelletItem(_bagitem(_getChekGetItem))
+        StayItem(_equipbag(_itemchekget))
+        _chekbagitem = Nothing
+        _getChekGetItem = 12
       Catch ex As Exception
       End Try
     End While
@@ -491,8 +456,8 @@
     _equip(5) = _equipbag(5)
   End Sub
 
-
-  Public Sub SeenItem() 'Метод осмотра описания предмета.
+  'Метод осмотра описания предмета.
+  Public Sub SeenItem()
     Dim _getseenitem As String
     _getseenitem = 0
     While _getseenitem <> 12
@@ -728,6 +693,82 @@
       Case "Прочный кинжал"
         _txtRGB.TxtRGB("White", "Black", "   │Прочный кинжал│     ", False)
 
+             '-------------------------------------------------------------------
+      Case "Потрёпаная стёганка"
+        _txtRGB.TxtRGB("White", "Black", "|Потрёпаная стёганка|", False)
+
+      Case "Стёртые сапоги"
+        _txtRGB.TxtRGB("White", "Black", "|Стёртые сапоги|", False)
+
+      Case "Погнутые доспехи"
+        _txtRGB.TxtRGB("White", "Black", "|Погнутые доспехи|", False)
+
+      Case "Кожаные доспехи"
+        _txtRGB.TxtRGB("White", "Black", "|Кожаные доспехи|", False)
+
+      Case "Пробитый кушак"
+        _txtRGB.TxtRGB("White", "Black", "|Пробитый кушак|", False)
+
+      Case "Ржавый шлем"
+        _txtRGB.TxtRGB("White", "Black", "|Ржавый шлем|", False)
+
+      Case "Треснутое забрало"
+        _txtRGB.TxtRGB("White", "Black", "|Треснутое забрало|", False)
+
+      Case "Перчатки из тины"
+        _txtRGB.TxtRGB("White", "Black", "|Перчатки из тины|", False)
+
+      Case "Старые варежки"
+        _txtRGB.TxtRGB("White", "Black", "|Старые варежки| ", False)
+
+      Case "Прогнившие наручи"
+        _txtRGB.TxtRGB("White", "Black", "|Прогнившие наручи| ", False)
+
+      Case "Медные наручи"
+        _txtRGB.TxtRGB("White", "Black", "|Медные наручи| ", False)
+
+      Case "Медный доспех"
+        _txtRGB.TxtRGB("White", "Black", "|Медный доспех| ", False)
+
+      Case "Прочные ботинки"
+        _txtRGB.TxtRGB("White", "Black", "|Прочные ботинки| ", False)
+
+      Case "Ветхие  сапоги"
+        _txtRGB.TxtRGB("White", "Black", "|Ветхие  сапоги| ", False)
+
+      Case "Халат"
+        _txtRGB.TxtRGB("White", "Black", "|Халат| ", False)
+
+      Case "Старый балахон"
+        _txtRGB.TxtRGB("White", "Black", "|Старый балахон| ", False)
+
+      Case "Потрёпаный плащ"
+        _txtRGB.TxtRGB("White", "Black", "|Потрёпаный плащ| ", False)
+
+      Case "Изношенная мантия"
+        _txtRGB.TxtRGB("White", "Black", "|Изношенная мантия| ", False)
+
+      Case "Кожаные сандали"
+        _txtRGB.TxtRGB("White", "Black", "|Кожаные сандали| ", False)
+
+      Case "Потрёпаный колпак"
+        _txtRGB.TxtRGB("White", "Black", "|Потрёпаный колпак| ", False)
+
+      Case "Ветхое одеяние"
+        _txtRGB.TxtRGB("White", "Black", "|Ветхое одеяние| ", False)
+
+      Case "Исхудалые ботинки"
+        _txtRGB.TxtRGB("White", "Black", "|Исхудалые ботинки| ", False)
+
+      Case "Старые ритуальные перчатки"
+        _txtRGB.TxtRGB("White", "Black", "|Старые ритуальные перчатки| ", False)
+
+      Case "Дырявое пончо"
+        _txtRGB.TxtRGB("White", "Black", "|Дырявое пончо| ", False)
+
+      Case "Крепкие одеяния"
+        _txtRGB.TxtRGB("White", "Black", "|Крепкие одеяния| ", False)
+
     End Select
 
   End Sub
@@ -779,7 +820,7 @@
         Case "Фальшивый скипетр"
           _txtRGB.TxtRGB("White", "Black", " │Фальшивый скипетр│ ", False)
         Case "Лук лесника"
-          _txtRGB.TxtRGB("White", "Black", " │Лук лесника│     ", False)
+          _txtRGB.TxtRGB("White", "Black", " │Лук лесника│ ", False)
         Case "Лук ученика"
           _txtRGB.TxtRGB("White", "Black", " │Лук ученика│     ", False)
         Case "Лук из бурейника"
@@ -818,6 +859,57 @@
           _txtRGB.TxtRGB("White", "Black", " │Гнущийся лук│     ", False)
         Case "Прочный кинжал"
           _txtRGB.TxtRGB("White", "Black", " │Прочный кинжал│     ", False)
+          '-------------------------------------------------------------------
+        Case "Потрёпаная стёганка"
+          _txtRGB.TxtRGB("White", "Black", " |Потрёпаная стёганка|", False)
+        Case "Стёртые сапоги"
+          _txtRGB.TxtRGB("White", "Black", " |Стёртые сапоги|", False)
+        Case "Погнутые доспехи"
+          _txtRGB.TxtRGB("White", "Black", " |Погнутые доспехи|", False)
+        Case "Кожаные доспехи"
+          _txtRGB.TxtRGB("White", "Black", " |Кожаные доспехи|", False)
+        Case "Пробитый кушак"
+          _txtRGB.TxtRGB("White", "Black", " |Пробитый кушак|", False)
+        Case "Ржавый шлем"
+          _txtRGB.TxtRGB("White", "Black", " |Ржавый шлем|", False)
+        Case "Треснутое забрало"
+          _txtRGB.TxtRGB("White", "Black", " |Треснутое забрало|", False)
+        Case "Перчатки из тины"
+          _txtRGB.TxtRGB("White", "Black", " |Перчатки из тины|", False)
+        Case "Старые варежки"
+          _txtRGB.TxtRGB("White", "Black", " |Старые варежки| ", False)
+        Case "Прогнившие наручи"
+          _txtRGB.TxtRGB("White", "Black", " |Прогнившие наручи| ", False)
+        Case "Медные наручи"
+          _txtRGB.TxtRGB("White", "Black", " |Медные наручи| ", False)
+        Case "Медный доспех"
+          _txtRGB.TxtRGB("White", "Black", " |Медный доспех| ", False)
+        Case "Прочные ботинки"
+          _txtRGB.TxtRGB("White", "Black", " |Прочные ботинки| ", False)
+        Case "Ветхие  сапоги"
+          _txtRGB.TxtRGB("White", "Black", " |Ветхие  сапоги| ", False)
+        Case "Халат"
+          _txtRGB.TxtRGB("White", "Black", " |Халат| ", False)
+        Case "Старый балахон"
+          _txtRGB.TxtRGB("White", "Black", " |Старый балахон| ", False)
+        Case "Потрёпаный плащ"
+          _txtRGB.TxtRGB("White", "Black", " |Потрёпаный плащ| ", False)
+        Case "Изношенная мантия"
+          _txtRGB.TxtRGB("White", "Black", " |Изношенная мантия| ", False)
+        Case "Кожаные сандали"
+          _txtRGB.TxtRGB("White", "Black", " |Кожаные сандали| ", False)
+        Case "Потрёпаный колпак"
+          _txtRGB.TxtRGB("White", "Black", " |Потрёпаный колпак| ", False)
+        Case "Ветхое одеяние"
+          _txtRGB.TxtRGB("White", "Black", " |Ветхое одеяние| ", False)
+        Case "Исхудалые ботинки"
+          _txtRGB.TxtRGB("White", "Black", " |Исхудалые ботинки| ", False)
+        Case "Старые ритуальные перчатки"
+          _txtRGB.TxtRGB("White", "Black", " |Старые ритуальные перчатки| ", False)
+        Case "Дырявое пончо"
+          _txtRGB.TxtRGB("White", "Black", " |Дырявое пончо| ", False)
+        Case "Крепкие одеяния"
+          _txtRGB.TxtRGB("White", "Black", " |Крепкие одеяния| ", False)
       End Select
     End If
   End Sub
@@ -849,6 +941,38 @@
         _statshero(1) -= 10
       Case "Медный кинжал"
         _statshero(1) -= 17
+        '-----------------------------
+      Case "Потрёпаная стёганка"
+        _statshero(3) -= 5
+        _statshero(4) -= 5
+      Case "Стёртые сапоги"
+
+      Case "Погнутые доспехи"
+
+      Case "Кожаные доспехи"
+
+      Case "Пробитый кушак"
+
+      Case "Ржавый шлем"
+
+      Case "Треснутое забрало"
+
+      Case "Перчатки из тины"
+        _statshero(5) -= 1
+        _statshero(4) -= 5
+      Case "Старые варежки"
+
+      Case "Прогнившие наручи"
+
+      Case "Медные наручи"
+
+      Case "Медный доспех"
+
+      Case "Прочные ботинки"
+
+      Case "Ветхие  сапоги"
+
+
          '------------Маг-------------
       Case "Старый посох"
         _statshero(2) -= 10
@@ -870,6 +994,30 @@
         _statshero(2) -= 24
       Case "Фальшивый скипетр"
         _statshero(2) -= 8
+        '--------------------------
+      Case "Халат"
+        _statshero(3) -= 5
+        _statshero(4) -= 5
+      Case "Старый балахон"
+
+      Case "Потрёпаный плащ"
+
+      Case "Изношенная мантия"
+
+      Case "Кожаные сандали"
+
+      Case "Потрёпаный колпак"
+
+      Case "Ветхое одеяние"
+
+      Case "Исхудалые ботинки"
+
+      Case "Старые ритуальные перчатки"
+
+      Case "Дырявое пончо"
+
+      Case "Крепкие одеяния"
+
         '------------Лучник--------
       Case "Лук лесника"
         _statshero(4) -= 5
@@ -958,6 +1106,38 @@
         _statshero(1) += 10
       Case "Медный кинжал"
         _statshero(1) += 17
+       '-----------------------------
+      Case "Потрёпаная стёганка"
+        _statshero(3) += 5
+        _statshero(4) += 5
+      Case "Стёртые сапоги"
+
+      Case "Погнутые доспехи"
+
+      Case "Кожаные доспехи"
+
+      Case "Пробитый кушак"
+
+      Case "Ржавый шлем"
+
+      Case "Треснутое забрало"
+
+      Case "Перчатки из тины"
+        _statshero(5) += 1
+        _statshero(4) += 5
+      Case "Старые варежки"
+
+      Case "Прогнившие наручи"
+
+      Case "Медные наручи"
+
+      Case "Медный доспех"
+
+      Case "Прочные ботинки"
+
+      Case "Ветхие  сапоги"
+
+
          '------------Маг-------------
       Case "Старый посох"
         _statshero(2) += 10
@@ -979,6 +1159,30 @@
         _statshero(2) += 24
       Case "Фальшивый скипетр"
         _statshero(2) += 8
+       '--------------------------
+      Case "Халат"
+        _statshero(3) += 5
+        _statshero(4) += 5
+      Case "Старый балахон"
+
+      Case "Потрёпаный плащ"
+
+      Case "Изношенная мантия"
+
+      Case "Кожаные сандали"
+
+      Case "Потрёпаный колпак"
+
+      Case "Ветхое одеяние"
+
+      Case "Исхудалые ботинки"
+
+      Case "Старые ритуальные перчатки"
+
+      Case "Дырявое пончо"
+
+      Case "Крепкие одеяния"
+
         '------------Лучник--------
       Case "Лук лесника"
         _statshero(4) += 5

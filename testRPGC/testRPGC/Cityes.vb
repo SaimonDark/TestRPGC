@@ -255,8 +255,8 @@ Public Class Cityes
           _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
           Console.WriteLine("     _______________Торговец          ")
           Console.WriteLine("    ║ 1. Оружие                                                                      ")
-          Console.WriteLine("    │ 2. Барахолка                                                                   ")
-          Console.WriteLine("    │ 3. Броня                                                                       ")
+          Console.WriteLine("    │ 2. Броня                                                                   ")
+          Console.WriteLine("    │ 3. Редкости                                                                      ")
           Console.WriteLine("    │ 4. Продать                                                                     ")
           Console.WriteLine("    │ 5. Уйти                                                                        ")
           Console.WriteLine("    └                                                                                ")
@@ -436,8 +436,144 @@ Public Class Cityes
             End Select
           End While
 
-        Case 2
+        Case 2 'Броня
+          While byitems <> 5
+            Dim viRand = New Random(DateTime.Now.Millisecond)
+            Console.SetCursorPosition(0, 6)
+            _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+            Console.WriteLine("     _______________Торговец          ")
+            viaponRand(1) = viRand.Next(1, 26)
+            Console.WriteLine("    ║ 1. " & _items(2, viaponRand(1))._nameprotection & "  " & _items(2, viaponRand(1))._sellP & "            ")
+            viaponRand(2) = viRand.Next(1, 26)
+            Console.WriteLine("    │ 2. " & _items(2, viaponRand(2))._nameprotection & "  " & _items(2, viaponRand(2))._sellP & "            ")
+            viaponRand(3) = viRand.Next(1, 26)
+            Console.WriteLine("    │ 3. " & _items(2, viaponRand(3))._nameprotection & "  " & _items(2, viaponRand(3))._sellP & "            ")
+            Console.WriteLine("    │ 4. Обновить                          ")
+            Console.WriteLine("    │ 5. Уйти                             ")
+            Console.WriteLine("    └                                     ")
+            Dim infotorgviapon As ConsoleKeyInfo = Console.ReadKey()
+            Try
+              byitems = infotorgviapon.Key - 48
+            Catch ex As Exception
 
+            End Try
+            Select Case byitems
+              Case 1 'Первый слот
+                If _money >= _items(2, viaponRand(1))._sellP Then
+                  Try
+                    For _bye = 1 To 10
+                      If _bag(_bye) = "|Пусто|" Then
+                        _bag(_bye) = _items(2, viaponRand(1))._nameprotection
+                        _money -= _items(2, viaponRand(1))._sellP
+                        Exit For
+                      End If
+                    Next
+                    Console.SetCursorPosition(0, 6)
+                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+                    Console.WriteLine("     _______________Торговец          ")
+                    Console.WriteLine("    ║ Покупка совершена.                  ")
+                    Console.WriteLine("    └                                     ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.ReadLine()
+                    byitems = 5
+                  Catch ex As Exception
+
+                  End Try
+                Else
+                  Console.SetCursorPosition(0, 6)
+                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+                  Console.WriteLine("     _______________Торговец          ")
+                  Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
+                  Console.WriteLine("    │ денег для этого предмета.           ")
+                  Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.ReadLine()
+                End If
+
+
+              Case 2 'Вторый слот
+                If _money >= _items(2, viaponRand(2))._sellP Then
+                  Try
+                    For _bye = 1 To 10
+                      If _bag(_bye) = "|Пусто|" Then
+                        _bag(_bye) = _items(2, viaponRand(2))._nameprotection
+                        _money -= _items(2, viaponRand(2))._sellP
+                        Exit For
+                      End If
+                    Next
+                    Console.SetCursorPosition(0, 6)
+                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+                    Console.WriteLine("     _______________Торговец          ")
+                    Console.WriteLine("    ║ Покупка совершена.                  ")
+                    Console.WriteLine("    └                                     ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.ReadLine()
+                    byitems = 5
+                  Catch ex As Exception
+
+                  End Try
+                Else
+                  Console.SetCursorPosition(0, 6)
+                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+                  Console.WriteLine("     _______________Торговец          ")
+                  Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
+                  Console.WriteLine("    │ денег для этого предмета.           ")
+                  Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.ReadLine()
+                End If
+
+
+              Case 3 'Третий слот
+                If _money >= _items(2, viaponRand(3))._sellP Then
+                  Try
+                    For _bye = 1 To 10
+                      If _bag(_bye) = "|Пусто|" Then
+                        _bag(_bye) = _items(2, viaponRand(3))._nameprotection
+                        _money -= _items(2, viaponRand(3))._sellP
+                        Exit For
+                      End If
+                    Next
+                    Console.SetCursorPosition(0, 6)
+                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+                    Console.WriteLine("     _______________Торговец          ")
+                    Console.WriteLine("    ║ Покупка совершена.                  ")
+                    Console.WriteLine("    └                                     ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.ReadLine()
+                    byitems = 5
+                  Catch ex As Exception
+
+                  End Try
+                Else
+                  Console.SetCursorPosition(0, 6)
+                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+                  Console.WriteLine("     _______________Торговец          ")
+                  Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
+                  Console.WriteLine("    │ денег для этого предмета.           ")
+                  Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.ReadLine()
+                End If
+              Case 4 'Обновление списка
+
+            End Select
+          End While
         Case 3
 
 
@@ -638,9 +774,61 @@ Public Class Cityes
           _money += Int(_items(2, 39)._sellW / 4)
         Case "Прочный кинжал"
           _money += Int(_items(2, 40)._sellW / 4)
+
+          '--------------------------------------------------
+        Case "Потрёпаная стёганка"
+          _money += Int(_items(2, 1)._sellW / 4)
+        Case "Стёртые сапоги"
+          _money += Int(_items(2, 2)._sellW / 4)
+        Case "Погнутые доспехи"
+          _money += Int(_items(2, 3)._sellW / 4)
+        Case "Кожаные доспехи"
+          _money += Int(_items(2, 4)._sellW / 4)
+        Case "Пробитый кушак"
+          _money += Int(_items(2, 5)._sellW / 4)
+        Case "Ржавый шлем"
+          _money += Int(_items(2, 6)._sellW / 4)
+        Case "Треснутое забрало"
+          _money += Int(_items(2, 7)._sellW / 4)
+        Case "Перчатки из тины"
+          _money += Int(_items(2, 8)._sellW / 4)
+        Case "Старые варежки"
+          _money += Int(_items(2, 9)._sellW / 4)
+        Case "Прогнившие наручи"
+          _money += Int(_items(2, 10)._sellW / 4)
+        Case "Медные наручи"
+          _money += Int(_items(2, 11)._sellW / 4)
+        Case "Медный доспех"
+          _money += Int(_items(2, 12)._sellW / 4)
+        Case "Прочные ботинки"
+          _money += Int(_items(2, 13)._sellW / 4)
+        Case "Ветхие  сапоги"
+          _money += Int(_items(2, 14)._sellW / 4)
+        Case "Халат"
+          _money += Int(_items(2, 15)._sellW / 4)
+        Case "Старый балахон"
+          _money += Int(_items(2, 16)._sellW / 4)
+        Case "Потрёпаный плащ"
+          _money += Int(_items(2, 17)._sellW / 4)
+        Case "Изношенная мантия"
+          _money += Int(_items(2, 18)._sellW / 4)
+        Case "Кожаные сандали"
+          _money += Int(_items(2, 19)._sellW / 4)
+        Case "Потрёпаный колпак"
+          _money += Int(_items(2, 20)._sellW / 4)
+        Case "Ветхое одеяние"
+          _money += Int(_items(2, 21)._sellW / 4)
+        Case "Исхудалые ботинки"
+          _money += Int(_items(2, 22)._sellW / 4)
+        Case "Старые ритуальные перчатки"
+          _money += Int(_items(2, 23)._sellW / 4)
+        Case "Дырявое пончо"
+          _money += Int(_items(2, 24)._sellW / 4)
+        Case "Крепкие одеяния"
+          _money += Int(_items(2, 25)._sellW / 4)
       End Select
     Catch ex As Exception
-      _txtRGB.TxtRGB("Red", "Black", "/////////////////////////////////////////////////////////////", False)
+      '_txtRGB.TxtRGB("Red", "Black", "/////////////////////////////////////////////////////////////", False)
     End Try
 
   End Sub
@@ -729,6 +917,57 @@ Public Class Cityes
           _txtRGB.TxtRGB("White", "Black", "|Гнущийся лук| " & Int(_items(2, 39)._sellW / 4), False)
         Case "Прочный кинжал"
           _txtRGB.TxtRGB("White", "Black", "|Прочный кинжал| " & Int(_items(2, 40)._sellW / 4), False)
+          '----------------------------------------------------
+        Case "Потрёпаная стёганка"
+          _txtRGB.TxtRGB("White", "Black", "|Потрёпаная стёганка|" & Int(_items(2, 1)._sellP / 4), False)
+        Case "Стёртые сапоги"
+          _txtRGB.TxtRGB("White", "Black", "|Стёртые сапоги|" & Int(_items(2, 2)._sellP / 4), False)
+        Case "Погнутые доспехи"
+          _txtRGB.TxtRGB("White", "Black", "|Погнутые доспехи|" & Int(_items(2, 3)._sellP / 4), False)
+        Case "Кожаные доспехи"
+          _txtRGB.TxtRGB("White", "Black", "|Кожаные доспехи|" & Int(_items(2, 4)._sellP / 4), False)
+        Case "Пробитый кушак"
+          _txtRGB.TxtRGB("White", "Black", "|Пробитый кушак|" & Int(_items(2, 5)._sellP / 4), False)
+        Case "Ржавый шлем"
+          _txtRGB.TxtRGB("White", "Black", "|Ржавый шлем|" & Int(_items(2, 6)._sellP / 4), False)
+        Case "Треснутое забрало"
+          _txtRGB.TxtRGB("White", "Black", "|Треснутое забрало|" & Int(_items(2, 7)._sellP / 4), False)
+        Case "Перчатки из тины"
+          _txtRGB.TxtRGB("White", "Black", "|Перчатки из тины|" & Int(_items(2, 8)._sellP / 4), False)
+        Case "Старые варежки"
+          _txtRGB.TxtRGB("White", "Black", "|Старые варежки| " & Int(_items(2, 9)._sellP / 4), False)
+        Case "Прогнившие наручи"
+          _txtRGB.TxtRGB("White", "Black", "|Прогнившие наручи| " & Int(_items(2, 10)._sellP / 4), False)
+        Case "Медные наручи"
+          _txtRGB.TxtRGB("White", "Black", "|Медные наручи| " & Int(_items(2, 11)._sellP / 4), False)
+        Case "Медный доспех"
+          _txtRGB.TxtRGB("White", "Black", "|Медный доспех| " & Int(_items(2, 12)._sellP / 4), False)
+        Case "Прочные ботинки"
+          _txtRGB.TxtRGB("White", "Black", "|Прочные ботинки| " & Int(_items(2, 13)._sellP / 4), False)
+        Case "Ветхие  сапоги"
+          _txtRGB.TxtRGB("White", "Black", "|Ветхие  сапоги| " & Int(_items(2, 14)._sellP / 4), False)
+        Case "Халат"
+          _txtRGB.TxtRGB("White", "Black", "|Халат| " & Int(_items(2, 15)._sellP / 4), False)
+        Case "Старый балахон"
+          _txtRGB.TxtRGB("White", "Black", "|Старый балахон| " & Int(_items(2, 16)._sellP / 4), False)
+        Case "Потрёпаный плащ"
+          _txtRGB.TxtRGB("White", "Black", "|Потрёпаный плащ| " & Int(_items(2, 17)._sellP / 4), False)
+        Case "Изношенная мантия"
+          _txtRGB.TxtRGB("White", "Black", "|Изношенная мантия| " & Int(_items(2, 18)._sellP / 4), False)
+        Case "Кожаные сандали"
+          _txtRGB.TxtRGB("White", "Black", "|Кожаные сандали| " & Int(_items(2, 19)._sellP / 4), False)
+        Case "Потрёпаный колпак"
+          _txtRGB.TxtRGB("White", "Black", "|Потрёпаный колпак| " & Int(_items(2, 20)._sellP / 4), False)
+        Case "Ветхое одеяние"
+          _txtRGB.TxtRGB("White", "Black", "|Ветхое одеяние| " & Int(_items(2, 21)._sellP / 4), False)
+        Case "Исхудалые ботинки"
+          _txtRGB.TxtRGB("White", "Black", "|Исхудалые ботинки| " & Int(_items(2, 22)._sellP / 4), False)
+        Case "Старые ритуальные перчатки"
+          _txtRGB.TxtRGB("White", "Black", "|Старые ритуальные перчатки| " & Int(_items(2, 23)._sellP / 4), False)
+        Case "Дырявое пончо"
+          _txtRGB.TxtRGB("White", "Black", "|Дырявое пончо| " & Int(_items(2, 24)._sellP / 4), False)
+        Case "Крепкие одеяния"
+          _txtRGB.TxtRGB("White", "Black", "|Крепкие одеяния| " & Int(_items(2, 25)._sellP / 4), False)
       End Select
     End If
   End Sub
@@ -781,6 +1020,34 @@ Public Class Cityes
     _items(2, 39)._nameweapons = "Гнущийся лук"
     _items(2, 40)._nameweapons = "Прочный кинжал"
     'Доспехи
+    '--------------Воин---------------
+    _items(2, 1)._nameprotection = "Потрёпаная стёганка"
+    _items(2, 2)._nameprotection = "Стёртые сапоги" 'Общий предмет
+    _items(2, 3)._nameprotection = "Погнутые доспехи"
+    _items(2, 4)._nameprotection = "Кожаные доспехи"
+    _items(2, 5)._nameprotection = "Пробитый кушак"
+    _items(2, 6)._nameprotection = "Ржавый шлем"
+    _items(2, 7)._nameprotection = "Треснутое забрало"
+    _items(2, 8)._nameprotection = "Перчатки из тины"  'Общий предмет
+    _items(2, 9)._nameprotection = "Старые варежки"
+    _items(2, 10)._nameprotection = "Прогнившие наручи"
+    _items(2, 11)._nameprotection = "Медные наручи"
+    _items(2, 12)._nameprotection = "Медный доспех"
+    _items(2, 13)._nameprotection = "Прочные ботинки"
+    _items(2, 14)._nameprotection = "Ветхие  сапоги"
+    '-----------------Маг-----------------
+    _items(2, 15)._nameprotection = "Халат"
+    _items(2, 16)._nameprotection = "Старый балахон"
+    _items(2, 17)._nameprotection = "Потрёпаный плащ"
+    _items(2, 18)._nameprotection = "Изношенная мантия"
+    _items(2, 19)._nameprotection = "Кожаные сандали"
+    _items(2, 20)._nameprotection = "Потрёпаный колпак"
+    _items(2, 21)._nameprotection = "Ветхое одеяние"
+    _items(2, 22)._nameprotection = "Исхудалые ботинки"
+    _items(2, 23)._nameprotection = "Старые ритуальные перчатки"
+    _items(2, 24)._nameprotection = "Дырявое пончо"
+    _items(2, 25)._nameprotection = "Крепкие одеяния"
+
 
     'Предметы
 
@@ -826,6 +1093,35 @@ Public Class Cityes
     _items(2, 38)._sellW = 165
     _items(2, 39)._sellW = 120
     _items(2, 40)._sellW = 265
+    'За доспехи
+    _items(2, 1)._sellP = 90
+    _items(2, 2)._sellP = 80
+    _items(2, 3)._sellP = 90
+    _items(2, 4)._sellP = 130
+    _items(2, 5)._sellP = 140
+    _items(2, 6)._sellP = 90
+    _items(2, 7)._sellP = 150
+    _items(2, 8)._sellP = 80
+    _items(2, 9)._sellP = 120
+    _items(2, 10)._sellP = 70
+    _items(2, 11)._sellP = 75
+    _items(2, 12)._sellP = 90
+    _items(2, 13)._sellP = 120
+    _items(2, 14)._sellP = 90
+
+    _items(2, 15)._sellP = 50
+    _items(2, 16)._sellP = 115
+    _items(2, 17)._sellP = 150
+    _items(2, 18)._sellP = 60
+    _items(2, 19)._sellP = 250
+    _items(2, 20)._sellP = 70
+    _items(2, 21)._sellP = 80
+    _items(2, 22)._sellP = 110
+    _items(2, 23)._sellP = 160
+    _items(2, 24)._sellP = 85
+    _items(2, 25)._sellP = 270
+
+
 
 
 

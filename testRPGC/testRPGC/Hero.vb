@@ -191,7 +191,7 @@
     _h._accuracy = _h._warrior._accuracy
     _Equip(1) = "Ржавый кованый меч"
     _Equip(2) = "|Пусто|"
-    _Equip(3) = "Потрёпанная стёганка"
+    _Equip(3) = "Потрёпаная стёганка"
     _Equip(4) = "|Пусто|"
     _Equip(5) = "Стёртые сапоги"
     _strength_Equip = 10
