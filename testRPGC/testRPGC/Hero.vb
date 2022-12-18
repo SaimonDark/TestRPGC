@@ -6,6 +6,7 @@
   Public _cvest(3) As Integer 'Определение ориентации заданий
   Public _skils(4) As Integer 'Параметр определяющий уровень скилов.
   Public _PerksStatLvl(4) As Single 'Параметр изменяющийся по уровню скиллов
+  Public _dopperks(5) As Integer
 
 
   Structure _skills 'Структура переменных для скилов
@@ -19,6 +20,7 @@
     Public _live_race, _strength_race, _intelligece_race, _agility_race, _defense_race, _accuracy_race As Single 'параметры рас.
     Public _lvl, _liveMax, _live, _manaMax, _mana, _ExMax, _Ex, _strength, _intelligece, _agility, _defense, _accuracy, _Damage As Single ' Базовые параметры соответственно: Сила, Интеллект, Ловкость, Защита, Точность, Критический удар.
     Public _name, _RPclass, _chekclass, _RPrace As String
+
     Enum _human As Long 'Люди
       _live = 20
       _strength = 20
@@ -400,6 +402,77 @@
     End Select
     _h._mana = (_h._intelligece / 10) + 10
     _h._manaMax = _h._mana
+  End Sub
+
+  Public Sub Uploadstats()
+    _h._strength = 0
+    _h._intelligece = 0
+    _h._agility = 0
+    _h._defense = 0
+    _h._accuracy = 0
+    Select Case _h._RPclass
+      Case "Воин"
+        _h._strength += _h._warrior._strength
+        _h._intelligece += _h._warrior._intelligece
+        _h._agility += _h._warrior._agility
+        _h._defense += _h._warrior._defense
+        _h._accuracy += _h._warrior._accuracy
+      Case "Маг"
+        _h._strength += _h._mage._strength
+        _h._intelligece += _h._mage._intelligece
+        _h._agility += _h._mage._agility
+        _h._defense += _h._mage._defense
+        _h._accuracy += _h._mage._accuracy
+      Case "Лучник"
+        _h._strength += _h._Archer._strength
+        _h._intelligece += _h._Archer._intelligece
+        _h._agility += _h._Archer._agility
+        _h._defense += _h._Archer._defense
+        _h._accuracy += _h._Archer._accuracy
+      Case "Плут"
+        _h._strength += _h._Rogue._strength
+        _h._intelligece += _h._Rogue._intelligece
+        _h._agility += _h._Rogue._agility
+        _h._defense += _h._Rogue._defense
+        _h._accuracy += _h._Rogue._accuracy
+    End Select
+
+    Select Case _h._RPrace
+      Case "Человек"
+        _h._live = _h._human._live
+        _h._strength += _h._human._strength
+        _h._intelligece += _h._human._intelligece
+        _h._agility += _h._human._agility
+        _h._defense += _h._human._defense
+        _h._accuracy += _h._human._accuracy
+
+      Case "Эльф"
+        _h._live = _h._elf._live
+        _h._strength += _h._elf._strength
+        _h._intelligece += _h._elf._intelligece
+        _h._agility += _h._elf._agility
+        _h._defense += _h._elf._defense
+        _h._accuracy += _h._elf._accuracy
+
+      Case "Дворф"
+        _h._live = _h._dworf._live
+        _h._strength += _h._dworf._strength
+        _h._intelligece += _h._dworf._intelligece
+        _h._agility += _h._dworf._agility
+        _h._defense += _h._dworf._defense
+        _h._accuracy += _h._dworf._accuracy
+
+    End Select
+    _h._strength += _strength_Equip + _dopperks(1)
+    _h._intelligece += _intelligece_Equip + _dopperks(2)
+    _h._defense += (_h._strength / 2) + _defense_Equip + _dopperks(3)
+    _h._agility += (_h._intelligece / 2) + _agility_Equip + _dopperks(4)
+    _h._accuracy += _accuracy_Equip + _dopperks(5)
+    _h._live += 100 + (_h._strength / 2) + _live_Equip
+    _h._liveMax = _h._live
+    _h._mana = (_h._intelligece / 10) + 10
+    _h._manaMax = _h._mana
+
   End Sub
 
   Public Sub InfoBar(ByVal _moneyVis As Integer)

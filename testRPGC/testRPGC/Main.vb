@@ -2,30 +2,33 @@
 Imports System.Text
 Imports System.Drawing.SystemColors
 Imports System.IO
-Imports testRPGC.Hero
-Imports testRPGC.Hero._hero
+Imports System.Runtime.InteropServices
+
+
 
 Module Main
+
+  '<DllImport("kernel32.dll", SetLastError:=True, CharSet:=CharSet.Auto)>
+  'Private Function GetConsoleWindow() As IntPtr
+  'End Function
+  'https://www.pinvoke.net/default.aspx/kernel32.getconsolewindow Изменить параметры консоли на vb
+  'https://stackoverflow.com/questions/1937163/drawing-in-a-win32-console-on-c Пример работы с графикой 
 
   Dim iRand, fRand, mRand, exRand As Integer 'Переменные к шансам
   Public _vibor(17) As Integer 'Переменные к интерфейсам
   Public _pointHero, _pointSet As String 'Переменные к карте
-  Dim _chekhero As String
+  Dim _chekhero As String 'Пункт для раздела новой игры.
   Public _hero As New Hero
   Public _enemy As New Enemy
-  Public _map As New Map
   Public _city As New Cityes
-  Public _bag As New Bagpack
-  Public _book As New BookSkils
   ReadOnly _System As New SystemColorConsole
 
   Dim _AdventureSave, _save, _saveMap, _pointX, _pointY As Integer 'Временный показатель наличия сохранения, позиция персонажа на карте по X и Y
   Dim _figthTime As Integer 'Тригер активности боя
-  Public _Perks, _PerksSkils, _statshero(5), _dopperks(5) As Integer 'Доступные очки для характеристиков
+  Public _Perks, _PerksSkils, _statshero(5) As Integer 'Доступные очки для характеристиков
   Public _botleLive, _botleMana, _money As Integer 'Бутылки жизни и маны и деньги.
   Public _equip(5), _bagitem(10) As String
 
-  'Public _interf As New Interfuce()
   Sub Main()
     Console.CursorVisible = False
     _AdventureSave = 1
@@ -41,11 +44,11 @@ Module Main
     _vibor(7) = 0
     _vibor(8) = 0
     _vibor(9) = 0
-    _dopperks(1) = 0
-    _dopperks(2) = 0
-    _dopperks(3) = 0
-    _dopperks(4) = 0
-    _dopperks(5) = 0
+    _hero._dopperks(1) = 0
+    _hero._dopperks(2) = 0
+    _hero._dopperks(3) = 0
+    _hero._dopperks(4) = 0
+    _hero._dopperks(5) = 0
     _pointHero = 0 'Перемещение по начальной карте
     _pointSet = 0 'Перемещение по начальной карте
     _save = 0
@@ -102,11 +105,11 @@ Module Main
             _vibor(7) = 0
             _vibor(8) = 0
             _vibor(9) = 0
-            _dopperks(1) = 0
-            _dopperks(2) = 0
-            _dopperks(3) = 0
-            _dopperks(4) = 0
-            _dopperks(5) = 0
+            _hero._dopperks(1) = 0
+            _hero._dopperks(2) = 0
+            _hero._dopperks(3) = 0
+            _hero._dopperks(4) = 0
+            _hero._dopperks(5) = 0
             _pointHero = "a"
             _pointSet = "v"
             _saveMap = 0
@@ -200,18 +203,19 @@ Module Main
           Next
           Console.Clear()
           _hero.InfoBar(0)
-          _bag.Perechen()
+          Dim _bag As New Bagpack
           _bag.Inventary(_money)
           'Перевод параметров и вещей из методов инвентаря в методы героя
           UpdateStatsHero(2)
           For _bagitemset As Integer = 1 To 10
             _hero._Bagcheck(_bagitemset) = _bagitem(_bagitemset)
           Next
-
+          _bag = Nothing
         Case 4 'Книга талантов
           Console.Clear()
           _hero.InfoBar(1)
           Console.WriteLine("  ")
+          Dim _book As New BookSkils
           _book.Skils(_hero._skl(0)._RPability, _hero._skl(0)._damage, _hero._skils(1), _hero._PerksStatLvl(0))
           _book.Skils(_hero._skl(1)._RPability, _hero._skl(1)._damage, _hero._skils(2), _hero._PerksStatLvl(1))
           _book.Skils(_hero._skl(2)._RPability, _hero._skl(2)._damage, _hero._skils(3), _hero._PerksStatLvl(2))
@@ -236,7 +240,7 @@ Module Main
             End While
           End If
           _vibor(8) = 0
-
+          _book = Nothing
       End Select
     End While
     SaveData()
@@ -657,6 +661,7 @@ Module Main
   End Sub
 
   Public Sub MapMove(ByVal _savePointSet As Integer) 'Туториальная и первая локация
+    Dim _map As New Map
     _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
     Select Case _savePointSet
       Case 0 'Начальная карта
@@ -699,7 +704,7 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
-          ElseIf ((_pointX = 1 Or _pointX = 2) And (_pointY = 1 Or _pointY = 2)) Then 'Переход на третью локацию
+          ElseIf (_pointX = 1 Or _pointX = 2) And (_pointY = 1 Or _pointY = 2) Then 'Переход на третью локацию
             _pointSet = "1"
             _pointX = 49
             _pointY = 14
@@ -710,20 +715,14 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
-          ElseIf ((_pointX = 64 Or _pointX = 65 Or _pointX = 66) And _pointY = 23) Then
-
           End If
+
           If mRand >= 123 Then 'Блог появления моба
             Console.Clear()
             Fighting(1)
           End If
         End While
-    End Select
-    _pointSet = "v"
-  End Sub
 
-  Public Sub MapMove2(ByVal _saveMapSet As Integer) 'Вторая локация
-    Select Case _saveMapSet
       Case 2
         While _pointSet <> "2"
           _hero.InfoBar(1)
@@ -755,12 +754,8 @@ Module Main
             Console.Clear()
             Fighting(_saveMap)
           End If
+
         End While
-    End Select
-    _pointSet = "v"
-  End Sub
-  Public Sub MapMove3(ByVal _saveMapSet As Integer) 'Вторая локация
-    Select Case _saveMapSet
       Case 3
         While _pointSet <> "3"
           _hero.InfoBar(1)
@@ -787,17 +782,6 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
-          ElseIf ((_pointX = 2 Or _pointX = 3 Or _pointX = 4) And _pointY = 15) Then 'Переход на вторую локацию
-            '_pointSet = "1"
-            '_pointX = 26
-            '_pointY = 1
-            '_saveMap = 2
-            Dim i, j As Integer
-            For i = 0 To 16
-              For j = 0 To 50
-                _map._hillStatic(i, j) = _map._hillConst(i, j)
-              Next
-            Next
           End If
 
           If mRand >= 123 Then
@@ -805,23 +789,29 @@ Module Main
             Fighting(_saveMap)
           End If
         End While
+
     End Select
     _pointSet = "v"
+    _map = Nothing
   End Sub
+
 
   Public Sub LoadFon(ByVal _MapPoint As Integer) 'Переход между локаицями, тут могут быть советы и разная другая полезная информация.
     Console.Clear()
     _hero._h._mana = _hero._h._manaMax
     _hero.InfoBar(1)
     Console.WriteLine("  Переход в другое место... ")
-    '
-    '
-    '
+
     Console.ReadLine()
     Console.Clear()
-    If _saveMap = 1 Then MapMove(_MapPoint)
-    If _saveMap = 2 Then MapMove2(_MapPoint)
-    If _saveMap = 3 Then MapMove3(_MapPoint)
+    Select Case _saveMap
+      Case 1
+        MapMove(1)
+      Case 2
+        MapMove(2)
+      Case 3
+        MapMove(3)
+    End Select
 
 
   End Sub
@@ -841,10 +831,10 @@ Module Main
         Case 68
           If _pointX < _Point_X Then _pointX += 1
         Case 69 'Вход в город
-          _city.StatsItems()
+
           _city.Perechen(_hero._Bagcheck(1), _hero._Bagcheck(2), _hero._Bagcheck(3), _hero._Bagcheck(4), _hero._Bagcheck(5), _hero._Bagcheck(6), _hero._Bagcheck(7), _hero._Bagcheck(8), _hero._Bagcheck(9), _hero._Bagcheck(10))
           Console.Clear()
-          _hero.InfoBar(0)
+          _hero.InfoBar(0) 'Надо сделать обновление вывода информации персонажа с деньгами.
           If _saveMap = 2 And _pointX = 38 And _pointY = 8 Then
             _city.VivodCity2()
             Console.Clear()
@@ -888,6 +878,7 @@ Module Main
           Console.Clear()
           _hero.InfoBar(1)
           Console.WriteLine("  ")
+          Dim _book As New BookSkils
           _book.Skils(_hero._skl(0)._RPability, _hero._skl(0)._damage, _hero._skils(1), _hero._PerksStatLvl(0))
           _book.Skils(_hero._skl(1)._RPability, _hero._skl(1)._damage, _hero._skils(2), _hero._PerksStatLvl(1))
           _book.Skils(_hero._skl(2)._RPability, _hero._skl(2)._damage, _hero._skils(3), _hero._PerksStatLvl(2))
@@ -918,6 +909,7 @@ Module Main
             Console.Clear()
           End If
           _vibor(8) = 0
+          _book = Nothing
         Case 66 'Инвентарь
           'Инициализация параметров героя и его экипировки для инвентаря и его методов
           UpdateStatsHero(1)
@@ -926,7 +918,7 @@ Module Main
           Next
           Console.Clear()
           _hero.InfoBar(0)
-          _bag.Perechen()
+          Dim _bag As New Bagpack
           _bag.Inventary(_money)
           'Перевод параметров и вещей из методов инвентаря в методы героя
           UpdateStatsHero(2)
@@ -934,6 +926,7 @@ Module Main
             _hero._Bagcheck(_bagitemset) = _bagitem(_bagitemset)
           Next
           Console.Clear()
+          _bag = Nothing
       End Select
 
 
@@ -1005,164 +998,32 @@ Module Main
       End Try
       Select Case _vibor(7)
         Case 1 'Изменить параметр силы
-          _dopperks(1) += 1
+          _hero._dopperks(1) += 1
 
         Case 2 'Изменить параметр интеллекта
-          _dopperks(2) += 1
+          _hero._dopperks(2) += 1
 
         Case 3 'Изменить параметр Защиты
-          _dopperks(3) += 1
-          _dopperks(1) += 1
+          _hero._dopperks(3) += 1
+          _hero._dopperks(1) += 1
 
         Case 4 'Изменить параметр Ловкости
-          _dopperks(4) += 1
-          _dopperks(2) += 1
+          _hero._dopperks(4) += 1
+          _hero._dopperks(2) += 1
         Case 5 'Изменить параметр Точности
           If _hero._h._accuracy < 50 Then
-            _dopperks(5) += 1
+            _hero._dopperks(5) += 1
 
           End If
       End Select
-      _hero._h._strength = 0
-      _hero._h._intelligece = 0
-      _hero._h._agility = 0
-      _hero._h._defense = 0
-      _hero._h._accuracy = 0
-      Select Case _classes
-        Case "Воин"
-          _hero._h._strength += _hero._h._warrior._strength
-          _hero._h._intelligece += _hero._h._warrior._intelligece
-          _hero._h._agility += _hero._h._warrior._agility
-          _hero._h._defense += _hero._h._warrior._defense
-          _hero._h._accuracy += _hero._h._warrior._accuracy
-        Case "Маг"
-          _hero._h._strength += _hero._h._mage._strength
-          _hero._h._intelligece += _hero._h._mage._intelligece
-          _hero._h._agility += _hero._h._mage._agility
-          _hero._h._defense += _hero._h._mage._defense
-          _hero._h._accuracy += _hero._h._mage._accuracy
-        Case "Лучник"
-          _hero._h._strength += _hero._h._Archer._strength
-          _hero._h._intelligece += _hero._h._Archer._intelligece
-          _hero._h._agility += _hero._h._Archer._agility
-          _hero._h._defense += _hero._h._Archer._defense
-          _hero._h._accuracy += _hero._h._Archer._accuracy
-        Case "Плут"
-          _hero._h._strength += _hero._h._Rogue._strength
-          _hero._h._intelligece += _hero._h._Rogue._intelligece
-          _hero._h._agility += _hero._h._Rogue._agility
-          _hero._h._defense += _hero._h._Rogue._defense
-          _hero._h._accuracy += _hero._h._Rogue._accuracy
-      End Select
-
-      Select Case _races
-        Case "Человек"
-          _hero._h._live = _hero._h._human._live
-          _hero._h._strength += _hero._h._human._strength
-          _hero._h._intelligece += _hero._h._human._intelligece
-          _hero._h._agility += _hero._h._human._agility
-          _hero._h._defense += _hero._h._human._defense
-          _hero._h._accuracy += _hero._h._human._accuracy
-
-        Case "Эльф"
-          _hero._h._live = _hero._h._elf._live
-          _hero._h._strength += _hero._h._elf._strength
-          _hero._h._intelligece += _hero._h._elf._intelligece
-          _hero._h._agility += _hero._h._elf._agility
-          _hero._h._defense += _hero._h._elf._defense
-          _hero._h._accuracy += _hero._h._elf._accuracy
-
-        Case "Дворф"
-          _hero._h._live = _hero._h._dworf._live
-          _hero._h._strength += _hero._h._dworf._strength
-          _hero._h._intelligece += _hero._h._dworf._intelligece
-          _hero._h._agility += _hero._h._dworf._agility
-          _hero._h._defense += _hero._h._dworf._defense
-          _hero._h._accuracy += _hero._h._dworf._accuracy
-
-      End Select
-      _hero._h._strength += _hero._strength_Equip + _dopperks(1)
-      _hero._h._intelligece += _hero._intelligece_Equip + _dopperks(2)
-      _hero._h._defense += (_hero._h._strength / 2) + _hero._defense_Equip + _dopperks(3)
-      _hero._h._agility += (_hero._h._intelligece / 2) + _hero._agility_Equip + _dopperks(4)
-      _hero._h._accuracy += _hero._accuracy_Equip + _dopperks(5)
-      _hero._h._live += 100 + (_hero._h._strength / 2) + _hero._live_Equip
-      _hero._h._liveMax = _hero._h._live
-      _hero._h._mana = (_hero._h._intelligece / 10) + 10
-      _hero._h._manaMax = _hero._h._mana
+      _hero.Uploadstats()
     End While
 
+
     'Без очков добавления, для обновления экипировки
-    _hero._h._strength = 0
-    _hero._h._intelligece = 0
-    _hero._h._agility = 0
-    _hero._h._defense = 0
-    _hero._h._accuracy = 0
-    Select Case _classes
-      Case "Воин"
-        _hero._h._strength += _hero._h._warrior._strength
-        _hero._h._intelligece += _hero._h._warrior._intelligece
-        _hero._h._agility += _hero._h._warrior._agility
-        _hero._h._defense += _hero._h._warrior._defense
-        _hero._h._accuracy += _hero._h._warrior._accuracy
-      Case "Маг"
-        _hero._h._strength += _hero._h._mage._strength
-        _hero._h._intelligece += _hero._h._mage._intelligece
-        _hero._h._agility += _hero._h._mage._agility
-        _hero._h._defense += _hero._h._mage._defense
-        _hero._h._accuracy += _hero._h._mage._accuracy
-      Case "Лучник"
-        _hero._h._strength += _hero._h._Archer._strength
-        _hero._h._intelligece += _hero._h._Archer._intelligece
-        _hero._h._agility += _hero._h._Archer._agility
-        _hero._h._defense += _hero._h._Archer._defense
-        _hero._h._accuracy += _hero._h._Archer._accuracy
-      Case "Плут"
-        _hero._h._strength += _hero._h._Rogue._strength
-        _hero._h._intelligece += _hero._h._Rogue._intelligece
-        _hero._h._agility += _hero._h._Rogue._agility
-        _hero._h._defense += _hero._h._Rogue._defense
-        _hero._h._accuracy += _hero._h._Rogue._accuracy
-    End Select
+    _hero.Uploadstats()
 
-    Select Case _races
-      Case "Человек"
-        _hero._h._live = _hero._h._human._live
-        _hero._h._strength += _hero._h._human._strength
-        _hero._h._intelligece += _hero._h._human._intelligece
-        _hero._h._agility += _hero._h._human._agility
-        _hero._h._defense += _hero._h._human._defense
-        _hero._h._accuracy += _hero._h._human._accuracy
-
-      Case "Эльф"
-        _hero._h._live = _hero._h._elf._live
-        _hero._h._strength += _hero._h._elf._strength
-        _hero._h._intelligece += _hero._h._elf._intelligece
-        _hero._h._agility += _hero._h._elf._agility
-        _hero._h._defense += _hero._h._elf._defense
-        _hero._h._accuracy += _hero._h._elf._accuracy
-
-      Case "Дворф"
-        _hero._h._live = _hero._h._dworf._live
-        _hero._h._strength += _hero._h._dworf._strength
-        _hero._h._intelligece += _hero._h._dworf._intelligece
-        _hero._h._agility += _hero._h._dworf._agility
-        _hero._h._defense += _hero._h._dworf._defense
-        _hero._h._accuracy += _hero._h._dworf._accuracy
-
-    End Select
-    _hero._h._strength += _hero._strength_Equip + _dopperks(1)
-    _hero._h._intelligece += _hero._intelligece_Equip + _dopperks(2)
-    _hero._h._defense += (_hero._h._strength / 2) + _hero._defense_Equip + _dopperks(3)
-    _hero._h._agility += (_hero._h._intelligece / 2) + _hero._agility_Equip + _dopperks(4)
-    _hero._h._accuracy += _hero._accuracy_Equip + _dopperks(5)
-    _hero._h._live += 100 + (_hero._h._strength / 2) + _hero._live_Equip
-    _hero._h._liveMax = _hero._h._live
-    _hero._h._mana = (_hero._h._intelligece / 10) + 10
-    _hero._h._manaMax = _hero._h._mana
-
-
-    Select Case _classes
+      Select Case _classes
       Case "Воин"
         _hero._skl(0)._damage = (_hero._h._strength / 2) * (_hero._h._accuracy * 0.35)
         _hero._skl(1)._damage = (_hero._h._strength / 1.8) * (_hero._h._accuracy * 0.55)
@@ -1464,11 +1325,11 @@ Module Main
       myFileWriter.WriteLine(_hero._h._liveMax)
       myFileWriter.WriteLine(_hero._h._manaMax)
       'Дополнительные параметры
-      myFileWriter.WriteLine(_dopperks(1))
-      myFileWriter.WriteLine(_dopperks(2))
-      myFileWriter.WriteLine(_dopperks(3))
-      myFileWriter.WriteLine(_dopperks(4))
-      myFileWriter.WriteLine(_dopperks(5))
+      myFileWriter.WriteLine(_hero._dopperks(1))
+      myFileWriter.WriteLine(_hero._dopperks(2))
+      myFileWriter.WriteLine(_hero._dopperks(3))
+      myFileWriter.WriteLine(_hero._dopperks(4))
+      myFileWriter.WriteLine(_hero._dopperks(5))
       'Дополнительные параметры расы
       myFileWriter.WriteLine(_hero._h._strength_race)
       myFileWriter.WriteLine(_hero._h._intelligece_race)
@@ -1574,11 +1435,11 @@ Module Main
       _hero._h._liveMax = myFileReader.ReadLine()
       _hero._h._manaMax = myFileReader.ReadLine()
       'Дополнительные параметры
-      _dopperks(1) = myFileReader.ReadLine()
-      _dopperks(2) = myFileReader.ReadLine()
-      _dopperks(3) = myFileReader.ReadLine()
-      _dopperks(4) = myFileReader.ReadLine()
-      _dopperks(5) = myFileReader.ReadLine()
+      _hero._dopperks(1) = myFileReader.ReadLine()
+      _hero._dopperks(2) = myFileReader.ReadLine()
+      _hero._dopperks(3) = myFileReader.ReadLine()
+      _hero._dopperks(4) = myFileReader.ReadLine()
+      _hero._dopperks(5) = myFileReader.ReadLine()
       'Дополнительные параметры расы
       _hero._h._strength_race = myFileReader.ReadLine()
       _hero._h._intelligece_race = myFileReader.ReadLine()

@@ -6,7 +6,7 @@ Public Class Cityes
   Public _map As New Map
   Public viaponRand(3) As Integer
   Structure _predmets
-    Public _nameweapons, _nameprotection, _nameitems As String
+    Public _nameweapons, _nameprotection, _nameitems, _nameelitw, _nameelitp As String
     Public _sellW, _sellP, _sellI As Integer
   End Structure
   Public _items(10, 50) As _predmets
@@ -96,7 +96,7 @@ Public Class Cityes
                 End While
                 sayPerson = 0
               Case 3 'Кузнец
-                While sayPerson <> 4
+                While sayPerson <> 5
                   Personstat("Кузнец", 2)
                   Dim infok As ConsoleKeyInfo = Console.ReadKey()
                   Try
@@ -109,7 +109,10 @@ Public Class Cityes
                       'Добавить раздел сюжета
                     Case 2
                       'Добавить раздел сюжета
-
+                    Case 3
+                      Blacksmith(2, 1)
+                    Case 4
+                      Blacksmith(2, 2)
                   End Select
                 End While
                 sayPerson = 0
@@ -173,10 +176,10 @@ Public Class Cityes
             Console.WriteLine("     _______________Кузнец                           ")
             Console.WriteLine("    ║ 1. Осмотреть                                         ")
             Console.WriteLine("    │ 2. Поговорить                                        ")
-            Console.WriteLine("    │ 3. Ковать                                            ")
-            Console.WriteLine("    │ 4. Выход                                             ")
-            Console.WriteLine("    └                                                    ")
-            Console.WriteLine("                                                         ")
+            Console.WriteLine("    │ 3. Ковать оружие                                           ")
+            Console.WriteLine("    │ 4. Ковать броню                                             ")
+            Console.WriteLine("    │ 5. Выход                                                   ")
+            Console.WriteLine("    └                                                     ")
           Case "Торговец"
             Console.SetCursorPosition(0, 6)
             _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
@@ -245,7 +248,7 @@ Public Class Cityes
     End Select
   End Sub
 
-  Public Sub Torg(ByVal _number As Integer) 'Доделать!
+  Public Sub Torg(ByVal _number As Integer)
     Dim torgtime As String
     torgtime = 0
     While torgtime <> 5
@@ -268,11 +271,11 @@ Public Class Cityes
           End Try
           Select Case torgtime
             Case 1
-              Torggorod2(1)
+              Torggorod(1, 2)
             Case 2
-              Torggorod2(2)
+              Torggorod(2, 2)
             Case 3
-              Torggorod2(3)
+              Torggorod(3, 2)
             Case 4
               Sell()
           End Select
@@ -281,13 +284,17 @@ Public Class Cityes
     torgtime = 0
   End Sub
   'Покупка
-  Private Sub Torggorod2(ByVal _punkt As Integer)
+  Private Sub Torggorod(ByVal _punkt As Integer, ByVal _citynumber As Integer)
     Dim byitems As String
     byitems = 0
+    Select Case _citynumber
+      Case 2
+        Console.SetCursorPosition(0, 6)
+        _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+        Console.WriteLine("     _______________Торговец          ")
+    End Select
     If _bag(1) <> "|Пусто|" And _bag(2) <> "|Пусто|" And _bag(3) <> "|Пусто|" And _bag(4) <> "|Пусто|" And _bag(5) <> "|Пусто|" And _bag(6) <> "|Пусто|" And _bag(7) <> "|Пусто|" And _bag(8) <> "|Пусто|" And _bag(9) <> "|Пусто|" And _bag(10) <> "|Пусто|" Then
-      Console.SetCursorPosition(0, 6)
-      _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-      Console.WriteLine("     _______________Торговец          ")
+      Console.SetCursorPosition(0, 8)
       Console.WriteLine("    ║ Прости друг, но я тебе нечего не           ")
       Console.WriteLine("    │ продам, тебе некуда складывать вещи.         ")
       Console.WriteLine("    └                                    ")
@@ -300,15 +307,13 @@ Public Class Cityes
         Case 1 'Оружие
           While byitems <> 5
             Dim viRand = New Random(DateTime.Now.Millisecond)
-            Console.SetCursorPosition(0, 6)
-            _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-            Console.WriteLine("     _______________Торговец          ")
+            Console.SetCursorPosition(0, 8)
             viaponRand(1) = viRand.Next(1, 41)
-            Console.WriteLine("    ║ 1. " & _items(2, viaponRand(1))._nameweapons & "  " & _items(2, viaponRand(1))._sellW & "            ")
+            Console.WriteLine("    ║ 1. " & _items(_citynumber, viaponRand(1))._nameweapons & "  " & _items(_citynumber, viaponRand(1))._sellW & "            ")
             viaponRand(2) = viRand.Next(1, 41)
-            Console.WriteLine("    │ 2. " & _items(2, viaponRand(2))._nameweapons & "  " & _items(2, viaponRand(2))._sellW & "            ")
+            Console.WriteLine("    │ 2. " & _items(_citynumber, viaponRand(2))._nameweapons & "  " & _items(_citynumber, viaponRand(2))._sellW & "            ")
             viaponRand(3) = viRand.Next(1, 41)
-            Console.WriteLine("    │ 3. " & _items(2, viaponRand(3))._nameweapons & "  " & _items(2, viaponRand(3))._sellW & "            ")
+            Console.WriteLine("    │ 3. " & _items(_citynumber, viaponRand(3))._nameweapons & "  " & _items(_citynumber, viaponRand(3))._sellW & "            ")
             Console.WriteLine("    │ 4. Обновить                          ")
             Console.WriteLine("    │ 5. Уйти                             ")
             Console.WriteLine("    └                                     ")
@@ -320,18 +325,16 @@ Public Class Cityes
             End Try
             Select Case byitems
               Case 1 'Первый слот
-                If _money >= _items(2, viaponRand(1))._sellW Then
+                If _money >= _items(_citynumber, viaponRand(1))._sellW Then
                   Try
                     For _bye = 1 To 10
                       If _bag(_bye) = "|Пусто|" Then
-                        _bag(_bye) = _items(2, viaponRand(1))._nameweapons
-                        _money -= _items(2, viaponRand(1))._sellW
+                        _bag(_bye) = _items(_citynumber, viaponRand(1))._nameweapons
+                        _money -= _items(_citynumber, viaponRand(1))._sellW
                         Exit For
                       End If
                     Next
-                    Console.SetCursorPosition(0, 6)
-                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                    Console.WriteLine("     _______________Торговец          ")
+                    Console.SetCursorPosition(0, 8)
                     Console.WriteLine("    ║ Покупка совершена.                  ")
                     Console.WriteLine("    └                                     ")
                     Console.WriteLine("                                        ")
@@ -344,9 +347,7 @@ Public Class Cityes
 
                   End Try
                 Else
-                  Console.SetCursorPosition(0, 6)
-                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                  Console.WriteLine("     _______________Торговец          ")
+                  Console.SetCursorPosition(0, 8)
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
@@ -358,18 +359,16 @@ Public Class Cityes
 
 
               Case 2 'Вторый слот
-                If _money >= _items(2, viaponRand(2))._sellW Then
+                If _money >= _items(_citynumber, viaponRand(2))._sellW Then
                   Try
                     For _bye = 1 To 10
                       If _bag(_bye) = "|Пусто|" Then
-                        _bag(_bye) = _items(2, viaponRand(2))._nameweapons
-                        _money -= _items(2, viaponRand(2))._sellW
+                        _bag(_bye) = _items(_citynumber, viaponRand(2))._nameweapons
+                        _money -= _items(_citynumber, viaponRand(2))._sellW
                         Exit For
                       End If
                     Next
-                    Console.SetCursorPosition(0, 6)
-                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                    Console.WriteLine("     _______________Торговец          ")
+                    Console.SetCursorPosition(0, 8)
                     Console.WriteLine("    ║ Покупка совершена.                  ")
                     Console.WriteLine("    └                                     ")
                     Console.WriteLine("                                        ")
@@ -382,9 +381,7 @@ Public Class Cityes
 
                   End Try
                 Else
-                  Console.SetCursorPosition(0, 6)
-                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                  Console.WriteLine("     _______________Торговец          ")
+                  Console.SetCursorPosition(0, 8)
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
@@ -396,18 +393,16 @@ Public Class Cityes
 
 
               Case 3 'Третий слот
-                If _money >= _items(2, viaponRand(3))._sellW Then
+                If _money >= _items(_citynumber, viaponRand(3))._sellW Then
                   Try
                     For _bye = 1 To 10
                       If _bag(_bye) = "|Пусто|" Then
-                        _bag(_bye) = _items(2, viaponRand(3))._nameweapons
-                        _money -= _items(2, viaponRand(3))._sellW
+                        _bag(_bye) = _items(_citynumber, viaponRand(3))._nameweapons
+                        _money -= _items(_citynumber, viaponRand(3))._sellW
                         Exit For
                       End If
                     Next
-                    Console.SetCursorPosition(0, 6)
-                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                    Console.WriteLine("     _______________Торговец          ")
+                    Console.SetCursorPosition(0, 8)
                     Console.WriteLine("    ║ Покупка совершена.                  ")
                     Console.WriteLine("    └                                     ")
                     Console.WriteLine("                                        ")
@@ -420,9 +415,7 @@ Public Class Cityes
 
                   End Try
                 Else
-                  Console.SetCursorPosition(0, 6)
-                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                  Console.WriteLine("     _______________Торговец          ")
+                  Console.SetCursorPosition(0, 8)
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
@@ -439,15 +432,13 @@ Public Class Cityes
         Case 2 'Броня
           While byitems <> 5
             Dim viRand = New Random(DateTime.Now.Millisecond)
-            Console.SetCursorPosition(0, 6)
-            _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-            Console.WriteLine("     _______________Торговец          ")
+            Console.SetCursorPosition(0, 8)
             viaponRand(1) = viRand.Next(1, 26)
-            Console.WriteLine("    ║ 1. " & _items(2, viaponRand(1))._nameprotection & "  " & _items(2, viaponRand(1))._sellP & "            ")
+            Console.WriteLine("    ║ 1. " & _items(_citynumber, viaponRand(1))._nameprotection & "  " & _items(_citynumber, viaponRand(1))._sellP & "            ")
             viaponRand(2) = viRand.Next(1, 26)
-            Console.WriteLine("    │ 2. " & _items(2, viaponRand(2))._nameprotection & "  " & _items(2, viaponRand(2))._sellP & "            ")
+            Console.WriteLine("    │ 2. " & _items(_citynumber, viaponRand(2))._nameprotection & "  " & _items(_citynumber, viaponRand(2))._sellP & "            ")
             viaponRand(3) = viRand.Next(1, 26)
-            Console.WriteLine("    │ 3. " & _items(2, viaponRand(3))._nameprotection & "  " & _items(2, viaponRand(3))._sellP & "            ")
+            Console.WriteLine("    │ 3. " & _items(_citynumber, viaponRand(3))._nameprotection & "  " & _items(_citynumber, viaponRand(3))._sellP & "            ")
             Console.WriteLine("    │ 4. Обновить                          ")
             Console.WriteLine("    │ 5. Уйти                             ")
             Console.WriteLine("    └                                     ")
@@ -459,18 +450,16 @@ Public Class Cityes
             End Try
             Select Case byitems
               Case 1 'Первый слот
-                If _money >= _items(2, viaponRand(1))._sellP Then
+                If _money >= _items(_citynumber, viaponRand(1))._sellP Then
                   Try
                     For _bye = 1 To 10
                       If _bag(_bye) = "|Пусто|" Then
-                        _bag(_bye) = _items(2, viaponRand(1))._nameprotection
-                        _money -= _items(2, viaponRand(1))._sellP
+                        _bag(_bye) = _items(_citynumber, viaponRand(1))._nameprotection
+                        _money -= _items(_citynumber, viaponRand(1))._sellP
                         Exit For
                       End If
                     Next
-                    Console.SetCursorPosition(0, 6)
-                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                    Console.WriteLine("     _______________Торговец          ")
+                    Console.SetCursorPosition(0, 8)
                     Console.WriteLine("    ║ Покупка совершена.                  ")
                     Console.WriteLine("    └                                     ")
                     Console.WriteLine("                                        ")
@@ -483,9 +472,7 @@ Public Class Cityes
 
                   End Try
                 Else
-                  Console.SetCursorPosition(0, 6)
-                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                  Console.WriteLine("     _______________Торговец          ")
+                  Console.SetCursorPosition(0, 8)
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
@@ -497,18 +484,16 @@ Public Class Cityes
 
 
               Case 2 'Вторый слот
-                If _money >= _items(2, viaponRand(2))._sellP Then
+                If _money >= _items(_citynumber, viaponRand(2))._sellP Then
                   Try
                     For _bye = 1 To 10
                       If _bag(_bye) = "|Пусто|" Then
-                        _bag(_bye) = _items(2, viaponRand(2))._nameprotection
-                        _money -= _items(2, viaponRand(2))._sellP
+                        _bag(_bye) = _items(_citynumber, viaponRand(2))._nameprotection
+                        _money -= _items(_citynumber, viaponRand(2))._sellP
                         Exit For
                       End If
                     Next
-                    Console.SetCursorPosition(0, 6)
-                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                    Console.WriteLine("     _______________Торговец          ")
+                    Console.SetCursorPosition(0, 8)
                     Console.WriteLine("    ║ Покупка совершена.                  ")
                     Console.WriteLine("    └                                     ")
                     Console.WriteLine("                                        ")
@@ -521,9 +506,7 @@ Public Class Cityes
 
                   End Try
                 Else
-                  Console.SetCursorPosition(0, 6)
-                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                  Console.WriteLine("     _______________Торговец          ")
+                  Console.SetCursorPosition(0, 8)
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
@@ -535,18 +518,16 @@ Public Class Cityes
 
 
               Case 3 'Третий слот
-                If _money >= _items(2, viaponRand(3))._sellP Then
+                If _money >= _items(_citynumber, viaponRand(3))._sellP Then
                   Try
                     For _bye = 1 To 10
                       If _bag(_bye) = "|Пусто|" Then
-                        _bag(_bye) = _items(2, viaponRand(3))._nameprotection
-                        _money -= _items(2, viaponRand(3))._sellP
+                        _bag(_bye) = _items(_citynumber, viaponRand(3))._nameprotection
+                        _money -= _items(_citynumber, viaponRand(3))._sellP
                         Exit For
                       End If
                     Next
-                    Console.SetCursorPosition(0, 6)
-                    _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                    Console.WriteLine("     _______________Торговец          ")
+                    Console.SetCursorPosition(0, 8)
                     Console.WriteLine("    ║ Покупка совершена.                  ")
                     Console.WriteLine("    └                                     ")
                     Console.WriteLine("                                        ")
@@ -559,9 +540,7 @@ Public Class Cityes
 
                   End Try
                 Else
-                  Console.SetCursorPosition(0, 6)
-                  _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
-                  Console.WriteLine("     _______________Торговец          ")
+                  Console.SetCursorPosition(0, 8)
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
@@ -687,6 +666,97 @@ Public Class Cityes
 
       End While
     End If
+
+  End Sub
+
+  'Кузнечное дело
+  Public Sub Blacksmith(ByVal _punkt As Integer, ByVal _citynumber As Integer)
+    Select Case _citynumber
+      Case 2
+        Console.SetCursorPosition(0, 6)
+        _txtRGB.TxtRGB("White", "Black", "     | Город одичалых |                 ", True)
+        Console.WriteLine("     _______________Кузнец          ")
+    End Select
+    If _bag(1) <> "|Пусто|" And _bag(2) <> "|Пусто|" And _bag(3) <> "|Пусто|" And _bag(4) <> "|Пусто|" And _bag(5) <> "|Пусто|" And _bag(6) <> "|Пусто|" And _bag(7) <> "|Пусто|" And _bag(8) <> "|Пусто|" And _bag(9) <> "|Пусто|" And _bag(10) <> "|Пусто|" Then
+      Console.SetCursorPosition(0, 8)
+      Console.WriteLine("    ║ Извини, но разве я могу сделать то,           ")
+      Console.WriteLine("    │ чего не имеет веса? Посмотри, у тебя нет места.         ")
+      Console.WriteLine("    └                                    ")
+      Console.WriteLine("                                        ")
+      Console.WriteLine("                                        ")
+      Console.WriteLine("                                        ")
+      Console.ReadLine()
+    Else
+      Select Case _punkt
+        Case 1 'Куёт оружие
+          If _money >= 1500 Then
+            Try
+              For _bye = 1 To 10
+                Dim viRand = New Random(DateTime.Now.Millisecond)
+                viaponRand(1) = viRand.Next(1, 17)
+                If _bag(_bye) = "|Пусто|" Then
+                  _bag(_bye) = _items(_citynumber, viaponRand(1))._nameelitw
+                  _money -= 1500
+                  Exit For
+                End If
+              Next
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Я выковал тебе " & _items(_citynumber, viaponRand(1))._nameelitw & "                  ")
+              Console.WriteLine("    └                                     ")
+              Console.WriteLine("                                          ")
+              Console.WriteLine("                                          ")
+              Console.WriteLine("                                          ")
+              Console.WriteLine("                                          ")
+              Console.ReadLine()
+            Catch ex As Exception
+
+            End Try
+          Else
+            Console.SetCursorPosition(0, 8)
+            Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
+            Console.WriteLine("    │ денег для мои услуг. Копи больше.    ")
+            Console.WriteLine("    └                                   ")
+            Console.WriteLine("                                        ")
+            Console.WriteLine("                                        ")
+            Console.WriteLine("                                        ")
+            Console.ReadLine()
+          End If
+        Case 2 'Куёт броню
+          If _money >= 2000 Then
+            Try
+              For _bye = 1 To 10
+                Dim viRand = New Random(DateTime.Now.Millisecond)
+                viaponRand(1) = viRand.Next(1, 17)
+                If _bag(_bye) = "|Пусто|" Then
+                  _bag(_bye) = _items(_citynumber, viaponRand(1))._nameelitw
+                  _money -= 2000
+                  Exit For
+                End If
+              Next
+              Console.SetCursorPosition(0, 8)
+              Console.WriteLine("    ║ Я выковал тебе " & _items(_citynumber, viaponRand(1))._nameelitw & "                  ")
+              Console.WriteLine("    └                                     ")
+              Console.WriteLine("                                        ")
+              Console.WriteLine("                                        ")
+              Console.WriteLine("                                        ")
+              Console.WriteLine("                                        ")
+              Console.ReadLine()
+            Catch ex As Exception
+
+            End Try
+          Else
+            Console.SetCursorPosition(0, 8)
+            Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
+            Console.WriteLine("    │ денег для мои услуг. Копи больше.    ")
+            Console.WriteLine("    └                                   ")
+            Console.WriteLine("                                        ")
+            Console.WriteLine("                                        ")
+            Console.WriteLine("                                        ")
+            Console.ReadLine()
+          End If
+      End Select
+    End If
+
 
   End Sub
 
@@ -972,7 +1042,7 @@ Public Class Cityes
     End If
   End Sub
   'Предметы
-  Public Sub StatsItems()
+  Public Sub New()
     'Предметы города в гнилистых лесах.
     'Оружие
     'Воин
@@ -1019,6 +1089,34 @@ Public Class Cityes
     _items(2, 38)._nameweapons = "Тупой нож"
     _items(2, 39)._nameweapons = "Гнущийся лук"
     _items(2, 40)._nameweapons = "Прочный кинжал"
+    'Редкие предметы - нет в списках экипировки и продажи!!!
+    'Оружие
+    _items(2, 1)._nameelitw = "Кованный благородный меч"
+    _items(2, 2)._nameelitw = "Кованный прочный нож"
+    _items(2, 3)._nameelitw = "Безупречный двуручный меч"
+    _items(2, 4)._nameelitw = "Безупречный острый тесак"
+    _items(2, 5)._nameelitw = "Кованный прочный жезл"
+    _items(2, 6)._nameelitw = "Кованный прелестный скипетр"
+    _items(2, 7)._nameelitw = "Безупречная палочка"
+    _items(2, 8)._nameelitw = "Безупречный посох"
+    _items(2, 9)._nameelitw = "Кованный гибкий лук"
+    _items(2, 10)._nameelitw = "Безупречный арбалет"
+    _items(2, 11)._nameelitw = "Безупречный большой лук"
+    _items(2, 12)._nameelitw = "Кованный широкий арбалет"
+    _items(2, 13)._nameelitw = "Кованый острый кинжал"
+    _items(2, 14)._nameelitw = "Безупречные ядовитые кинжалы"
+    _items(2, 15)._nameelitw = "Безупречный дротик"
+    _items(2, 16)._nameelitw = "Кованый прочный дротик"
+    'Доспехи
+    _items(2, 1)._nameelitp = "Безупречный прочный доспех"
+    _items(2, 2)._nameelitp = "Кованный шлем"
+    _items(2, 3)._nameelitp = "Прочные бронированные сапоги"
+    _items(2, 4)._nameelitp = "Безупречный халат"
+    _items(2, 5)._nameelitp = "Прочный волшебный плащ"
+    _items(2, 6)._nameelitp = "Волшебный магический колпак"
+
+
+
     'Доспехи
     '--------------Воин---------------
     _items(2, 1)._nameprotection = "Потрёпаная стёганка"
@@ -1108,7 +1206,6 @@ Public Class Cityes
     _items(2, 12)._sellP = 90
     _items(2, 13)._sellP = 120
     _items(2, 14)._sellP = 90
-
     _items(2, 15)._sellP = 50
     _items(2, 16)._sellP = 115
     _items(2, 17)._sellP = 150
@@ -1120,9 +1217,6 @@ Public Class Cityes
     _items(2, 23)._sellP = 160
     _items(2, 24)._sellP = 85
     _items(2, 25)._sellP = 270
-
-
-
 
 
   End Sub

@@ -2,7 +2,7 @@
   ReadOnly _txtRGB As New SystemColorConsole
   Public _equipbag(5), _chekbagitem As String
   Public _getbag As Integer
-  Public Sub Perechen()
+  Public Sub New()
     '_statsGet(1) = _statshero(1) 'Сила
     '_statsGet(2) = _statshero(2) 'Интеллект
     '_statsGet(3) = _statshero(3) 'Защита
