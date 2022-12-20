@@ -189,7 +189,7 @@ Module Main
               End Try
               Select Case _vibor(6)
                 Case 1
-                  Perks_stats(_hero._h._RPclass, _hero._h._RPrace)
+                  Perks_stats(_hero._h._RPclass)
               End Select
               SaveData()
             End While
@@ -685,7 +685,7 @@ Module Main
           'Console.WriteLine("  " & mRand & _saveMap)
           'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet
           _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
-          _map.MapSet(_pointX, _pointY, 1)
+          _map.MapSet(_pointX, _pointY)
           Console.WriteLine("  ║Гнилистые леса:  " & _map._nameLocation & "                                                                        ")
           Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
           Console.WriteLine()
@@ -730,7 +730,7 @@ Module Main
           'Console.WriteLine("  " & mRand & _saveMap)
           'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
           _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
-          _map.MapSet2(_pointX, _pointY, 1)
+          _map.MapSet2(_pointX, _pointY)
           Console.WriteLine("  ║Гнилистые леса:  " & _map._nameLocation & "                                                                        ")
           Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
           Console.WriteLine()
@@ -763,7 +763,7 @@ Module Main
           'Console.WriteLine("  " & mRand & _saveMap)
           'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
           _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
-          _map.MapSet3(_pointX, _pointY, 1)
+          _map.MapSet3(_pointX, _pointY)
           Console.WriteLine(_map._nameLocation & "                                                                        ")
           Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
           Console.WriteLine()
@@ -782,6 +782,17 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
+          ElseIf ((_pointX = 2 Or _pointX = 3 Or _pointX = 4) And _pointY = 15) Then 'Переход на первую локацию.
+            _pointSet = "3"
+            _pointX = 48
+            _pointY = 2
+            _saveMap = 4
+            Dim i, j As Integer
+            For i = 0 To 16
+              For j = 0 To 50
+                _map._hillStatic(i, j) = _map._hillConst(i, j)
+              Next
+            Next
           End If
 
           If mRand >= 123 Then
@@ -789,7 +800,39 @@ Module Main
             Fighting(_saveMap)
           End If
         End While
+      Case 4
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
 
+          If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+            _pointSet = "4"
+            _pointX = 3
+            _pointY = 14
+            _saveMap = 3
+            Dim i, j As Integer
+            For i = 0 To 16
+              For j = 0 To 50
+                _map._hillStatic(i, j) = _map._hillConst(i, j)
+              Next
+            Next
+          End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
     End Select
     _pointSet = "v"
     _map = Nothing
@@ -804,13 +847,15 @@ Module Main
 
     Console.ReadLine()
     Console.Clear()
-    Select Case _saveMap
+    Select Case _MapPoint
       Case 1
         MapMove(1)
       Case 2
         MapMove(2)
       Case 3
         MapMove(3)
+      Case 4
+        MapMove(4)
     End Select
 
 
@@ -845,9 +890,16 @@ Module Main
             _bagitem(_bagset) = _hero._Bagcheck(_bagset)
           Next
         Case 27 'Выход.
-          If _saveMap = 1 Then _pointSet = "1"
-          If _saveMap = 2 Then _pointSet = "2"
-          If _saveMap = 3 Then _pointSet = "3"
+          Select Case _saveMap
+            Case 1
+              _pointSet = "1"
+            Case 2
+              _pointSet = "2"
+            Case 3
+              _pointSet = "3"
+            Case 4
+              _pointSet = "4"
+          End Select
           _AdventureSave = 0
         Case 80 'Информация о персонаже
           Console.Clear()
@@ -867,7 +919,7 @@ Module Main
               End Try
               Select Case _vibor(6)
                 Case 1
-                  Perks_stats(_hero._h._RPclass, _hero._h._RPrace)
+                  Perks_stats(_hero._h._RPclass)
               End Select
               SaveData()
             End While
@@ -970,11 +1022,11 @@ Module Main
         _hero._h._agility += _hero._agility_Equip
         _hero._h._defense += _hero._defense_Equip
         _hero._h._accuracy += _hero._accuracy_Equip
-        Perks_stats(_hero._h._RPclass, _hero._h._RPrace)
+        Perks_stats(_hero._h._RPclass)
     End Select
   End Sub
 
-  Public Sub Perks_stats(ByVal _classes As String, ByVal _races As String) 'Нужно скорректировать распределение очков на дополнительные параметры, криты и способности
+  Public Sub Perks_stats(ByVal _classes As String) 'Нужно скорректировать распределение очков на дополнительные параметры, криты и способности
     While _Perks <> 0
       Console.Clear()
       Console.WriteLine("  ")
@@ -1023,7 +1075,7 @@ Module Main
     'Без очков добавления, для обновления экипировки
     _hero.Uploadstats()
 
-      Select Case _classes
+    Select Case _classes
       Case "Воин"
         _hero._skl(0)._damage = (_hero._h._strength / 2) * (_hero._h._accuracy * 0.35)
         _hero._skl(1)._damage = (_hero._h._strength / 1.8) * (_hero._h._accuracy * 0.55)

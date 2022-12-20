@@ -5,11 +5,11 @@ Public Class Cityes
   Public _hero As New Hero
   Public _map As New Map
   Public viaponRand(3) As Integer
-  Structure _predmets
+  Structure Predmets
     Public _nameweapons, _nameprotection, _nameitems, _nameelitw, _nameelitp As String
     Public _sellW, _sellP, _sellI As Integer
   End Structure
-  Public _items(10, 50) As _predmets
+  Public _items(10, 50) As Predmets
   Public _bag(10) As String
 
   Public Sub VivodCity2()
@@ -72,7 +72,7 @@ Public Class Cityes
                     Case 2 'Продажа флакона здоровья.
                       If _money > 15 Then Liveflac(2)
                     Case 3 'Продажа флакона маны.
-                      If _money > 20 Then manaflac(2)
+                      If _money > 20 Then Manaflac(2)
                     Case 4
                       'Добавить раздел сюжета
                   End Select
@@ -110,7 +110,7 @@ Public Class Cityes
                     Case 2
                       'Добавить раздел сюжета
                     Case 3
-                      Blacksmith(2, 1)
+                      Blacksmith(1, 2)
                     Case 4
                       Blacksmith(2, 2)
                   End Select
@@ -281,7 +281,7 @@ Public Class Cityes
           End Select
       End Select
     End While
-    torgtime = 0
+    'torgtime = 0
   End Sub
   'Покупка
   Private Sub Torggorod(ByVal _punkt As Integer, ByVal _citynumber As Integer)
@@ -703,10 +703,10 @@ Public Class Cityes
               Console.SetCursorPosition(0, 8)
               Console.WriteLine("    ║ Я выковал тебе " & _items(_citynumber, viaponRand(1))._nameelitw & "                  ")
               Console.WriteLine("    └                                     ")
-              Console.WriteLine("                                          ")
-              Console.WriteLine("                                          ")
-              Console.WriteLine("                                          ")
-              Console.WriteLine("                                          ")
+              Console.WriteLine("                                        ")
+              Console.WriteLine("                                        ")
+              Console.WriteLine("                                        ")
+              Console.WriteLine("                                        ")
               Console.ReadLine()
             Catch ex As Exception
 
@@ -726,15 +726,15 @@ Public Class Cityes
             Try
               For _bye = 1 To 10
                 Dim viRand = New Random(DateTime.Now.Millisecond)
-                viaponRand(1) = viRand.Next(1, 17)
+                viaponRand(1) = viRand.Next(1, 7)
                 If _bag(_bye) = "|Пусто|" Then
-                  _bag(_bye) = _items(_citynumber, viaponRand(1))._nameelitw
+                  _bag(_bye) = _items(_citynumber, viaponRand(1))._nameelitp
                   _money -= 2000
                   Exit For
                 End If
               Next
               Console.SetCursorPosition(0, 8)
-              Console.WriteLine("    ║ Я выковал тебе " & _items(_citynumber, viaponRand(1))._nameelitw & "                  ")
+              Console.WriteLine("    ║ Я выковал тебе " & _items(_citynumber, viaponRand(1))._nameelitp & "                  ")
               Console.WriteLine("    └                                     ")
               Console.WriteLine("                                        ")
               Console.WriteLine("                                        ")
@@ -896,6 +896,51 @@ Public Class Cityes
           _money += Int(_items(2, 24)._sellW / 4)
         Case "Крепкие одеяния"
           _money += Int(_items(2, 25)._sellW / 4)
+        Case "Кованный благородный меч"
+          _money += 250
+        Case "Кованный прочный нож"
+          _money += 250
+        Case "Безупречный двуручный меч"
+          _money += 250
+        Case "Безупречный острый тесак"
+          _money += 250
+        Case "Кованный прочный жезл"
+          _money += 250
+        Case "Кованный прелестный скипетр"
+          _money += 250
+        Case "Безупречная палочка"
+          _money += 250
+        Case "Безупречный посох"
+          _money += 250
+        Case "Кованный гибкий лук"
+          _money += 250
+        Case "Безупречный арбалет"
+          _money += 250
+        Case "Безупречный большой лук"
+          _money += 250
+        Case "Кованный широкий арбалет"
+          _money += 250
+        Case "Кованый острый кинжал"
+          _money += 250
+        Case "Безупречные ядовитые кинжалы"
+          _money += 250
+        Case "Безупречный дротик"
+          _money += 250
+        Case "Кованый прочный дротик"
+          _money += 250
+        Case "Безупречный прочный доспех"
+          _money += 100
+        Case "Кованный шлем"
+          _money += 100
+        Case "Прочные бронированные сапоги"
+          _money += 100
+        Case "Безупречный халат"
+          _money += 100
+        Case "Прочный волшебный плащ"
+          _money += 100
+        Case "Волшебный магический колпак"
+          _money += 100
+
       End Select
     Catch ex As Exception
       '_txtRGB.TxtRGB("Red", "Black", "/////////////////////////////////////////////////////////////", False)
@@ -1038,6 +1083,50 @@ Public Class Cityes
           _txtRGB.TxtRGB("White", "Black", "|Дырявое пончо| " & Int(_items(2, 24)._sellP / 4), False)
         Case "Крепкие одеяния"
           _txtRGB.TxtRGB("White", "Black", "|Крепкие одеяния| " & Int(_items(2, 25)._sellP / 4), False)
+        Case "Кованный благородный меч"
+          _txtRGB.TxtRGB("White", "Black", "|Кованный благородный меч| 250", False)
+        Case "Кованный прочный нож"
+          _txtRGB.TxtRGB("White", "Black", "|Кованный прочный нож| 250", False)
+        Case "Безупречный двуручный меч"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный двуручный меч| 250", False)
+        Case "Безупречный острый тесак"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный острый тесак| 250", False)
+        Case "Кованный прочный жезл"
+          _txtRGB.TxtRGB("White", "Black", "|Кованный прочный жезл| 250", False)
+        Case "Кованный прелестный скипетр"
+          _txtRGB.TxtRGB("White", "Black", "|Кованный прелестный скипетр| 250", False)
+        Case "Безупречная палочка"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречная палочка| 250", False)
+        Case "Безупречный посох"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный посох| 250", False)
+        Case "Кованный гибкий лук"
+          _txtRGB.TxtRGB("White", "Black", "|Кованный гибкий лук| 250", False)
+        Case "Безупречный арбалет"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный арбалет| 250", False)
+        Case "Безупречный большой лук"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный большой лук| 250", False)
+        Case "Кованный широкий арбалет"
+          _txtRGB.TxtRGB("White", "Black", "|Кованный широкий арбалет| 250", False)
+        Case "Кованый острый кинжал"
+          _txtRGB.TxtRGB("White", "Black", "|Кованый острый кинжал| 250", False)
+        Case "Безупречные ядовитые кинжалы"
+          _txtRGB.TxtRGB("White", "Black", "Безупречные ядовитые кинжалы| 250", False)
+        Case "Безупречный дротик"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный дротик| 250", False)
+        Case "Кованый прочный дротик"
+          _txtRGB.TxtRGB("White", "Black", "|Кованый прочный дротик| 250", False)
+        Case "Безупречный прочный доспех"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный прочный доспех| 100", False)
+        Case "Кованный шлем"
+          _txtRGB.TxtRGB("White", "Black", "|Кованный шлем| 100", False)
+        Case "Прочные бронированные сапоги"
+          _txtRGB.TxtRGB("White", "Black", "|Прочные бронированные сапоги| 100", False)
+        Case "Безупречный халат"
+          _txtRGB.TxtRGB("White", "Black", "|Безупречный халат| 100", False)
+        Case "Прочный волшебный плащ"
+          _txtRGB.TxtRGB("White", "Black", "|Прочный волшебный плащ| 100", False)
+        Case "Волшебный магический колпак"
+          _txtRGB.TxtRGB("White", "Black", "|Волшебный магический колпак| 100", False)
       End Select
     End If
   End Sub
@@ -1089,6 +1178,7 @@ Public Class Cityes
     _items(2, 38)._nameweapons = "Тупой нож"
     _items(2, 39)._nameweapons = "Гнущийся лук"
     _items(2, 40)._nameweapons = "Прочный кинжал"
+
     'Редкие предметы - нет в списках экипировки и продажи!!!
     'Оружие
     _items(2, 1)._nameelitw = "Кованный благородный меч"
@@ -1249,7 +1339,7 @@ Public Class Cityes
     Console.ReadLine()
   End Sub
 
-  Private Sub manaflac(ByVal _local As Integer)
+  Private Sub Manaflac(ByVal _local As Integer)
     If _local = 2 Then _money -= 20
     _botleMana += 1
     Console.SetCursorPosition(0, 6)

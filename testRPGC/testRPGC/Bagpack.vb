@@ -695,79 +695,146 @@
 
              '-------------------------------------------------------------------
       Case "Потрёпаная стёганка"
-        _txtRGB.TxtRGB("White", "Black", "|Потрёпаная стёганка|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Потрёпаная стёганка│     ", False)
 
       Case "Стёртые сапоги"
-        _txtRGB.TxtRGB("White", "Black", "|Стёртые сапоги|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Стёртые сапоги│     ", False)
 
       Case "Погнутые доспехи"
-        _txtRGB.TxtRGB("White", "Black", "|Погнутые доспехи|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Погнутые доспехи│     ", False)
 
       Case "Кожаные доспехи"
-        _txtRGB.TxtRGB("White", "Black", "|Кожаные доспехи|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Кожаные доспехи│     ", False)
 
       Case "Пробитый кушак"
-        _txtRGB.TxtRGB("White", "Black", "|Пробитый кушак|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Пробитый кушак│     ", False)
 
       Case "Ржавый шлем"
-        _txtRGB.TxtRGB("White", "Black", "|Ржавый шлем|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Ржавый шлем│     ", False)
 
       Case "Треснутое забрало"
-        _txtRGB.TxtRGB("White", "Black", "|Треснутое забрало|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Треснутое забрало│     ", False)
 
       Case "Перчатки из тины"
-        _txtRGB.TxtRGB("White", "Black", "|Перчатки из тины|", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Перчатки из тины│     ", False)
 
       Case "Старые варежки"
-        _txtRGB.TxtRGB("White", "Black", "|Старые варежки| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Старые варежки| ", False)
 
       Case "Прогнившие наручи"
-        _txtRGB.TxtRGB("White", "Black", "|Прогнившие наручи| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Прогнившие наручи| ", False)
 
       Case "Медные наручи"
-        _txtRGB.TxtRGB("White", "Black", "|Медные наручи| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Медные наручи| ", False)
 
       Case "Медный доспех"
-        _txtRGB.TxtRGB("White", "Black", "|Медный доспех| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Медный доспех| ", False)
 
       Case "Прочные ботинки"
-        _txtRGB.TxtRGB("White", "Black", "|Прочные ботинки| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Прочные ботинки| ", False)
 
       Case "Ветхие  сапоги"
-        _txtRGB.TxtRGB("White", "Black", "|Ветхие  сапоги| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Ветхие  сапоги| ", False)
 
       Case "Халат"
-        _txtRGB.TxtRGB("White", "Black", "|Халат| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Халат| ", False)
 
       Case "Старый балахон"
-        _txtRGB.TxtRGB("White", "Black", "|Старый балахон| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Старый балахон| ", False)
 
       Case "Потрёпаный плащ"
-        _txtRGB.TxtRGB("White", "Black", "|Потрёпаный плащ| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Потрёпаный плащ| ", False)
 
       Case "Изношенная мантия"
-        _txtRGB.TxtRGB("White", "Black", "|Изношенная мантия| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Изношенная мантия| ", False)
 
       Case "Кожаные сандали"
-        _txtRGB.TxtRGB("White", "Black", "|Кожаные сандали| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Кожаные сандали| ", False)
 
       Case "Потрёпаный колпак"
-        _txtRGB.TxtRGB("White", "Black", "|Потрёпаный колпак| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Потрёпаный колпак| ", False)
 
       Case "Ветхое одеяние"
-        _txtRGB.TxtRGB("White", "Black", "|Ветхое одеяние| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Ветхое одеяние│     ", False)
 
       Case "Исхудалые ботинки"
-        _txtRGB.TxtRGB("White", "Black", "|Исхудалые ботинки| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Исхудалые ботинки│     ", False)
 
       Case "Старые ритуальные перчатки"
-        _txtRGB.TxtRGB("White", "Black", "|Старые ритуальные перчатки| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Старые ритуальные перчатки│     ", False)
 
       Case "Дырявое пончо"
-        _txtRGB.TxtRGB("White", "Black", "|Дырявое пончо| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Дырявое пончо│     ", False)
 
       Case "Крепкие одеяния"
-        _txtRGB.TxtRGB("White", "Black", "|Крепкие одеяния| ", False)
+        _txtRGB.TxtRGB("White", "Black", "   │Крепкие одеяния│     ", False)
+
+      Case "Кованный благородный меч"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованный благородный меч│     ", False)
+
+      Case "Кованный прочный нож"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованный прочный нож│     ", False)
+
+      Case "Безупречный двуручный меч"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный двуручный меч│     ", False)
+
+      Case "Безупречный острый тесак"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный острый тесак│     ", False)
+
+      Case "Кованный прочный жезл"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованный прочный жезл│     ", False)
+
+      Case "Кованный прелестный скипетр"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованный прелестный скипетр│     ", False)
+
+      Case "Безупречная палочка"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречная палочка│     ", False)
+
+      Case "Безупречный посох"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный посох│     ", False)
+
+      Case "Кованный гибкий лук"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованный гибкий лук│     ", False)
+
+      Case "Безупречный арбалет"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный арбалет│     ", False)
+
+      Case "Безупречный большой лук"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный большой лук│     ", False)
+
+      Case "Кованный широкий арбалет"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованный широкий арбалет│     ", False)
+
+      Case "Кованый острый кинжал"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованый острый кинжал│     ", False)
+
+      Case "Безупречные ядовитые кинжалы"
+        _txtRGB.TxtRGB("White", "Black", "Безупречные ядовитые кинжалы│     ", False)
+
+      Case "Безупречный дротик"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный дротик│     ", False)
+
+      Case "Кованый прочный дротик"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованый прочный дротик│     ", False)
+
+      Case "Безупречный прочный доспех"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный прочный доспех│     ", False)
+
+      Case "Кованный шлем"
+        _txtRGB.TxtRGB("White", "Black", "   │Кованный шлем│     ", False)
+
+      Case "Прочные бронированные сапоги"
+        _txtRGB.TxtRGB("White", "Black", "   │Прочные бронированные сапоги│     ", False)
+
+      Case "Безупречный халат"
+        _txtRGB.TxtRGB("White", "Black", "   │Безупречный халат│     ", False)
+
+      Case "Прочный волшебный плащ"
+        _txtRGB.TxtRGB("White", "Black", "   │Прочный волшебный плащ│     ", False)
+
+      Case "Волшебный магический колпак"
+        _txtRGB.TxtRGB("White", "Black", "   │Волшебный магический колпак│     ", False)
+
 
     End Select
 
@@ -776,7 +843,7 @@
   'Отображение предметов в ячейках инвентаря
   Private Sub Visbag(ByVal _bagchek As String)
     If _bagchek = "|Пусто|" Then
-      _txtRGB.TxtRGB("DarkGray", "Black", " |Пусто| ", False)
+      _txtRGB.TxtRGB("DarkGray", "Black", " │Пусто│ ", False)
     Else
       Select Case _bagchek
         Case "Ржавый кованый меч"
@@ -861,21 +928,21 @@
           _txtRGB.TxtRGB("White", "Black", " │Прочный кинжал│     ", False)
           '-------------------------------------------------------------------
         Case "Потрёпаная стёганка"
-          _txtRGB.TxtRGB("White", "Black", " |Потрёпаная стёганка|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Потрёпаная стёганка| ", False)
         Case "Стёртые сапоги"
-          _txtRGB.TxtRGB("White", "Black", " |Стёртые сапоги|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Стёртые сапоги| ", False)
         Case "Погнутые доспехи"
-          _txtRGB.TxtRGB("White", "Black", " |Погнутые доспехи|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Погнутые доспехи| ", False)
         Case "Кожаные доспехи"
-          _txtRGB.TxtRGB("White", "Black", " |Кожаные доспехи|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Кожаные доспехи| ", False)
         Case "Пробитый кушак"
-          _txtRGB.TxtRGB("White", "Black", " |Пробитый кушак|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Пробитый кушак| ", False)
         Case "Ржавый шлем"
-          _txtRGB.TxtRGB("White", "Black", " |Ржавый шлем|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Ржавый шлем| ", False)
         Case "Треснутое забрало"
-          _txtRGB.TxtRGB("White", "Black", " |Треснутое забрало|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Треснутое забрало| ", False)
         Case "Перчатки из тины"
-          _txtRGB.TxtRGB("White", "Black", " |Перчатки из тины|", False)
+          _txtRGB.TxtRGB("White", "Black", " |Перчатки из тины| ", False)
         Case "Старые варежки"
           _txtRGB.TxtRGB("White", "Black", " |Старые варежки| ", False)
         Case "Прогнившие наручи"
@@ -910,6 +977,52 @@
           _txtRGB.TxtRGB("White", "Black", " |Дырявое пончо| ", False)
         Case "Крепкие одеяния"
           _txtRGB.TxtRGB("White", "Black", " |Крепкие одеяния| ", False)
+          '-------------------------------Элитные предметы
+        Case "Кованный благородный меч"
+          _txtRGB.TxtRGB("White", "Black", " |Кованный благородный меч| ", False)
+        Case "Кованный прочный нож"
+          _txtRGB.TxtRGB("White", "Black", " |Кованный прочный нож| ", False)
+        Case "Безупречный двуручный меч"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный двуручный меч| ", False)
+        Case "Безупречный острый тесак"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный острый тесак| ", False)
+        Case "Кованный прочный жезл"
+          _txtRGB.TxtRGB("White", "Black", " |Кованный прочный жезл| ", False)
+        Case "Кованный прелестный скипетр"
+          _txtRGB.TxtRGB("White", "Black", " |Кованный прелестный скипетр| ", False)
+        Case "Безупречная палочка"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречная палочка| ", False)
+        Case "Безупречный посох"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный посох| ", False)
+        Case "Кованный гибкий лук"
+          _txtRGB.TxtRGB("White", "Black", " |Кованный гибкий лук| ", False)
+        Case "Безупречный арбалет"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный арбалет| ", False)
+        Case "Безупречный большой лук"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный большой лук| ", False)
+        Case "Кованный широкий арбалет"
+          _txtRGB.TxtRGB("White", "Black", " |Кованный широкий арбалет| ", False)
+        Case "Кованый острый кинжал"
+          _txtRGB.TxtRGB("White", "Black", " |Кованый острый кинжал| ", False)
+        Case "Безупречные ядовитые кинжалы"
+          _txtRGB.TxtRGB("White", "Black", "Безупречные ядовитые кинжалы| ", False)
+        Case "Безупречный дротик"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный дротик| ", False)
+        Case "Кованый прочный дротик"
+          _txtRGB.TxtRGB("White", "Black", " |Кованый прочный дротик| ", False)
+        Case "Безупречный прочный доспех"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный прочный доспех| ", False)
+        Case "Кованный шлем"
+          _txtRGB.TxtRGB("White", "Black", " |Кованный шлем| ", False)
+        Case "Прочные бронированные сапоги"
+          _txtRGB.TxtRGB("White", "Black", " |Прочные бронированные сапоги| ", False)
+        Case "Безупречный халат"
+          _txtRGB.TxtRGB("White", "Black", " |Безупречный халат| ", False)
+        Case "Прочный волшебный плащ"
+          _txtRGB.TxtRGB("White", "Black", " |Прочный волшебный плащ| ", False)
+        Case "Волшебный магический колпак"
+          _txtRGB.TxtRGB("White", "Black", " |Волшебный магический колпак| ", False)
+
       End Select
     End If
   End Sub
@@ -918,7 +1031,7 @@
   '_statsGet(3) = _statshero(3) 'Защита
   '_statsGet(4) = _statshero(4) 'Ловкость
   '_statsGet(5) = _statshero(5) 'Точность
-  Private Sub DelletItem(ByVal _delItem As String)
+  Private Shared Sub DelletItem(ByVal _delItem As String)
     Select Case _delItem
       '------------Воин-------------
       Case "Ржавый кованый меч"
@@ -948,31 +1061,36 @@
       Case "Стёртые сапоги"
 
       Case "Погнутые доспехи"
-
+        _statshero(3) -= 3
       Case "Кожаные доспехи"
-
+        _statshero(3) -= 2
+        _statshero(4) -= 1
       Case "Пробитый кушак"
-
+        _statshero(3) -= 1
       Case "Ржавый шлем"
-
+        _statshero(3) -= 4
+        _statshero(4) -= 2
       Case "Треснутое забрало"
-
+        _statshero(3) -= 5
+        _statshero(4) -= 3
+        _statshero(5) -= 1
       Case "Перчатки из тины"
         _statshero(5) -= 1
         _statshero(4) -= 5
       Case "Старые варежки"
-
+        _statshero(4) -= 4
       Case "Прогнившие наручи"
-
+        _statshero(4) -= 3
       Case "Медные наручи"
-
+        _statshero(5) -= 2
+        _statshero(4) -= 6
       Case "Медный доспех"
-
+        _statshero(3) -= 10
+        _statshero(4) -= 4
       Case "Прочные ботинки"
-
+        _statshero(4) -= 7
       Case "Ветхие  сапоги"
-
-
+        _statshero(5) -= 2
          '------------Маг-------------
       Case "Старый посох"
         _statshero(2) -= 10
@@ -999,25 +1117,34 @@
         _statshero(3) -= 5
         _statshero(4) -= 5
       Case "Старый балахон"
-
+        _statshero(3) -= 2
       Case "Потрёпаный плащ"
-
+        _statshero(3) -= 4
+        _statshero(4) -= 3
       Case "Изношенная мантия"
-
+        _statshero(3) -= 6
+        _statshero(4) -= 4
       Case "Кожаные сандали"
-
+        _statshero(3) -= 4
+        _statshero(2) -= 4
       Case "Потрёпаный колпак"
-
+        _statshero(3) -= 4
+        _statshero(5) -= 3
       Case "Ветхое одеяние"
-
+        _statshero(4) -= 5
       Case "Исхудалые ботинки"
-
+        _statshero(4) -= 4
       Case "Старые ритуальные перчатки"
-
+        _statshero(3) -= 3
+        _statshero(4) -= 6
       Case "Дырявое пончо"
-
+        _statshero(3) -= 4
+        _statshero(4) -= 3
+        _statshero(5) -= 4
       Case "Крепкие одеяния"
-
+        _statshero(3) -= 9
+        _statshero(4) -= 4
+        _statshero(5) -= 1
         '------------Лучник--------
       Case "Лук лесника"
         _statshero(4) -= 5
@@ -1080,12 +1207,81 @@
       Case "Прочный кинжал"
         _statshero(3) -= 23
         _statshero(5) -= 5
+        '--------------Редкая экипировка-------------
+      Case "Кованный благородный меч"
+        _statshero(1) -= 50
+      Case "Кованный прочный нож"
+        _statshero(1) -= 45
+        _statshero(5) -= 5
+      Case "Безупречный двуручный меч"
+        _statshero(1) -= 75
+        _statshero(3) -= 10
+      Case "Безупречный острый тесак"
+        _statshero(1) -= 40
+        _statshero(4) -= 7
+      Case "Кованный прочный жезл"
+        _statshero(2) -= 52
+      Case "Кованный прелестный скипетр"
+        _statshero(2) -= 47
+        _statshero(3) -= 7
+      Case "Безупречная палочка"
+        _statshero(2) -= 65
+        _statshero(4) -= 20
+      Case "Безупречный посох"
+        _statshero(2) -= 59
+        _statshero(5) -= 10
+      Case "Кованный гибкий лук"
+        _statshero(1) -= 20
+        _statshero(4) -= 40
+      Case "Безупречный арбалет"
+        _statshero(2) -= 20
+        _statshero(4) -= 40
+      Case "Безупречный большой лук"
+        _statshero(3) -= 35
+        _statshero(4) -= 35
+      Case "Кованный широкий арбалет"
+        _statshero(5) -= 15
+        _statshero(4) -= 55
+      Case "Кованый острый кинжал"
+        _statshero(1) -= 25
+        _statshero(3) -= 40
+      Case "Безупречные ядовитые кинжалы"
+        _statshero(2) -= 25
+        _statshero(3) -= 40
+      Case "Безупречный дротик"
+        _statshero(4) -= 35
+        _statshero(3) -= 35
+      Case "Кованый прочный дротик"
+        _statshero(5) -= 12
+        _statshero(3) -= 60
+      Case "Безупречный прочный доспех"
+        _statshero(4) -= 10
+        _statshero(3) -= 30
+      Case "Кованный шлем"
+        _statshero(4) -= 15
+        _statshero(3) -= 25
+        _statshero(5) -= 15
+      Case "Прочные бронированные сапоги"
+        _statshero(4) -= 30
+        _statshero(3) -= 15
+        _statshero(5) -= 5
+      Case "Безупречный халат"
+        _statshero(4) -= 45
+        _statshero(3) -= 10
+        _statshero(5) -= 5
+      Case "Прочный волшебный плащ"
+        _statshero(4) -= 15
+        _statshero(3) -= 20
+      Case "Волшебный магический колпак"
+        _statshero(4) -= 20
+        _statshero(3) -= 10
+        _statshero(5) -= 20
     End Select
   End Sub
 
-  Private Sub StayItem(ByVal _STItem As String)
+  Private Shared Sub StayItem(ByVal _STItem As String)
     Select Case _STItem
-      '------------Воин-------------
+                   '------------Воин-------------
       Case "Ржавый кованый меч"
         _statshero(1) += 10
       Case "Ржавый двуручный меч"
@@ -1106,38 +1302,43 @@
         _statshero(1) += 10
       Case "Медный кинжал"
         _statshero(1) += 17
-       '-----------------------------
+        '-----------------------------
       Case "Потрёпаная стёганка"
         _statshero(3) += 5
         _statshero(4) += 5
       Case "Стёртые сапоги"
 
       Case "Погнутые доспехи"
-
+        _statshero(3) += 3
       Case "Кожаные доспехи"
-
+        _statshero(3) += 2
+        _statshero(4) += 1
       Case "Пробитый кушак"
-
+        _statshero(3) += 1
       Case "Ржавый шлем"
-
+        _statshero(3) += 4
+        _statshero(4) += 2
       Case "Треснутое забрало"
-
+        _statshero(3) += 5
+        _statshero(4) += 3
+        _statshero(5) += 1
       Case "Перчатки из тины"
         _statshero(5) += 1
         _statshero(4) += 5
       Case "Старые варежки"
-
+        _statshero(4) += 4
       Case "Прогнившие наручи"
-
+        _statshero(4) += 3
       Case "Медные наручи"
-
+        _statshero(5) += 2
+        _statshero(4) += 6
       Case "Медный доспех"
-
+        _statshero(3) += 10
+        _statshero(4) += 4
       Case "Прочные ботинки"
-
+        _statshero(4) += 7
       Case "Ветхие  сапоги"
-
-
+        _statshero(5) += 2
          '------------Маг-------------
       Case "Старый посох"
         _statshero(2) += 10
@@ -1159,30 +1360,39 @@
         _statshero(2) += 24
       Case "Фальшивый скипетр"
         _statshero(2) += 8
-       '--------------------------
+        '--------------------------
       Case "Халат"
         _statshero(3) += 5
         _statshero(4) += 5
       Case "Старый балахон"
-
+        _statshero(3) += 2
       Case "Потрёпаный плащ"
-
+        _statshero(3) += 4
+        _statshero(4) += 3
       Case "Изношенная мантия"
-
+        _statshero(3) += 6
+        _statshero(4) += 4
       Case "Кожаные сандали"
-
+        _statshero(3) += 4
+        _statshero(2) += 4
       Case "Потрёпаный колпак"
-
+        _statshero(3) += 4
+        _statshero(5) += 3
       Case "Ветхое одеяние"
-
+        _statshero(4) += 5
       Case "Исхудалые ботинки"
-
+        _statshero(4) += 4
       Case "Старые ритуальные перчатки"
-
+        _statshero(3) += 3
+        _statshero(4) += 6
       Case "Дырявое пончо"
-
+        _statshero(3) += 4
+        _statshero(4) += 3
+        _statshero(5) += 4
       Case "Крепкие одеяния"
-
+        _statshero(3) += 9
+        _statshero(4) += 4
+        _statshero(5) += 1
         '------------Лучник--------
       Case "Лук лесника"
         _statshero(4) += 5
@@ -1245,6 +1455,75 @@
       Case "Прочный кинжал"
         _statshero(3) += 23
         _statshero(5) += 5
+        '--------------Редкая экипировка-------------
+      Case "Кованный благородный меч"
+        _statshero(1) += 50
+      Case "Кованный прочный нож"
+        _statshero(1) += 45
+        _statshero(5) += 5
+      Case "Безупречный двуручный меч"
+        _statshero(1) += 75
+        _statshero(3) += 10
+      Case "Безупречный острый тесак"
+        _statshero(1) += 40
+        _statshero(4) += 7
+      Case "Кованный прочный жезл"
+        _statshero(2) += 52
+      Case "Кованный прелестный скипетр"
+        _statshero(2) += 47
+        _statshero(3) += 7
+      Case "Безупречная палочка"
+        _statshero(2) += 65
+        _statshero(4) += 20
+      Case "Безупречный посох"
+        _statshero(2) += 59
+        _statshero(5) += 10
+      Case "Кованный гибкий лук"
+        _statshero(1) += 20
+        _statshero(4) += 40
+      Case "Безупречный арбалет"
+        _statshero(2) += 20
+        _statshero(4) += 40
+      Case "Безупречный большой лук"
+        _statshero(3) += 35
+        _statshero(4) += 35
+      Case "Кованный широкий арбалет"
+        _statshero(5) += 15
+        _statshero(4) += 55
+      Case "Кованый острый кинжал"
+        _statshero(1) += 25
+        _statshero(3) += 40
+      Case "Безупречные ядовитые кинжалы"
+        _statshero(2) += 25
+        _statshero(3) += 40
+      Case "Безупречный дротик"
+        _statshero(4) += 35
+        _statshero(3) += 35
+      Case "Кованый прочный дротик"
+        _statshero(5) += 12
+        _statshero(3) += 60
+      Case "Безупречный прочный доспех"
+        _statshero(4) += 10
+        _statshero(3) += 30
+      Case "Кованный шлем"
+        _statshero(4) += 15
+        _statshero(3) += 25
+        _statshero(5) += 15
+      Case "Прочные бронированные сапоги"
+        _statshero(4) += 30
+        _statshero(3) += 15
+        _statshero(5) += 5
+      Case "Безупречный халат"
+        _statshero(4) += 45
+        _statshero(3) += 10
+        _statshero(5) += 5
+      Case "Прочный волшебный плащ"
+        _statshero(4) += 15
+        _statshero(3) += 20
+      Case "Волшебный магический колпак"
+        _statshero(4) += 20
+        _statshero(3) += 10
+        _statshero(5) += 20
     End Select
   End Sub
 

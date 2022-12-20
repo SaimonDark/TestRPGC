@@ -16,8 +16,8 @@
                               {0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
                               {0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0},
                               {0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0},
-                              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0},
-                              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 2, 2, 0},
+                              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 0},
                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}} 'Начальная карта
 
   ReadOnly _hillMap0 As Integer(,) = {{2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
@@ -131,7 +131,25 @@
                                      {3, 3, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 8, 10, 9, 9, 10, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 0},
                                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}}
 
-  Public _local4 As Integer ' карта 16х50
+  Public _local4 As Integer(,) = {{3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}}
+
 
   '█ ▓ ▒ ░
   'If _local1(i, j) = 0 Then _txtRGB._txtRGB("DarkGreen", "DarkGray", "░", False) 'Болотное поле 
@@ -209,6 +227,7 @@
                 Console.CursorVisible = False
                 If _local0(i, j) = 0 Then _txtRGB.TxtRGB("DarkGreen", "DarkGray", "░", False)
                 If _local0(i, j) = 1 Then _txtRGB.TxtRGB("DarkYellow", "Black", "░", False)
+                If _local0(i, j) = 2 Then _txtRGB.TxtRGB("Red", "Black", "░", False)
               End If
             Catch ex As Exception
 
@@ -222,7 +241,7 @@
     Next
   End Sub
 
-  Public Sub MapSet(ByVal _x As Integer, ByVal _y As Integer, ByVal _location As Integer) 'Локация 1
+  Public Sub MapSet(ByVal _x As Integer, ByVal _y As Integer) 'Локация 1
     Dim i, j As Integer
     _nameLocation = " "
     _messegLocation = " "
@@ -337,7 +356,7 @@
     Next
   End Sub
 
-  Public Sub MapSet2(ByVal _x As Integer, ByVal _y As Integer, ByVal _location As Integer) 'Локация 2
+  Public Sub MapSet2(ByVal _x As Integer, ByVal _y As Integer) 'Локация 2
     Dim i, j As Integer
     _nameLocation = " "
     _messegLocation = " "
@@ -466,7 +485,7 @@
     Next
   End Sub
 
-  Public Sub MapSet3(ByVal _x As Integer, ByVal _y As Integer, ByVal _location As Integer) 'Локация 3
+  Public Sub MapSet3(ByVal _x As Integer, ByVal _y As Integer) 'Локация 3
     Dim i, j As Integer
     _nameLocation = " "
     _messegLocation = " "
@@ -565,6 +584,87 @@
                 If _local3(i, j) = 8 Then _txtRGB.TxtRGB("Black", "DarkGray", "░", False) 'Край болота
                 If _local3(i, j) = 9 Then _txtRGB.TxtRGB("White", "DarkBlue", "░", False) 'Водная местность
                 If _local3(i, j) = 10 Then _txtRGB.TxtRGB("White", "Cyan", "░", False) 'Речная местность
+              End If
+            Catch ex As Exception
+
+            End Try
+
+          End If
+        End If
+      Next
+      Console.WriteLine("                                  ")
+      Console.Write("              ")
+    Next
+  End Sub
+
+  Public Sub MapSet4(ByVal _x As Integer, ByVal _y As Integer) 'Локация 4
+    Dim i, j As Integer
+    _nameLocation = " "
+    _messegLocation = " "
+    Console.Write("              ")
+
+    For i = 0 To 16
+      For j = 0 To 50
+        If _x = j And _y = i Then
+          Console.CursorVisible = False
+          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
+
+          If _local4(i, j) = 3 Then
+            _nameLocation = "  ║Безупречный лес: Нетронутые рощи  " 'Болото
+            _messegLocation = "Деревья этого леса на столько прекрасны, что вы не смеете их трогать.                                                           "
+          End If
+
+          Try
+            'Стирание ближней границы
+            _hillStatic(i, j - 1) -= 2
+            _hillStatic(i - 1, j - 1) -= 2
+            _hillStatic(i + 1, j - 1) -= 2
+            _hillStatic(i - 1, j) -= 2
+            _hillStatic(i, j) -= 2
+            _hillStatic(i, j + 1) -= 2
+            _hillStatic(i + 1, j + 1) -= 2
+            _hillStatic(i - 1, j + 1) -= 2
+            _hillStatic(i + 1, j) -= 2
+            'Стирание дальней границы
+            _hillStatic(i, j - 2) -= 1
+            _hillStatic(i - 2, j - 2) -= 1
+            _hillStatic(i + 2, j - 2) -= 1
+            _hillStatic(i - 2, j) -= 1
+            _hillStatic(i, j + 2) -= 1
+            _hillStatic(i + 2, j + 2) -= 1
+            _hillStatic(i - 2, j + 2) -= 1
+            _hillStatic(i + 2, j) -= 1
+            _hillStatic(i - 2, j + 1) -= 1
+            _hillStatic(i - 2, j - 1) -= 1
+            _hillStatic(i + 2, j + 1) -= 1
+            _hillStatic(i + 2, j - 1) -= 1
+            _hillStatic(i - 1, j + 2) -= 1
+            _hillStatic(i - 1, j - 2) -= 1
+            _hillStatic(i + 1, j + 2) -= 1
+            _hillStatic(i + 1, j - 2) -= 1
+          Catch ex As Exception
+
+          End Try
+
+        Else
+          If i = 0 Or i = 16 Or j = 0 Or j = 50 Then
+            Console.CursorVisible = False
+            _txtRGB.TxtRGB("Black", "Cyan", "▓", False)
+          Else
+            Try
+              Console.CursorVisible = False
+              If _hillStatic(i, j) = 2 Then _txtRGB.TxtRGB("DarkGray", "Black", "░", False)
+              If _hillStatic(i, j) = 1 Then _txtRGB.TxtRGB("DarkGray", "White", "▓", False)
+              If _hillStatic(i, j) <= 0 Then 'Верни на 0
+                Console.CursorVisible = False
+                If _local4(i, j) = 0 Then _txtRGB.TxtRGB("DarkGreen", "DarkGray", "░", False) 'Земля
+                If _local4(i, j) = 1 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▓", False) 'Дорога
+                If _local4(i, j) = 2 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▒", False) 'Край дороги
+                If _local4(i, j) = 3 Then _txtRGB.TxtRGB("Cyan", "DarkGreen", "░", False) 'Лес
+                If _local4(i, j) = 4 Then _txtRGB.TxtRGB("DarkGreen", "Black", "░", False) 'Стены городов Эльфов 
+                If _local4(i, j) = 8 Then _txtRGB.TxtRGB("Black", "DarkGray", "░", False) 'Край болота
+                If _local4(i, j) = 9 Then _txtRGB.TxtRGB("White", "DarkBlue", "░", False) 'Водная местность
+                If _local4(i, j) = 10 Then _txtRGB.TxtRGB("White", "Cyan", "░", False) 'Речная местность
               End If
             Catch ex As Exception
 
