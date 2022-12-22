@@ -20,6 +20,8 @@
     <None Remove="Hero.vb~RF63c5a81.TMP" />
     <None Remove="Main.vb~RF23501c5f.TMP" />
     <None Remove="Main.vb~RF33367d2.TMP" />
+    <None Remove="map.vb~RF10fd22c8.TMP" />
+    <None Remove="map.vb~RF1104466b.TMP" />
     <None Remove="map.vb~RF2c38a8d.TMP" />
     <None Remove="Program.vb~RF318e47.TMP" />
   </ItemGroup>

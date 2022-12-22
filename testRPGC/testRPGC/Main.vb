@@ -901,6 +901,7 @@ Module Main
               _pointSet = "4"
           End Select
           _AdventureSave = 0
+
         Case 80 'Информация о персонаже
           Console.Clear()
           _hero.InfoHero()
@@ -926,6 +927,7 @@ Module Main
             Console.Clear()
           End If
           _vibor(6) = 0
+
         Case 84 'Таланты
           Console.Clear()
           _hero.InfoBar(1)
@@ -962,6 +964,7 @@ Module Main
           End If
           _vibor(8) = 0
           _book = Nothing
+
         Case 66 'Инвентарь
           'Инициализация параметров героя и его экипировки для инвентаря и его методов
           UpdateStatsHero(1)
@@ -979,6 +982,15 @@ Module Main
           Next
           Console.Clear()
           _bag = Nothing
+
+        Case 77 'Карта
+          Dim _mapM As New Map
+          _hero.InfoBar(1)
+          Console.WriteLine("  ")
+          _mapM.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _mapM.Minimap(_saveMap)
+          Console.ReadLine()
+
       End Select
 
 
