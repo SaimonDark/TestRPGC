@@ -11,16 +11,38 @@
     Public _ExpEnemy, _moneyEnemy As Integer
   End Structure
 
+  Structure _boss
+    Public _nameBoss As String
+    Public _bossDamage, _BossLive, _bossLiveMax1, _bossLiveMax2, _bossLiveMax3, _bossCrit, _bossliveStat As Single
+    Public _colorFB, _colorBB, _colorLiveBB As String
+    Public _ExpBoss, _moneyBoss As Integer
+  End Structure
+
   Public _enemyGame(10, 10) As _enemy
+  Public _BossGame(20) As _boss
 
   Public Sub _enemyStats()
     _enemyName = "Грозный Огр"
     _enemyDamage = 30
-        _enemylive = 1400
-        _enemyLiveMax = _enemylive
-    End Sub
+    _enemylive = 1400
+    _enemyLiveMax = _enemylive
+  End Sub
 
   Public Sub _enemyStatsGame()
+    'Босс первой локации
+    _BossGame(1)._nameBoss = "Голодный большой тролль"
+    _BossGame(1)._colorFB = "DarkGreen"
+    _BossGame(1)._colorBB = "Black"
+    _BossGame(1)._colorLiveBB = "DarkGreen"
+    _BossGame(1)._bossDamage = 120
+    _BossGame(1)._bossCrit = 250
+    _BossGame(1)._bossLiveMax1 = 4000
+    _BossGame(1)._bossLiveMax2 = 5500
+    _BossGame(1)._bossLiveMax3 = 8000
+    _BossGame(1)._ExpBoss = 350
+    _BossGame(1)._moneyBoss = 55
+
+
     'Враги первой локации
     _enemyGame(1, 1)._nameEnemy = " Молодой огр [2ур]"
     _enemyGame(1, 2)._nameEnemy = " Пробуждённый великан [3ур] "

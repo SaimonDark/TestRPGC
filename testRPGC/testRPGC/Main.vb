@@ -363,14 +363,14 @@ Module Main
             _System.TxtRGB(_enemy._enemyGame(_location, fRand)._colorF, _enemy._enemyGame(_location, fRand)._colorB, _enemy._enemyGame(_location, fRand)._nameEnemy, False)
             Console.Write("   [" & _enemy._enemyGame(_location, fRand)._enemyLiveMax & "]")
             _hero.Exxeption(_enemy._enemyGame(_location, fRand)._enemylive, _enemy._enemyGame(_location, fRand)._enemyLiveMax, _enemy._enemyGame(_location, fRand)._colorLive)
-            Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] критический удар -" & _hero._skl(0)._crit & If(_hero._PerksStatLvl(0) > 0, " +" & _hero._PerksStatLvl(0) * 1.5 & " ", " "))
+            Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] крит -" & _hero._skl(0)._crit & If(_hero._PerksStatLvl(0) > 0, " +" & _hero._PerksStatLvl(0) * 1.5 & " ", " "))
             Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
             Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
             _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
             Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
             Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
             _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
-            Console.WriteLine(" ")
+            _System.Apostrof()
 
           Else 'Обычная атака
             _enemy._enemyGame(_location, fRand)._enemylive -= _hero._skl(0)._damage + _hero._PerksStatLvl(0)
@@ -414,7 +414,7 @@ Module Main
               _System.TxtRGB(_enemy._enemyGame(_location, fRand)._colorF, _enemy._enemyGame(_location, fRand)._colorB, _enemy._enemyGame(_location, fRand)._nameEnemy, False)
               Console.Write("   [" & _enemy._enemyGame(_location, fRand)._enemyLiveMax & "]")
               _hero.Exxeption(_enemy._enemyGame(_location, fRand)._enemylive, _enemy._enemyGame(_location, fRand)._enemyLiveMax, _enemy._enemyGame(_location, fRand)._colorLive)
-              Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] критический удар -" & _hero._skl(1)._crit & If(_hero._PerksStatLvl(1) > 0, " +" & _hero._PerksStatLvl(1) * 1.5 & " ", " "))
+              Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] крит -" & _hero._skl(1)._crit & If(_hero._PerksStatLvl(1) > 0, " +" & _hero._PerksStatLvl(1) * 1.5 & " ", " "))
               Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
               Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
               _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
@@ -467,7 +467,7 @@ Module Main
               _System.TxtRGB(_enemy._enemyGame(_location, fRand)._colorF, _enemy._enemyGame(_location, fRand)._colorB, _enemy._enemyGame(_location, fRand)._nameEnemy, False)
               Console.Write("   [" & _enemy._enemyGame(_location, fRand)._enemyLiveMax & "]")
               _hero.Exxeption(_enemy._enemyGame(_location, fRand)._enemylive, _enemy._enemyGame(_location, fRand)._enemyLiveMax, _enemy._enemyGame(_location, fRand)._colorLive)
-              Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] критический удар -" & _hero._skl(2)._crit & If(_hero._PerksStatLvl(2) > 0, " +" & _hero._PerksStatLvl(2) * 1.5 & " ", " "))
+              Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] крит -" & _hero._skl(2)._crit & If(_hero._PerksStatLvl(2) > 0, " +" & _hero._PerksStatLvl(2) * 1.5 & " ", " "))
               Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
               Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
               _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
@@ -520,7 +520,7 @@ Module Main
               _System.TxtRGB(_enemy._enemyGame(_location, fRand)._colorF, _enemy._enemyGame(_location, fRand)._colorB, _enemy._enemyGame(_location, fRand)._nameEnemy, False)
               Console.Write("   [" & _enemy._enemyGame(_location, fRand)._enemyLiveMax & "]")
               _hero.Exxeption(_enemy._enemyGame(_location, fRand)._enemylive, _enemy._enemyGame(_location, fRand)._enemyLiveMax, _enemy._enemyGame(_location, fRand)._colorLive)
-              Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] критический удар -" & _hero._skl(3)._crit & If(_hero._PerksStatLvl(3) > 0, " +" & _hero._PerksStatLvl(3) * 1.5 & " ", " "))
+              Console.WriteLine("[" & _enemy._enemyGame(_location, fRand)._enemylive & "] крит -" & _hero._skl(3)._crit & If(_hero._PerksStatLvl(3) > 0, " +" & _hero._PerksStatLvl(3) * 1.5 & " ", " "))
               Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
               Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
               _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
@@ -660,6 +660,434 @@ Module Main
     Console.Clear()
   End Sub
 
+  Public Sub BossFiht(ByVal _locationBoss As Integer) 'При победе вылетаетиз игры.
+    Console.Clear()
+    Dim oRand = New Random(DateTime.Now.Millisecond)
+    Dim skill3, skill4, _nomberBoss, _stateLiveBoss, _infoFitgh As Integer
+    Dim _stateBosslive(5) As Integer
+    skill3 = 0
+    skill4 = 0
+    _infoFitgh = 0
+    fRand = oRand.Next(1, 4)
+
+    Select Case _locationBoss 'Выборка босса в зависимости от локации
+      Case 1
+        _nomberBoss = 1
+        _stateLiveBoss = 3
+        _stateBosslive(3) = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+        _stateBosslive(2) = _enemy._BossGame(_nomberBoss)._bossLiveMax2
+        _stateBosslive(1) = _enemy._BossGame(_nomberBoss)._bossLiveMax3
+        _enemy._BossGame(_nomberBoss)._BossLive = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+        _enemy._BossGame(_nomberBoss)._bossliveStat = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+      Case 2
+
+    End Select
+
+    _enemy._BossGame(_nomberBoss)._BossLive = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+    _hero._h._live = _hero._h._liveMax
+    _hero.InfoBar(1)
+    Console.WriteLine(" ")
+    Console.WriteLine("    ┌────────────────")
+    Console.Write("    │")
+    _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+    Console.Write("   [" & _enemy._BossGame(_nomberBoss)._BossLive & "]")
+    _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _enemy._BossGame(_nomberBoss)._bossliveStat, _enemy._BossGame(_nomberBoss)._colorLiveBB)
+    Console.WriteLine("                        ")
+    Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+    Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+    _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+    Console.WriteLine("")
+    Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+    _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+    _System.Apostrof()
+    Console.WriteLine("    └  Флаконов жизни: " & _botleLive & "  Флаконов маны: " & _botleMana)
+    Console.WriteLine(" ")
+    Console.WriteLine("    ┌──────────────────")
+    Console.WriteLine("   ┌1. " & _hero._skl(0)._RPability)
+    If _hero._skils(2) > 0 And _hero._h._mana >= 3 Then
+      Console.WriteLine("   ├2. " & _hero._skl(1)._RPability)
+    ElseIf _hero._skils(2) > 0 And _hero._h._mana < 3 Then
+      _System.TxtRGB("DarkGray", "Black", "   ├2. " & _hero._skl(1)._RPability, True)
+    End If
+    If _hero._skils(3) > 0 Then _System.TxtRGB("DarkGray", "Black", "   ├3. " & _hero._skl(2)._RPability, True)
+    If _hero._skils(4) > 0 Then _System.TxtRGB("DarkGray", "Black", "   └4. " & _hero._skl(3)._RPability, True)
+    Console.WriteLine("    ├───────────────────")
+    Console.WriteLine("   ┌5. Использовать зелье здоровья")
+    If _hero._skils(2) > 0 Then
+      Console.WriteLine("   └6. Использовать зелье маны")
+    ElseIf _hero._skils(2) = 0 Then
+      _System.TxtRGB("DarkGray", "Black", "   └6. Использовать зелье маны", True)
+    End If
+    Console.WriteLine("    └───────────────────")
+
+    While _figthTime <> 0
+      While _nomberBoss <> 0
+
+
+        Try
+          _vibor(2) = Console.ReadLine()
+        Catch ex As Exception
+
+        End Try
+        Dim _vivodundmg As Single
+        'Шанс уворота
+        Dim uRand = New Random(DateTime.Now.Millisecond)
+        Dim uvorotMax As Integer = 100 + _hero._h._agility
+        Dim uvorot As Integer = uRand.Next(1, uvorotMax)
+        _vivodundmg = (_enemy._BossGame(_nomberBoss)._bossDamage - (_hero._h._defense * 0.8)) 'Вывод урона моба с учётом защиты 
+        Select Case _vibor(2)
+          Case 1
+            'Шанс критического удара
+            Dim сRand = New Random(DateTime.Now.Millisecond)
+            Dim chance_crit As Integer = oRand.Next(1, 100 - _hero._h._accuracy)
+            If _vivodundmg <= 0 Then _vivodundmg = _enemy._BossGame(_nomberBoss)._bossDamage * 0.1
+            If uvorot >= _hero._h._agility And uvorot <= uvorotMax - _hero._h._agility Then 'Шанс уворота
+              _vivodundmg = 0 '& " Уворот"
+              _hero._h._live -= _vivodundmg
+            Else
+              _hero._h._live -= _vivodundmg
+            End If
+            If chance_crit <= _hero._h._accuracy Then 'критический удар
+              _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(0)._crit + If(_hero._PerksStatLvl(0) > 0, _hero._PerksStatLvl(0) * 1.5, 0) 'Критический удар
+              If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                _stateLiveBoss -= 1
+
+                _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+              End If
+              _hero.InfoBar(1)
+              Console.WriteLine(" ")
+              Console.WriteLine("    ┌────────────────")
+              Console.Write("    │")
+              _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+              Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+              _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+              Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] крит -" & _hero._skl(0)._crit & If(_hero._PerksStatLvl(0) > 0, " +" & _hero._PerksStatLvl(0) * 1.5 & " ", " "))
+              Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+              Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+              _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+              Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+              Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+              _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+              Console.WriteLine(" ")
+            Else 'Обычная атака
+              _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(0)._damage + _hero._PerksStatLvl(0)
+              If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                _stateLiveBoss -= 1
+
+                _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+              End If
+              _hero.InfoBar(1)
+              Console.WriteLine(" ")
+              Console.WriteLine("    ┌────────────────")
+              Console.Write("    │")
+              _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+              Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+              _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+              Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] -" & _hero._skl(0)._damage & If(_hero._PerksStatLvl(0) > 0, " +" & _hero._PerksStatLvl(0) & "                         ", "                        "))
+              Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+              Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+              _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+              Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+              Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+              _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+              _System.Apostrof()
+            End If
+          Case 2
+            If _hero._skils(2) > 0 And _hero._h._mana >= 3 Then
+              _hero._h._mana -= 3
+              skill3 += 1
+              'Шанс критического удара
+              Dim сRand = New Random(DateTime.Now.Millisecond)
+              Dim chance_crit As Integer = oRand.Next(1, 100 - _hero._h._accuracy)
+              If _vivodundmg <= 0 Then _vivodundmg = _enemy._BossGame(_nomberBoss)._bossDamage * 0.1
+              If uvorot >= _hero._h._agility And uvorot <= uvorotMax - _hero._h._agility Then 'Шанс уворота
+                _vivodundmg = 0 '& " Уворот"
+                _hero._h._live -= _vivodundmg
+              Else
+                _hero._h._live -= _vivodundmg
+              End If
+              If chance_crit <= _hero._h._accuracy Then 'критический удар
+                _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(1)._crit + If(_hero._PerksStatLvl(1) > 0, _hero._PerksStatLvl(1) * 1.5, 0)
+                If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                  _stateLiveBoss -= 1
+
+                  _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+                End If
+                _hero.InfoBar(1)
+                Console.WriteLine(" ")
+                Console.WriteLine("    ┌────────────────")
+                Console.Write("    │")
+                _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+                Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+                _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+                Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] критический удар -" & _hero._skl(1)._crit & If(_hero._PerksStatLvl(1) > 0, " +" & _hero._PerksStatLvl(1) * 1.5 & " ", " "))
+                Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+                Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+                _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+                Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+                Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+                _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+                _System.Apostrof()
+
+              Else 'Обычная атака
+                _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(1)._damage + _hero._PerksStatLvl(1)
+                If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                  _stateLiveBoss -= 1
+
+                  _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+                End If
+                _hero.InfoBar(1)
+                Console.WriteLine(" ")
+                Console.WriteLine("    ┌────────────────")
+                Console.Write("    │")
+                _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+                Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+                _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+                Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] -" & _hero._skl(1)._damage & If(_hero._PerksStatLvl(1) > 0, " +" & _hero._PerksStatLvl(1) & "                         ", "                        "))
+                Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+                Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+                _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+                Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+                Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+                _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+                _System.Apostrof()
+
+              End If
+            End If
+          Case 3
+            If _hero._skils(3) > 0 And skill3 >= 3 And _hero._h._mana >= 5 Then
+              skill3 = 0
+              skill4 += 1
+              _hero._h._mana -= 5
+              'Шанс критического удара
+              Dim сRand = New Random(DateTime.Now.Millisecond)
+              Dim chance_crit As Integer = oRand.Next(1, 100 - _hero._h._accuracy)
+              If _vivodundmg <= 0 Then _vivodundmg = _enemy._BossGame(_nomberBoss)._bossDamage * 0.1
+              If uvorot >= _hero._h._agility And uvorot <= uvorotMax - _hero._h._agility Then 'Шанс уворота
+                _vivodundmg = 0 '& " Уворот"
+                _hero._h._live -= _vivodundmg
+              Else
+                _hero._h._live -= _vivodundmg
+              End If
+              If chance_crit <= _hero._h._accuracy Then 'критический удар
+                _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(2)._crit + If(_hero._PerksStatLvl(2) > 0, _hero._PerksStatLvl(2) * 1.5, 0)
+                If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                  _stateLiveBoss -= 1
+
+                  _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+                End If
+                _hero.InfoBar(1)
+                Console.WriteLine(" ")
+                Console.WriteLine("    ┌────────────────")
+                Console.Write("    │")
+                _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+                Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+                _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+                Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] критический удар -" & _hero._skl(2)._crit & If(_hero._PerksStatLvl(2) > 0, " +" & _hero._PerksStatLvl(2) * 1.5 & " ", " "))
+                Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+                Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+                _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+                Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+                Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+                _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+                _System.Apostrof()
+
+              Else 'Обычная атака
+                _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(2)._damage + _hero._PerksStatLvl(2)
+                If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                  _stateLiveBoss -= 1
+
+                  _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+                End If
+                _hero.InfoBar(1)
+                Console.WriteLine(" ")
+                Console.WriteLine("    ┌────────────────")
+                Console.Write("    │")
+                _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+                Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+                _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+                Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] -" & _hero._skl(2)._damage & If(_hero._PerksStatLvl(2) > 0, " +" & _hero._PerksStatLvl(2) & "                         ", "                        "))
+                Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+                Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+                _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+                Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+                Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+                _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+                _System.Apostrof()
+
+              End If
+            End If
+          Case 4
+            If _hero._skils(4) > 0 And skill4 >= 2 And _hero._h._mana > _hero._h._manaMax * 0.6 Then
+              _hero._h._mana -= _hero._h._manaMax * 0.6
+              If _hero._h._mana < 0 Then _hero._h._mana = 0
+              skill4 = 0
+              'Шанс критического удара
+              Dim сRand = New Random(DateTime.Now.Millisecond)
+              Dim chance_crit As Integer = oRand.Next(1, 100 - _hero._h._accuracy)
+              If _vivodundmg <= 0 Then _vivodundmg = _enemy._BossGame(_nomberBoss)._bossDamage * 0.1
+              If uvorot >= _hero._h._agility And uvorot <= uvorotMax - _hero._h._agility Then 'Шанс уворота
+                _vivodundmg = 0 '& " Уворот"
+                _hero._h._live -= _vivodundmg
+              Else
+                _hero._h._live -= _vivodundmg
+              End If
+              If chance_crit <= _hero._h._accuracy Then 'критический удар
+                _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(3)._crit + If(_hero._PerksStatLvl(3) > 0, _hero._PerksStatLvl(3) * 1.5, 0)
+                If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                  _stateLiveBoss -= 1
+
+                  _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+                End If
+                _hero.InfoBar(1)
+                Console.WriteLine(" ")
+                Console.WriteLine("    ┌────────────────")
+                Console.Write("    │")
+                _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+                Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+                _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+                Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] критический удар -" & _hero._skl(3)._crit & If(_hero._PerksStatLvl(3) > 0, " +" & _hero._PerksStatLvl(3) * 1.5 & " ", " "))
+                Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+                Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+                _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+                Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+                Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+                _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+                _System.Apostrof()
+
+              Else 'Обычная атака
+                _enemy._BossGame(_nomberBoss)._BossLive -= _hero._skl(3)._damage + _hero._PerksStatLvl(3)
+                If _enemy._BossGame(_nomberBoss)._BossLive <= 0 Then 'Если враг умер
+                  _stateLiveBoss -= 1
+
+                  _enemy._BossGame(_nomberBoss)._BossLive = _stateBosslive(_stateLiveBoss)
+                End If
+                _hero.InfoBar(1)
+                Console.WriteLine(" ")
+                Console.WriteLine("    ┌────────────────")
+                Console.Write("    │")
+                _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+                Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+                _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+                Console.WriteLine("[" & _enemy._BossGame(_nomberBoss)._BossLive & "] -" & _hero._skl(3)._damage & If(_hero._PerksStatLvl(3) > 0, " +" & _hero._PerksStatLvl(3) & "                         ", "                        "))
+                Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+                Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+                _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+                Console.WriteLine("[" & _hero._h._live & "] -" & _vivodundmg & "                        ")
+                Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+                _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+                _System.Apostrof()
+
+              End If
+            End If
+          Case 5
+            If _botleLive > 0 Then
+              _botleLive -= 1
+              _hero._h._live += 500
+              If _hero._h._live > _hero._h._liveMax Then _hero._h._live = _hero._h._liveMax
+            End If
+            _hero.InfoBar(1)
+            Console.WriteLine(" ")
+            Console.WriteLine("    ┌────────────────")
+            Console.Write("    │")
+            _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+            Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+            _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+            Console.WriteLine("                                                   ")
+            Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+            Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+            _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+            Console.WriteLine("                         ")
+            Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+            _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+            _System.Apostrof()
+          Case 6
+            If _hero._skils(2) > 0 Then
+              If _botleMana > 0 Then
+                _botleMana -= 1
+                _hero._h._mana += 100
+                If _hero._h._mana > _hero._h._manaMax Then _hero._h._mana = _hero._h._manaMax
+              End If
+              _hero.InfoBar(1)
+              Console.WriteLine(" ")
+              Console.WriteLine("    ┌────────────────")
+              Console.Write("    │")
+              _System.TxtRGB(_enemy._BossGame(_nomberBoss)._colorFB, _enemy._BossGame(_nomberBoss)._colorBB, _enemy._BossGame(_nomberBoss)._nameBoss, False)
+              Console.Write("   [" & _stateBosslive(_stateLiveBoss) & "]")
+              _hero.Exxeption(_enemy._BossGame(_nomberBoss)._BossLive, _stateBosslive(_stateLiveBoss), _enemy._BossGame(_nomberBoss)._colorLiveBB)
+              Console.WriteLine("                         ")
+              Console.WriteLine("    ╞════════════════▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+              Console.Write("    │ " & _hero._h._name & vbTab & "   [" & _hero._h._liveMax & "]")
+              _hero.Exxeption(_hero._h._live, _hero._h._liveMax, "Red")
+              Console.WriteLine("                        ")
+              Console.Write("    │            " & vbTab & "   [" & _hero._h._mana & "]")
+              _hero.Exxeption(_hero._h._mana, _hero._h._manaMax, "Blue")
+              _System.Apostrof()
+            End If
+        End Select
+        If _hero._h._mana < _hero._h._manaMax Then _hero._h._mana += 0.1
+        Console.SetCursorPosition(0, 12)
+        Console.WriteLine("    └  Флаконов жизни: " & _botleLive & "  Флаконов маны: " & _botleMana & "                               ")
+        Console.WriteLine(" ")
+        Console.WriteLine("    ┌──────────────────")
+        Console.WriteLine("   ┌1. " & _hero._skl(0)._RPability)
+        If _hero._skils(2) > 0 And _hero._h._mana >= 3 Then
+          Console.WriteLine("   ├2. " & _hero._skl(1)._RPability)
+        ElseIf _hero._skils(2) > 0 And _hero._h._mana < 3 Then
+          _System.TxtRGB("DarkGray", "Black", "   ├2. " & _hero._skl(1)._RPability, True)
+        End If
+        If _hero._skils(3) > 0 And skill3 < 3 Then
+          _System.TxtRGB("DarkGray", "Black", "   ├3. " & _hero._skl(2)._RPability, True)
+        ElseIf _hero._skils(3) > 0 And skill3 >= 3 And _hero._h._mana < 5 Then
+          _System.TxtRGB("DarkGray", "Black", "   ├3. " & _hero._skl(2)._RPability, True)
+        ElseIf _hero._skils(3) > 0 And skill3 >= 3 And _hero._h._mana >= 5 Then
+          _System.TxtRGB("White", "Black", "   ├3. " & _hero._skl(2)._RPability, True)
+        End If
+        If _hero._skils(4) > 0 And skill4 < 2 Then
+          _System.TxtRGB("DarkGray", "Black", "   └4. " & _hero._skl(3)._RPability, True)
+        ElseIf _hero._skils(4) > 0 And skill4 >= 2 And _hero._h._mana < _hero._h._manaMax * 0.6 Then
+          _System.TxtRGB("White", "Black", "   └4. " & _hero._skl(3)._RPability, True)
+        ElseIf _hero._skils(4) > 0 And skill4 >= 2 And _hero._h._mana >= _hero._h._manaMax * 0.6 Then
+          _System.TxtRGB("Yellow", "Black", "   └4. " & _hero._skl(3)._RPability, True)
+        End If
+        Console.WriteLine("    ├───────────────────")
+        Console.WriteLine("   ┌5. Использовать зелье здоровья")
+        If _hero._skils(2) > 0 Then
+          Console.WriteLine("   └6. Использовать зелье маны")
+        ElseIf _hero._skils(2) = 0 Then
+          _System.TxtRGB("DarkGray", "Black", "   └6. Использовать зелье маны", True)
+        End If
+        Console.WriteLine("    └───────────────────")
+
+        If _hero._h._live <= 0 Then 'Или если герой умер
+          _figthTime = 0
+          _infoFitgh = 1
+          exRand = oRand.Next(10, 50)
+          _hero._h._Ex -= exRand
+          If _hero._h._Ex <= 0 Then _hero._h._Ex = 0
+        End If
+      End While
+
+      Console.Clear()
+      _hero.InfoBar(1)
+      Console.WriteLine(" ")
+      Console.WriteLine("   Враг побеждён!")
+      Console.WriteLine("   Продолжайте своё путешествие, авантюрист.")
+      Console.ReadLine()
+    End While
+    Select Case _infoFitgh
+      Case 1
+        Console.Clear()
+        _hero.InfoBar(1)
+        Console.WriteLine(" ")
+        Console.WriteLine("   Вас победили...")
+        Console.WriteLine("   Возвращайтесь с новыми силами.")
+        Console.ReadLine()
+    End Select
+    _figthTime = 1
+    Console.Clear()
+  End Sub
+
   Public Sub MapMove(ByVal _savePointSet As Integer) 'Туториальная и первая локация
     Dim _map As New Map
     _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
@@ -683,7 +1111,7 @@ Module Main
           _hero.InfoBar(1)
           Dim oRand = New Random(DateTime.Now.Millisecond)
           'Console.WriteLine("  " & mRand & _saveMap)
-          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
           _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
           _map.MapSet(_pointX, _pointY)
           Console.WriteLine("  ║Гнилистые леса:  " & _map._nameLocation & "                                                                        ")
@@ -704,6 +1132,9 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
+          ElseIf (_pointX = 43 And _pointY = 7) Then 'Переход на третью локацию
+            BossFiht(1)
+
           ElseIf (_pointX = 1 Or _pointX = 2) And (_pointY = 1 Or _pointY = 2) Then 'Переход на третью локацию
             _pointSet = "1"
             _pointX = 49

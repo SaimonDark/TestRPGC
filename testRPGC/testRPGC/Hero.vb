@@ -18,7 +18,7 @@
   Structure _hero 'Структурированная система переменных для всех параметров
     Public _live_Class, _strength_Class, _intelligece_Class, _agility_Class, _defense_Class, _accuracy_Class As Single 'параметры классов.
     Public _live_race, _strength_race, _intelligece_race, _agility_race, _defense_race, _accuracy_race As Single 'параметры рас.
-    Public _lvl, _liveMax, _live, _manaMax, _mana, _ExMax, _Ex, _strength, _intelligece, _agility, _defense, _accuracy, _Damage As Single ' Базовые параметры соответственно: Сила, Интеллект, Ловкость, Защита, Точность, Критический удар.
+    Public _lvl, _liveMax, _live, _manaMax, _mana, _ExMax, _Ex, _strength, _intelligece, _agility, _defense, _accuracy, _Damage As Single ' Базовые параметры соответственно: Сила, Интеллект, Ловкость, Защита, Точность, крит.
     Public _name, _RPclass, _chekclass, _RPrace As String
 
     Enum _human As Long 'Люди
@@ -596,7 +596,7 @@
   End Sub
 
 
-  Public Sub Exxeption(ByVal _par As Single, ByVal _parMax As Single, ByVal _color As String) 'Проблемное отображение...
+  Public Sub Exxeption(ByVal _par As Single, ByVal _parMax As Single, ByVal _color As String)
     Dim _sr1, _srP As Single
     _sr1 = _parMax / 100
     _srP = _par / _sr1
