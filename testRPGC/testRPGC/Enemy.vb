@@ -153,6 +153,19 @@
     _enemyGame(2, 4)._moneyEnemy = 6
     _enemyGame(2, 5)._moneyEnemy = 40
     '==========================================================================
+    'Босс первой локации
+    _BossGame(3)._nameBoss = "Болотный глава разбойников"
+    _BossGame(3)._colorFB = "Red"
+    _BossGame(3)._colorBB = "Black"
+    _BossGame(3)._colorLiveBB = "Red"
+    _BossGame(3)._bossDamage = 165
+    _BossGame(3)._bossCrit = 400
+    _BossGame(3)._bossLiveMax1 = 6500
+    _BossGame(3)._bossLiveMax2 = 9000
+    _BossGame(3)._bossLiveMax3 = 13500
+    _BossGame(3)._ExpBoss = 770
+    _BossGame(3)._moneyBoss = 120
+
     'Враги третьей локации
     _enemyGame(3, 1)._nameEnemy = " Ехидный гоблин [7ур] "
     _enemyGame(3, 2)._nameEnemy = " Хромой громила [10ур]"
