@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "I:\\testRPGC22\\testRPGC\\testRPGC.vbproj": {}
+    "F:\\testRPGC\\testRPGC\\testRPGC.vbproj": {}
   },
   "projects": {
-    "I:\\testRPGC22\\testRPGC\\testRPGC.vbproj": {
+    "F:\\testRPGC\\testRPGC\\testRPGC.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "I:\\testRPGC22\\testRPGC\\testRPGC.vbproj",
+        "projectUniqueName": "F:\\testRPGC\\testRPGC\\testRPGC.vbproj",
         "projectName": "testRPGC",
-        "projectPath": "I:\\testRPGC22\\testRPGC\\testRPGC.vbproj",
-        "packagesPath": "C:\\Users\\SD\\.nuget\\packages\\",
-        "outputPath": "I:\\testRPGC22\\testRPGC\\obj\\",
+        "projectPath": "F:\\testRPGC\\testRPGC\\testRPGC.vbproj",
+        "packagesPath": "C:\\Users\\Saimon Dark\\.nuget\\packages\\",
+        "outputPath": "F:\\testRPGC\\testRPGC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\SD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Saimon Dark\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

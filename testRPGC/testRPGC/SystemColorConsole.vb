@@ -2,12 +2,17 @@
 
 Public Class SystemColorConsole
 
-  Public Sub Apostrof()
+  Public Shared Sub Apostrof()
     Console.Write("                                ")
     Console.WriteLine("                                ")
   End Sub
 
-  Public Sub TxtRGB(ByVal _font As String, ByVal _back As String, ByVal _txt As String, ByVal _line As Boolean)
+  Public Shared Sub BlackFonfSys()
+    Console.ForegroundColor = ConsoleColor.Black
+    Console.CursorVisible = False
+  End Sub
+
+  Public Shared Sub TxtRGB(ByVal _font As String, ByVal _back As String, ByVal _txt As String, ByVal _line As Boolean)
     Select Case _font
       Case "Black"
         Console.ForegroundColor = ConsoleColor.Black
@@ -90,9 +95,9 @@ End Class
 
 
 Public Class Interfuce
-  Private _head As String
-  Private _bar(5) As String
-  Private _pole As String
+  Private ReadOnly _head As String
+  Private ReadOnly _bar(5) As String
+  Private ReadOnly _pole As String
   Sub New(ByVal ParamArray _b() As String)
     _pole = 5
     _head = _b(1)
@@ -103,7 +108,7 @@ Public Class Interfuce
     _bar(5) = _b(6)
   End Sub
 
-  Private Sub list()
+  Private Sub List()
     Console.WriteLine("   _______________" & _head & "                            ")
     Console.WriteLine("  ║ 1. " & _bar(1) & "                            ")
     Dim i As Integer
@@ -119,6 +124,6 @@ Public Class Interfuce
   End Sub
 
   Public Sub Interf()
-    list()
+    List()
   End Sub
 End Class
