@@ -25,7 +25,7 @@ Module Main
 
   Dim _AdventureSave, _save, _saveMap, _pointX, _pointY As Integer 'Временный показатель наличия сохранения, позиция персонажа на карте по X и Y
   Dim _figthTime As Integer 'Тригер активности боя
-  Public _Perks, _PerksSkils, _statshero(5) As Integer 'Доступные очки для характеристиков
+  Public _Perks, _PerksSkils, _statshero(5), _cvest(3) As Integer 'Доступные очки для характеристиков
   Public _botleLive, _botleMana, _money As Integer 'Бутылки жизни и маны и деньги.
   Public _equip(5), _bagitem(10) As String
 
@@ -49,6 +49,7 @@ Module Main
     _hero._dopperks(3) = 0
     _hero._dopperks(4) = 0
     _hero._dopperks(5) = 0
+
     _pointHero = 0 'Перемещение по начальной карте
     _pointSet = 0 'Перемещение по начальной карте
     _save = 0
@@ -61,6 +62,10 @@ Module Main
     _money = 0 'Костыль для монет
     Console.Title = "The Relight of Eternity"
     LoadData()
+    _cvest(1) = 0
+    _cvest(2) = 0
+    _cvest(3) = 0
+    If _hero._cvest(2) > 0 Then _cvest(2) = 2
     'Инициализация параметров героя и его экипировки для инвентаря
     _statshero(1) = _hero._strength_Equip
     _statshero(2) = _hero._intelligece_Equip
@@ -86,6 +91,8 @@ Module Main
       _System.TxtRGB("White", "Black", "                     3. Настройка.", True)
       _System.TxtRGB("White", "Black", "                     4. Авторы.", True)
       _System.TxtRGB("White", "Black", "                     5. Выход.", True)
+      Console.ForegroundColor = ConsoleColor.Black
+      Console.CursorVisible = False
       Dim info As ConsoleKeyInfo = Console.ReadKey()
       Try
         _vibor(0) = info.Key - 48
@@ -162,6 +169,8 @@ Module Main
       Console.WriteLine("    │ 4. Книга талантов")
       Console.WriteLine("    │ 5. Выход")
       Console.WriteLine("    └ ")
+      Console.ForegroundColor = ConsoleColor.Black
+      Console.CursorVisible = False
       Dim info As ConsoleKeyInfo = Console.ReadKey()
       Try
         _vibor(4) = info.Key - 48
@@ -257,8 +266,11 @@ Module Main
       Console.WriteLine("    │ 3. Фолиант событий")
       Console.WriteLine("    │ 4. Назад")
       Console.WriteLine("    └ ")
+      Console.ForegroundColor = ConsoleColor.Black
+      Console.CursorVisible = False
       Dim info As ConsoleKeyInfo = Console.ReadKey()
       Try
+        Console.ForegroundColor = ConsoleColor.Black
         _vibor(5) = info.Key - 48
         Select Case _vibor(5)
           Case 1
@@ -327,9 +339,10 @@ Module Main
     ElseIf _hero._skils(2) = 0 Then
       _System.TxtRGB("DarkGray", "Black", "   └6. Использовать зелье маны", True)
     End If
-    Console.WriteLine("    └───────────────────")
+    Console.Write("    └───────────────────┤ Действие:        ")
 
     While _figthTime <> 0
+      Console.SetCursorPosition(36, 22)
       Try
         _vibor(2) = Console.ReadLine()
       Catch ex As Exception
@@ -633,7 +646,7 @@ Module Main
       ElseIf _hero._skils(2) = 0 Then
         _System.TxtRGB("DarkGray", "Black", "   └6. Использовать зелье маны", True)
       End If
-      Console.WriteLine("    └───────────────────")
+      Console.Write("    └───────────────────┤ Действие:        ")
       'Console.WriteLine(" 7. Пропустить...")
       If _enemy._enemyGame(_location, fRand)._enemylive <= 0 Then 'Если враг умер
         exRand = oRand.Next(_location, 25)
@@ -724,11 +737,11 @@ Module Main
     ElseIf _hero._skils(2) = 0 Then
       _System.TxtRGB("DarkGray", "Black", "   └6. Использовать зелье маны", True)
     End If
-    Console.WriteLine("    └───────────────────")
+    Console.Write("    └───────────────────┤ Действие:        ")
 
     While _figthTime <> 0
       While _stateLiveBoss <> 0
-
+        Console.SetCursorPosition(36, 22)
         Try
             _vibor(2) = Console.ReadLine()
           Catch ex As Exception
@@ -1081,7 +1094,7 @@ Module Main
           ElseIf _hero._skils(2) = 0 Then
             _System.TxtRGB("DarkGray", "Black", "   └6. Использовать зелье маны", True)
           End If
-          Console.WriteLine("    └───────────────────")
+          Console.Write("    └───────────────────┤ Действие:        ")
 
         ElseIf _hero._h._live < _vivodundmg Then 'Или если герой умер
           _stateLiveBoss = 0
@@ -1110,6 +1123,14 @@ Module Main
         Console.WriteLine("   Враг побеждён!")
         Console.WriteLine("   Продолжайте своё путешествие, авантюрист.")
         Console.ReadLine()
+
+        If _hero._cvest(2) = 0 Then
+          _cvest(2) = 2
+          _hero._cvest(2) = 4
+          Console.WriteLine("   Вы получили свою награду.")
+        End If
+        If _hero._cvest(2) = 3 Then _hero._cvest(2) = 4
+
         _money += _enemy._BossGame(_nomberBoss)._moneyBoss
         _hero._h._Ex += _enemy._BossGame(_nomberBoss)._ExpBoss + exRand
         If _hero._h._Ex >= _hero._h._ExMax Then 'Новый уровень
@@ -1154,7 +1175,8 @@ Module Main
           Console.WriteLine("  ║Гнилистые леса:  " & _map._nameLocation & "                                                                        ")
           Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
           Console.WriteLine()
-          Console.Write("              ")
+          Console.SetCursorPosition(14, 23)
+          'Console.ForegroundColor = ConsoleColor.Black
           Click_Botton(49, 15)
           mRand = oRand.Next(1, 130)
 
@@ -1169,7 +1191,7 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
-          ElseIf (_pointX = 43 And _pointY = 7) Then 'Переход на третью локацию
+          ElseIf (_pointX = 43 And _pointY = 7) And (_hero._cvest(2) = 0 Or _hero._cvest(2) = 3) Then 'Битва с боссом.
             BossFiht(1)
 
           ElseIf (_pointX = 1 Or _pointX = 2) And (_pointY = 1 Or _pointY = 2) Then 'Переход на третью локацию
@@ -1250,7 +1272,7 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
-          ElseIf (_pointX = 27 And _pointY = 11) Then 'Переход на третью локацию
+          ElseIf (_pointX = 27 And _pointY = 11) And (_hero._cvest(2) = 0 Or _hero._cvest(2) = 3) Then 'Битва с боссом.
             BossFiht(3)
 
           ElseIf ((_pointX = 2 Or _pointX = 3 Or _pointX = 4) And _pointY = 15) Then 'Переход на первую локацию.
@@ -1299,10 +1321,10 @@ Module Main
             Next
           End If
 
-          'If mRand >= 123 Then
-          '  Console.Clear()
-          '  Fighting(_saveMap)
-          'End If
+          If mRand >= 123 Then
+            Console.Clear()
+            Fighting(_saveMap)
+          End If
         End While
     End Select
     _pointSet = "v"
@@ -1328,14 +1350,18 @@ Module Main
       Case 4
         MapMove(4)
     End Select
-
+    If _hero._cvest(2) = 4 Then _hero._cvest(2) = 3
 
   End Sub
 
   Public Sub Click_Botton(ByVal _Point_X As Int16, ByVal _point_Y As Integer) 'Основные клавиши перемещения и действий
+    Console.ForegroundColor = ConsoleColor.Black
+    Console.CursorVisible = False
     Dim info As ConsoleKeyInfo = Console.ReadKey()
     Try
+      Console.SetCursorPosition(14, 23)
       _pointHero = info.Key
+
       Select Case _pointHero
         'Клавиши передвижения
         Case 87
@@ -1461,11 +1487,16 @@ Module Main
           _mapM.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
           _mapM.Minimap(_saveMap)
           Console.ReadLine()
+          Console.SetCursorPosition(0, 6)
+          For clearScreen = 1 To 22
+            Console.WriteLine("                                                                                                                             ")
+          Next
 
       End Select
 
 
     Catch ex As Exception
+
 
     End Try
   End Sub
@@ -1509,7 +1540,7 @@ Module Main
     End Select
   End Sub
 
-  Public Sub Perks_stats(ByVal _classes As String) 'Нужно скорректировать распределение очков на дополнительные параметры, криты и способности
+  Public Sub Perks_stats(ByVal _classes As String)
     While _Perks <> 0
       Console.Clear()
       Console.WriteLine("  ")
@@ -2053,35 +2084,6 @@ Module Main
 
     End Try
     _enemy._enemyStatsGame()
-  End Sub
-
-
-  Public Sub SaveMaps() 'запись карт в файл
-    Try
-      Dim textFileStream As New IO.FileStream("Maps.save", IO.FileMode.OpenOrCreate,
-                          IO.FileAccess.ReadWrite, IO.FileShare.None)
-      Dim myFileWriter As New IO.StreamWriter(textFileStream)
-
-
-      myFileWriter.Close()
-      textFileStream.Close()
-    Catch ex As Exception
-
-    End Try
-  End Sub
-
-  Public Sub LoadMaps() 'чтение карт из файла
-    Try
-      Dim textFileStream As New IO.FileStream("Maps.save", IO.FileMode.OpenOrCreate,
-                          IO.FileAccess.ReadWrite, IO.FileShare.None)
-      Dim myFileReader As New IO.StreamReader(textFileStream)
-
-
-      myFileReader.Close()
-      textFileStream.Close()
-    Catch ex As Exception
-
-    End Try
   End Sub
 
 End Module

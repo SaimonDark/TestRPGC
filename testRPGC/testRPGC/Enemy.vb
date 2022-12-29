@@ -30,7 +30,7 @@
 
   Public Sub _enemyStatsGame()
     'Босс первой локации
-    _BossGame(1)._nameBoss = "Голодный большой тролль"
+    _BossGame(1)._nameBoss = "Голодный большой тролль [14ур]"
     _BossGame(1)._colorFB = "DarkGreen"
     _BossGame(1)._colorBB = "Black"
     _BossGame(1)._colorLiveBB = "DarkGreen"
@@ -40,7 +40,7 @@
     _BossGame(1)._bossLiveMax2 = 5500
     _BossGame(1)._bossLiveMax3 = 8000
     _BossGame(1)._ExpBoss = 350
-    _BossGame(1)._moneyBoss = 55
+    _BossGame(1)._moneyBoss = 125
 
 
     'Враги первой локации
@@ -154,7 +154,7 @@
     _enemyGame(2, 5)._moneyEnemy = 40
     '==========================================================================
     'Босс первой локации
-    _BossGame(3)._nameBoss = "Болотный глава разбойников"
+    _BossGame(3)._nameBoss = "Болотный глава разбойников [22ур]"
     _BossGame(3)._colorFB = "Red"
     _BossGame(3)._colorBB = "Black"
     _BossGame(3)._colorLiveBB = "Red"
@@ -164,7 +164,7 @@
     _BossGame(3)._bossLiveMax2 = 9000
     _BossGame(3)._bossLiveMax3 = 13500
     _BossGame(3)._ExpBoss = 770
-    _BossGame(3)._moneyBoss = 120
+    _BossGame(3)._moneyBoss = 250
 
     'Враги третьей локации
     _enemyGame(3, 1)._nameEnemy = " Ехидный гоблин [7ур] "
@@ -221,7 +221,61 @@
     _enemyGame(3, 4)._moneyEnemy = 8
     _enemyGame(3, 5)._moneyEnemy = 80
     '==========================================================================
+    'Враги четвёртой локации
+    _enemyGame(4, 1)._nameEnemy = " Лесной дух [11ур]"
+    _enemyGame(4, 2)._nameEnemy = " Агрессивная дриада [14ур] "
+    _enemyGame(4, 3)._nameEnemy = " Древесный паук [12ур] "
+    _enemyGame(4, 4)._nameEnemy = " Лесной кентавр [15ур] "
+    _enemyGame(4, 5)._nameEnemy = " Змеевик [14ур] "
+    'Количество единиц жизней
+    _enemyGame(4, 1)._enemyLiveMax = 2100
+    _enemyGame(4, 2)._enemyLiveMax = 1700
+    _enemyGame(4, 3)._enemyLiveMax = 2600
+    _enemyGame(4, 4)._enemyLiveMax = 4900
+    _enemyGame(4, 5)._enemyLiveMax = 1200
 
+    _enemyGame(4, 1)._enemylive = 2100
+    _enemyGame(4, 2)._enemylive = 1700
+    _enemyGame(4, 3)._enemylive = 2600
+    _enemyGame(4, 4)._enemylive = 4900
+    _enemyGame(4, 5)._enemylive = 1200
+    'Наносимый урон
+    _enemyGame(4, 1)._unDamage = 90
+    _enemyGame(4, 2)._unDamage = 220
+    _enemyGame(4, 3)._unDamage = 78
+    _enemyGame(4, 4)._unDamage = 110
+    _enemyGame(4, 5)._unDamage = 78
+    'Цветовое отображение
+    _enemyGame(4, 1)._colorF = "White"
+    _enemyGame(4, 2)._colorF = "Black"
+    _enemyGame(4, 3)._colorF = "White"
+    _enemyGame(4, 4)._colorF = "Black"
+    _enemyGame(4, 5)._colorF = "Yellow"
+
+    _enemyGame(4, 1)._colorB = "Black"
+    _enemyGame(4, 2)._colorB = "DarkYellow"
+    _enemyGame(4, 3)._colorB = "Black"
+    _enemyGame(4, 4)._colorB = "DarkYellow"
+    _enemyGame(4, 5)._colorB = "DarkMagenta"
+
+    _enemyGame(4, 1)._colorLive = "Green"
+    _enemyGame(4, 2)._colorLive = "DarkYellow"
+    _enemyGame(4, 3)._colorLive = "DarkGreen"
+    _enemyGame(4, 4)._colorLive = "DarkYellow"
+    _enemyGame(4, 5)._colorLive = "DarkMagenta"
+    'Опыт и деньги за врагов
+    _enemyGame(4, 1)._ExpEnemy = 45
+    _enemyGame(4, 2)._ExpEnemy = 135
+    _enemyGame(4, 3)._ExpEnemy = 40
+    _enemyGame(4, 4)._ExpEnemy = 110
+    _enemyGame(4, 5)._ExpEnemy = 30
+
+    _enemyGame(4, 1)._moneyEnemy = 17
+    _enemyGame(4, 2)._moneyEnemy = 30
+    _enemyGame(4, 3)._moneyEnemy = 13
+    _enemyGame(4, 4)._moneyEnemy = 21
+    _enemyGame(4, 5)._moneyEnemy = 115
+    '==========================================================================
 
   End Sub
 

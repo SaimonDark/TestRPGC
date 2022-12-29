@@ -80,10 +80,10 @@
                                      {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 9, 0, 0, 0, 0, 0, 0, 4, 0, 2},
                                      {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 9, 0, 0, 0, 0, 0, 0, 0, 0, 2},
                                      {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 9, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 9, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 9, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 9, 0, 0, 0, 0, 4, 0, 0, 2},
-                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 9, 0, 0, 0, 0, 0, 0, 2},
+                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 3, 3, 9, 0, 0, 0, 0, 0, 0, 0, 0, 2},
+                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 3, 9, 0, 0, 0, 0, 0, 0, 0, 0, 2},
+                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5, 3, 9, 0, 0, 0, 0, 4, 0, 0, 2},
+                                     {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5, 3, 3, 9, 0, 0, 0, 0, 0, 0, 2},
                                      {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9, 0, 0, 0, 0, 0, 2},
                                      {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9, 9, 9, 9, 9, 2},
                                      {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
@@ -153,22 +153,22 @@
                                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}}
 
   Public _local4 As Integer(,) = {{3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
-                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 1, 1, 1, 2, 3, 3, 3, 3, 2, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 3},
+                                     {3, 3, 3, 3, 3, 3, 2, 1, 2, 3, 3, 3, 2, 1, 1, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 1, 1, 2, 3, 3, 2, 1, 2, 3, 3, 3, 3, 2, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 2, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 2, 2, 1, 1, 3, 3, 3, 3, 3, 3, 1, 2, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 1, 1, 1, 3, 3, 3, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 3, 3, 3, 2, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 4, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 2, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 2, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 3, 3, 3, 1, 1, 1, 1, 2, 3, 3, 2, 1, 2, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 2, 3, 2, 1, 2, 3, 3, 3, 3, 3, 3, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 2, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 2, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1, 2, 3, 3, 3},
+                                     {3, 3, 3, 3, 3, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 3},
                                      {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}}
 
 
@@ -260,6 +260,8 @@
       Console.WriteLine("  ")
       Console.Write("              ")
     Next
+    Console.WriteLine("  ")
+    Console.Write("              ")
   End Sub
 
   Public Sub MapSet(ByVal _x As Integer, ByVal _y As Integer) 'Локация 1
@@ -375,6 +377,8 @@
       Console.WriteLine("  ")
       Console.Write("              ")
     Next
+    Console.WriteLine("  ")
+    Console.Write("              ")
   End Sub
 
   Public Sub MapSet2(ByVal _x As Integer, ByVal _y As Integer) 'Локация 2
@@ -504,6 +508,8 @@
       Console.WriteLine("                                  ")
       Console.Write("              ")
     Next
+    Console.WriteLine("  ")
+    Console.Write("              ")
   End Sub
 
   Public Sub MapSet3(ByVal _x As Integer, ByVal _y As Integer) 'Локация 3
@@ -616,6 +622,8 @@
       Console.WriteLine("                                  ")
       Console.Write("              ")
     Next
+    Console.WriteLine("  ")
+    Console.Write("              ")
   End Sub
 
   Public Sub MapSet4(ByVal _x As Integer, ByVal _y As Integer) 'Локация 4
@@ -629,10 +637,21 @@
         If _x = j And _y = i Then
           Console.CursorVisible = False
           _txtRGB.TxtRGB(fontprint, backprint, printset, False)
-
+          If _local4(i, j) = 1 Then
+            _nameLocation = "  ║Протоптонная тропа               " 'Болото
+            _messegLocation = "Интересно, какие существа обитали в этом лесу...                                                           "
+          End If
+          If _local4(i, j) = 2 Then
+            _nameLocation = "  ║Протоптонная тропа               " 'Болото
+            _messegLocation = "Интересно, какие существа обитали в этом лесу...                                                           "
+          End If
           If _local4(i, j) = 3 Then
-            _nameLocation = "  ║Безупречный лес: Нетронутые рощи  " 'Болото
-            _messegLocation = "Деревья этого леса на столько прекрасны, что вы не смеете их трогать.                                                           "
+            _nameLocation = "  ║Древний лес: ветвистые деревья   " 'Болото
+            _messegLocation = "Под шумом ветра кажется, будто они говорят с тобой.                                                           "
+          End If
+          If _local4(i, j) = 4 Then
+            _nameLocation = "  ║Древний лес: дорожный камень     " 'Болото
+            _messegLocation = "Не скажет тебе куда идти - приключения ждут везде!                                                           "
           End If
 
           Try
@@ -679,10 +698,10 @@
               If _hillStatic(i, j) <= 0 Then 'Верни на 0
                 Console.CursorVisible = False
                 If _local4(i, j) = 0 Then _txtRGB.TxtRGB("DarkGreen", "DarkGray", "░", False) 'Земля
-                If _local4(i, j) = 1 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▓", False) 'Дорога
+                If _local4(i, j) = 1 Then _txtRGB.TxtRGB("DarkYellow", "Black", "░", False) 'Дорога
                 If _local4(i, j) = 2 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▒", False) 'Край дороги
-                If _local4(i, j) = 3 Then _txtRGB.TxtRGB("Cyan", "DarkGreen", "░", False) 'Лес
-                If _local4(i, j) = 4 Then _txtRGB.TxtRGB("DarkGreen", "Black", "░", False) 'Стены городов Эльфов 
+                If _local4(i, j) = 3 Then _txtRGB.TxtRGB("Black", "DarkGreen", "░", False) 'Лес
+                If _local4(i, j) = 4 Then _txtRGB.TxtRGB("Red", "Black", "░", False) 'Дорожный камень
                 If _local4(i, j) = 8 Then _txtRGB.TxtRGB("Black", "DarkGray", "░", False) 'Край болота
                 If _local4(i, j) = 9 Then _txtRGB.TxtRGB("White", "DarkBlue", "░", False) 'Водная местность
                 If _local4(i, j) = 10 Then _txtRGB.TxtRGB("White", "Cyan", "░", False) 'Речная местность
@@ -697,6 +716,55 @@
       Console.WriteLine("                                  ")
       Console.Write("              ")
     Next
+    Console.WriteLine("  ")
+    Console.Write("              ")
+  End Sub
+
+  Public Sub Minimap(ByVal _setmapPosition As Integer) 'Миникарта
+    Dim i, j As Integer
+    Console.SetCursorPosition(0, 6)
+    Console.Write("              ")
+
+    For i = 0 To 16
+      For j = 0 To 50
+
+        If i = 0 Or i = 16 Or j = 0 Or j = 50 Then
+          Console.CursorVisible = False
+          _txtRGB.TxtRGB("Black", "Cyan", "▓", False)
+        ElseIf i = 4 And j = 47 And _setmapPosition = 1 Then
+          Console.CursorVisible = False
+          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
+        ElseIf i = 6 And j = 46 And _setmapPosition = 2 Then
+          Console.CursorVisible = False
+          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
+        ElseIf i = 4 And j = 41 And _setmapPosition = 3 Then
+          Console.CursorVisible = False
+          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
+        ElseIf i = 7 And j = 39 And _setmapPosition = 4 Then
+          Console.CursorVisible = False
+          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
+
+        Else
+          If _localmini(i, j) = 0 Then _txtRGB.TxtRGB("DarkGreen", "DarkGray", "░", False) 'Болотная Земля
+          If _localmini(i, j) = 1 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▓", False) 'Дорога
+          If _localmini(i, j) = 2 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▒", False) 'Край дороги
+          If _localmini(i, j) = 3 Then _txtRGB.TxtRGB("Cyan", "DarkGreen", "░", False) 'Лес
+          If _localmini(i, j) = 4 Then _txtRGB.TxtRGB("Black", "DarkMagenta", "▓", False) 'Стена башни
+          If _localmini(i, j) = 5 Then _txtRGB.TxtRGB("Black", "DarkGreen", "░", False) 'Лес
+          If _localmini(i, j) = 8 Then _txtRGB.TxtRGB("Black", "DarkGray", "░", False) 'Край болота
+          If _localmini(i, j) = 9 Then _txtRGB.TxtRGB("White", "DarkBlue", "░", False) 'Водная местность
+          If _localmini(i, j) = 10 Then _txtRGB.TxtRGB("White", "Cyan", "░", False) 'Речная местность
+        End If
+
+      Next
+      Console.WriteLine("                                  ")
+      Console.Write("              ")
+    Next
+    Console.WriteLine("                                                                                                              ")
+    Console.WriteLine("                                                                                                              ")
+    Console.WriteLine("                                                                                                              ")
+    Console.WriteLine("                                                                                                              ")
+    Console.WriteLine("                                                                                                              ")
   End Sub
 
   Public Sub PersonPrint(ByVal font As String, ByVal back As String, ByVal Pset As Integer)
@@ -727,53 +795,6 @@
     If Pset > 12 Then printset = "╬"
 
   End Sub
-
-  Public Sub Minimap(ByVal _setmapPosition As Integer)
-    Dim i, j As Integer
-    Console.SetCursorPosition(0, 6)
-    Console.Write("              ")
-
-    For i = 0 To 16
-      For j = 0 To 50
-
-        If i = 0 Or i = 16 Or j = 0 Or j = 50 Then
-          Console.CursorVisible = False
-          _txtRGB.TxtRGB("Black", "Cyan", "▓", False)
-        ElseIf i = 4 And j = 47 And _setmapPosition = 1 Then
-          Console.CursorVisible = False
-          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
-        ElseIf i = 6 And j = 46 And _setmapPosition = 2 Then
-          Console.CursorVisible = False
-          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
-        ElseIf i = 4 And j = 41 And _setmapPosition = 3 Then
-          Console.CursorVisible = False
-          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
-        ElseIf i = 7 And j = 39 And _setmapPosition = 4 Then
-          Console.CursorVisible = False
-          _txtRGB.TxtRGB(fontprint, backprint, printset, False)
-
-        Else
-          If _localmini(i, j) = 0 Then _txtRGB.TxtRGB("DarkGreen", "DarkGray", "░", False) 'Болотная Земля
-          If _localmini(i, j) = 1 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▓", False) 'Дорога
-          If _localmini(i, j) = 2 Then _txtRGB.TxtRGB("DarkYellow", "DarkGray", "▒", False) 'Край дороги
-          If _localmini(i, j) = 3 Then _txtRGB.TxtRGB("Cyan", "DarkGreen", "░", False) 'Лес
-          If _localmini(i, j) = 4 Then _txtRGB.TxtRGB("Black", "DarkMagenta", "▓", False) 'Стена башни
-          If _localmini(i, j) = 8 Then _txtRGB.TxtRGB("Black", "DarkGray", "░", False) 'Край болота
-          If _localmini(i, j) = 9 Then _txtRGB.TxtRGB("White", "DarkBlue", "░", False) 'Водная местность
-          If _localmini(i, j) = 10 Then _txtRGB.TxtRGB("White", "Cyan", "░", False) 'Речная местность
-        End If
-
-      Next
-      Console.WriteLine("                                  ")
-      Console.Write("              ")
-    Next
-    Console.WriteLine("                                                                                                              ")
-    Console.WriteLine("                                                                                                              ")
-    Console.WriteLine("                                                                                                              ")
-    Console.WriteLine("                                                                                                              ")
-    Console.WriteLine("                                                                                                              ")
-  End Sub
-
 
   Public Sub Minimapcityes()
 

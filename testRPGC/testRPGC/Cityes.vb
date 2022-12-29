@@ -7,6 +7,7 @@ Public Class Cityes
   Public viaponRand(3) As Integer
   Structure Predmets
     Public _nameweapons, _nameprotection, _nameitems, _nameelitw, _nameelitp As String
+    Public _infoWeapons, _infoprotection As String
     Public _sellW, _sellP, _sellI As Integer
   End Structure
   Public _items(10, 50) As Predmets
@@ -24,7 +25,8 @@ Public Class Cityes
       Console.WriteLine("    │ 4. Доска гильдии авантюристов                              ")
       Console.WriteLine("    │ 5. Уйти                                                    ")
       Console.WriteLine("    └                                                            ")
-
+      Console.ForegroundColor = ConsoleColor.Black
+      Console.CursorVisible = False
       Dim infos As ConsoleKeyInfo = Console.ReadKey()
       Try
         citylive = infos.Key - 48
@@ -49,7 +51,8 @@ Public Class Cityes
             Console.WriteLine("    │ 4. Торговец                                                ")
             Console.WriteLine("    │ 5. Уйти                                                    ")
             Console.WriteLine("    └                                                            ")
-
+            Console.ForegroundColor = ConsoleColor.Black
+            Console.CursorVisible = False
             Dim infop As ConsoleKeyInfo = Console.ReadKey()
             Try
               personslive = infop.Key - 48
@@ -60,6 +63,8 @@ Public Class Cityes
               Case 1 'Зельевар
                 While sayPerson <> 5
                   Personstat("Зельевар", 2)
+                  Console.ForegroundColor = ConsoleColor.Black
+                  Console.CursorVisible = False
                   Dim infoz As ConsoleKeyInfo = Console.ReadKey()
                   Try
                     sayPerson = infoz.Key - 48
@@ -81,6 +86,8 @@ Public Class Cityes
               Case 2 'Печальный ремесленник
                 While sayPerson <> 3
                   Personstat("Ремесленник", 2)
+                  Console.ForegroundColor = ConsoleColor.Black
+                  Console.CursorVisible = False
                   Dim infor As ConsoleKeyInfo = Console.ReadKey()
                   Try
                     sayPerson = infor.Key - 48
@@ -98,6 +105,8 @@ Public Class Cityes
               Case 3 'Кузнец
                 While sayPerson <> 5
                   Personstat("Кузнец", 2)
+                  Console.ForegroundColor = ConsoleColor.Black
+                  Console.CursorVisible = False
                   Dim infok As ConsoleKeyInfo = Console.ReadKey()
                   Try
                     sayPerson = infok.Key - 48
@@ -119,6 +128,8 @@ Public Class Cityes
               Case 4 'Торговец
                 While sayPerson <> 4
                   Personstat("Торговец", 2)
+                  Console.ForegroundColor = ConsoleColor.Black
+                  Console.CursorVisible = False
                   Dim infot As ConsoleKeyInfo = Console.ReadKey()
                   Try
                     sayPerson = infot.Key - 48
@@ -140,12 +151,66 @@ Public Class Cityes
           personslive = 0
         Case 4
           'Необязательные квесты
-
+          CvestState(2)
       End Select
     End While
 
   End Sub
+  Public Sub CvestState(ByVal _cityesStatus As Integer) 'Доделать доску!
+    Dim Deskcvest As Integer
+    While Deskcvest <> 5
+      Select Case _cityesStatus
+        Case 2
+          Console.SetCursorPosition(0, 7)
+          Console.WriteLine("     _______________Доска гильдии авантюристов                                       ")
+          If _cvest(2) = 0 Then Console.WriteLine("    ║ 1. Победить голодного большого тролля в заброшенной башне.                                                ")
+          If _cvest(2) = 2 Then _txtRGB.TxtRGB("Gray", "Black", "    ║ 1. Победить голодного большого тролля в заброшенной башне.                                                ", True)
+          Console.WriteLine("    │                                                               ")
+          Console.WriteLine("    │                                                                            ")
+          Console.WriteLine("    │                                                                           ")
+          Console.WriteLine("    │ 5. Уйти                                                    ")
+          Console.WriteLine("    └                                                            ")
+      End Select
 
+      Console.ForegroundColor = ConsoleColor.Black
+      Console.CursorVisible = False
+      Dim infop As ConsoleKeyInfo = Console.ReadKey()
+      Try
+        Deskcvest = infop.Key - 48
+      Catch ex As Exception
+
+      End Try
+      Select Case Deskcvest
+        Case 1
+          If _cvest(2) = 0 Then
+            Console.SetCursorPosition(0, 7)
+            Console.WriteLine("     _______________Доска гильдии авантюристов                                       ")
+            Console.WriteLine("    ║ Скорее отправляйтесь сразить его!                                                                            ")
+            Console.WriteLine("    │                                                                                                             ")
+            Console.WriteLine("    │                                                                                                              ")
+            Console.WriteLine("    │                                                                                                          ")
+            Console.WriteLine("    │                                                                                                          ")
+            Console.WriteLine("    └                                                                                                          ")
+            Console.ReadLine()
+            _cvest(2) = 1
+          Else _cvest(2) = 2
+            Console.SetCursorPosition(0, 7)
+            Console.WriteLine("     _______________Доска гильдии авантюристов                                       ")
+            Console.WriteLine("    ║ Ты показал этому монстру где раки зимуют!                                                                           ")
+            Console.WriteLine("    │                                                                                                             ")
+            Console.WriteLine("    │                                                                                                              ")
+            Console.WriteLine("    │                                                                                                          ")
+            Console.WriteLine("    │                                                                                                          ")
+            Console.WriteLine("    └                                                                                                          ")
+            Console.ReadLine()
+            _cvest(2) = 2
+          End If
+        Case 2
+
+
+      End Select
+    End While
+  End Sub
   Public Sub Personstat(ByVal _namePers As String, ByVal _location As Integer)
     Select Case _location
       Case 2
@@ -263,6 +328,11 @@ Public Class Cityes
           Console.WriteLine("    │ 4. Продать                                                                     ")
           Console.WriteLine("    │ 5. Уйти                                                                        ")
           Console.WriteLine("    └                                                                                ")
+          Console.WriteLine("                                        ")
+          Console.WriteLine("                                        ")
+          Console.WriteLine("                                        ")
+          Console.ForegroundColor = ConsoleColor.Black
+          Console.CursorVisible = False
           Dim infotorg As ConsoleKeyInfo = Console.ReadKey()
           Try
             torgtime = infotorg.Key - 48
@@ -306,17 +376,23 @@ Public Class Cityes
       Select Case _punkt 'Покупка предметов
         Case 1 'Оружие
           While byitems <> 5
+            Console.ForegroundColor = ConsoleColor.White
             Dim viRand = New Random(DateTime.Now.Millisecond)
             Console.SetCursorPosition(0, 8)
             viaponRand(1) = viRand.Next(1, 41)
             Console.WriteLine("    ║ 1. " & _items(_citynumber, viaponRand(1))._nameweapons & "  " & _items(_citynumber, viaponRand(1))._sellW & "            ")
+            Console.WriteLine("    │ " & _items(_citynumber, viaponRand(1))._infoWeapons)
             viaponRand(2) = viRand.Next(1, 41)
             Console.WriteLine("    │ 2. " & _items(_citynumber, viaponRand(2))._nameweapons & "  " & _items(_citynumber, viaponRand(2))._sellW & "            ")
+            Console.WriteLine("    │ " & _items(_citynumber, viaponRand(2))._infoWeapons)
             viaponRand(3) = viRand.Next(1, 41)
             Console.WriteLine("    │ 3. " & _items(_citynumber, viaponRand(3))._nameweapons & "  " & _items(_citynumber, viaponRand(3))._sellW & "            ")
+            Console.WriteLine("    │ " & _items(_citynumber, viaponRand(3))._infoWeapons)
             Console.WriteLine("    │ 4. Обновить                          ")
             Console.WriteLine("    │ 5. Уйти                             ")
             Console.WriteLine("    └                                     ")
+            Console.ForegroundColor = ConsoleColor.Black
+            Console.CursorVisible = False
             Dim infotorgviapon As ConsoleKeyInfo = Console.ReadKey()
             Try
               byitems = infotorgviapon.Key - 48
@@ -341,6 +417,10 @@ Public Class Cityes
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
                     Console.ReadLine()
                     byitems = 5
                   Catch ex As Exception
@@ -351,6 +431,10 @@ Public Class Cityes
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
@@ -375,6 +459,10 @@ Public Class Cityes
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
                     Console.ReadLine()
                     byitems = 5
                   Catch ex As Exception
@@ -385,6 +473,10 @@ Public Class Cityes
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
@@ -409,6 +501,10 @@ Public Class Cityes
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
                     Console.ReadLine()
                     byitems = 5
                   Catch ex As Exception
@@ -422,6 +518,10 @@ Public Class Cityes
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
                   Console.ReadLine()
                 End If
               Case 4 'Обновление списка
@@ -431,17 +531,23 @@ Public Class Cityes
 
         Case 2 'Броня
           While byitems <> 5
+            Console.ForegroundColor = ConsoleColor.White
             Dim viRand = New Random(DateTime.Now.Millisecond)
             Console.SetCursorPosition(0, 8)
             viaponRand(1) = viRand.Next(1, 26)
             Console.WriteLine("    ║ 1. " & _items(_citynumber, viaponRand(1))._nameprotection & "  " & _items(_citynumber, viaponRand(1))._sellP & "            ")
+            Console.WriteLine("    │ " & _items(_citynumber, viaponRand(1))._infoprotection)
             viaponRand(2) = viRand.Next(1, 26)
             Console.WriteLine("    │ 2. " & _items(_citynumber, viaponRand(2))._nameprotection & "  " & _items(_citynumber, viaponRand(2))._sellP & "            ")
+            Console.WriteLine("    │ " & _items(_citynumber, viaponRand(2))._infoprotection)
             viaponRand(3) = viRand.Next(1, 26)
             Console.WriteLine("    │ 3. " & _items(_citynumber, viaponRand(3))._nameprotection & "  " & _items(_citynumber, viaponRand(3))._sellP & "            ")
+            Console.WriteLine("    │ " & _items(_citynumber, viaponRand(3))._infoprotection)
             Console.WriteLine("    │ 4. Обновить                          ")
             Console.WriteLine("    │ 5. Уйти                             ")
             Console.WriteLine("    └                                     ")
+            Console.ForegroundColor = ConsoleColor.Black
+            Console.CursorVisible = False
             Dim infotorgviapon As ConsoleKeyInfo = Console.ReadKey()
             Try
               byitems = infotorgviapon.Key - 48
@@ -466,6 +572,10 @@ Public Class Cityes
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
                     Console.ReadLine()
                     byitems = 5
                   Catch ex As Exception
@@ -476,6 +586,10 @@ Public Class Cityes
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
@@ -500,6 +614,10 @@ Public Class Cityes
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
                     Console.ReadLine()
                     byitems = 5
                   Catch ex As Exception
@@ -510,6 +628,10 @@ Public Class Cityes
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
@@ -534,6 +656,10 @@ Public Class Cityes
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
                     Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
+                    Console.WriteLine("                                        ")
                     Console.ReadLine()
                     byitems = 5
                   Catch ex As Exception
@@ -544,6 +670,10 @@ Public Class Cityes
                   Console.WriteLine("    ║ Прости друг, но у тебя недостаточно ")
                   Console.WriteLine("    │ денег для этого предмета.           ")
                   Console.WriteLine("    └                                   ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
+                  Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
                   Console.WriteLine("                                        ")
@@ -609,6 +739,8 @@ Public Class Cityes
         Console.Write(vbTab & vbTab & "0.")
         Visbag(_bag(10))
         Console.WriteLine()
+        Console.ForegroundColor = ConsoleColor.Black
+        Console.CursorVisible = False
         Dim infopay As ConsoleKeyInfo = Console.ReadKey()
         Try
           payitems = infopay.Key - 48
@@ -1308,6 +1440,74 @@ Public Class Cityes
     _items(2, 24)._sellP = 85
     _items(2, 25)._sellP = 270
 
+    'Информация
+    'оружие
+    _items(2, 1)._infoWeapons = "Сила +10                               "
+    _items(2, 2)._infoWeapons = "Сила +12                               "
+    _items(2, 3)._infoWeapons = "Сила +9                                "
+    _items(2, 4)._infoWeapons = "Сила +8                                "
+    _items(2, 5)._infoWeapons = "Сила +25                               "
+    _items(2, 6)._infoWeapons = "Сила +15                               "
+    _items(2, 7)._infoWeapons = "Сила +14                               "
+    _items(2, 8)._infoWeapons = "Сила +9                                "
+    _items(2, 9)._infoWeapons = "Сила +10                               "
+    _items(2, 10)._infoWeapons = "Сила +17                               "
+    _items(2, 11)._infoWeapons = "Интеллект +10                          "
+    _items(2, 12)._infoWeapons = "Интеллект +11                          "
+    _items(2, 13)._infoWeapons = "Интеллект +9                           "
+    _items(2, 14)._infoWeapons = "Интеллект +13                          "
+    _items(2, 15)._infoWeapons = "Интеллект +11                          "
+    _items(2, 16)._infoWeapons = "Интеллект +15                          "
+    _items(2, 17)._infoWeapons = "Интеллект +16                          "
+    _items(2, 18)._infoWeapons = "Интеллект +14                          "
+    _items(2, 19)._infoWeapons = "Интеллект +24                          "
+    _items(2, 20)._infoWeapons = "Интеллект +8                           "
+    _items(2, 21)._infoWeapons = "Ловкость +5 Точность +2                "
+    _items(2, 22)._infoWeapons = "Ловкость +17 Точность +3               "
+    _items(2, 23)._infoWeapons = "Ловкость +14 Точность +4               "
+    _items(2, 24)._infoWeapons = "Ловкость +5 Точность +1                "
+    _items(2, 25)._infoWeapons = "Ловкость +22 Точность +5               "
+    _items(2, 26)._infoWeapons = "Ловкость +12 Точность +5               "
+    _items(2, 27)._infoWeapons = "Ловкость +8 Точность +3                "
+    _items(2, 28)._infoWeapons = "Ловкость +4 Точность +2                "
+    _items(2, 29)._infoWeapons = "Ловкость +5 Точность +1                "
+    _items(2, 30)._infoWeapons = "Ловкость +12 Точность +4               "
+    _items(2, 31)._infoWeapons = "Защита +5 Точность +2                  "
+    _items(2, 32)._infoWeapons = "Защита +4 Точность +3                  "
+    _items(2, 33)._infoWeapons = "Защита +2 Точность +2                  "
+    _items(2, 34)._infoWeapons = "Защита +15 Точность +4                 "
+    _items(2, 35)._infoWeapons = "Защита +16 Точность +4                 "
+    _items(2, 36)._infoWeapons = "Защита +5 Точность +1                  "
+    _items(2, 37)._infoWeapons = "Защита +14 Точность +4                 "
+    _items(2, 38)._infoWeapons = "Защита +17 Точность +4                 "
+    _items(2, 39)._infoWeapons = "Защита +12 Точность +2                 "
+    _items(2, 40)._infoWeapons = "Защита +23 Точность +5                 "
+    'доспехи
+    _items(2, 1)._infoprotection = "Защита +5 Ловкость +5                "
+    _items(2, 2)._infoprotection = "                                     "
+    _items(2, 3)._infoprotection = "Защита +3                            "
+    _items(2, 4)._infoprotection = "Защита +2 Ловкость +1                "
+    _items(2, 5)._infoprotection = "Точность +1                          "
+    _items(2, 6)._infoprotection = "Защита +4 Точность +2                "
+    _items(2, 7)._infoprotection = "Защита +5 Ловкость +3 Точность +1    "
+    _items(2, 8)._infoprotection = "Ловкость +5 Точность +1              "
+    _items(2, 9)._infoprotection = "Ловкость +4                          "
+    _items(2, 10)._infoprotection = "Ловкость +3                          "
+    _items(2, 11)._infoprotection = "Ловкость +6 Точность +2              "
+    _items(2, 12)._infoprotection = "Защита +10 Ловкость +4               "
+    _items(2, 13)._infoprotection = "Ловкость +7                          "
+    _items(2, 14)._infoprotection = "Точность +2                          "
+    _items(2, 15)._infoprotection = "Защита +5 Ловкость +5                "
+    _items(2, 16)._infoprotection = "Защита +2                            "
+    _items(2, 17)._infoprotection = "Защита +4 Ловкость +3                "
+    _items(2, 18)._infoprotection = "Защита +6 Ловкость +4                "
+    _items(2, 19)._infoprotection = "Защита +4 Интеллект +4               "
+    _items(2, 20)._infoprotection = "Защита +4 Точность +3                "
+    _items(2, 21)._infoprotection = "Ловкость +5                          "
+    _items(2, 22)._infoprotection = "Ловкость +4                          "
+    _items(2, 23)._infoprotection = "Защита +3 Ловкость +6                "
+    _items(2, 24)._infoprotection = "Защита +4 Ловкость +3 Точность +4    "
+    _items(2, 25)._infoprotection = "Защита +9 Ловкость +4 Точность +1    "
 
   End Sub
   'Операции проходящие внутри городов

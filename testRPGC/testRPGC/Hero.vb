@@ -481,7 +481,6 @@
     If _h._RPclass = "Маг" Then _color = "Blue"
     If _h._RPclass = "Лучник" Then _color = "Green"
     If _h._RPclass = "Плут" Then _color = "Yellow"
-    'Console.Clear()
     Console.SetCursorPosition(0, 0)
     Console.WriteLine(" ")
     _System.TxtRGB(_color, "Black", "   ╔═════════════════════════════════════════════════════════════════════╗", True)

@@ -73,3 +73,18 @@ C:\Users\Saimon Dark\Desktop\testRPGC\testRPGC\obj\Debug\net6.0\refint\testRPGC.
 C:\Users\Saimon Dark\Desktop\testRPGC\testRPGC\obj\Debug\net6.0\testRPGC.pdb
 C:\Users\Saimon Dark\Desktop\testRPGC\testRPGC\obj\Debug\net6.0\testRPGC.genruntimeconfig.cache
 C:\Users\Saimon Dark\Desktop\testRPGC\testRPGC\obj\Debug\net6.0\ref\testRPGC.dll
+I:\testRPGC22\testRPGC\bin\Debug\net6.0\testRPGC.exe
+I:\testRPGC22\testRPGC\bin\Debug\net6.0\testRPGC.deps.json
+I:\testRPGC22\testRPGC\bin\Debug\net6.0\testRPGC.runtimeconfig.json
+I:\testRPGC22\testRPGC\bin\Debug\net6.0\testRPGC.dll
+I:\testRPGC22\testRPGC\bin\Debug\net6.0\testRPGC.pdb
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.vbproj.AssemblyReference.cache
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.GeneratedMSBuildEditorConfig.editorconfig
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.AssemblyInfoInputs.cache
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.AssemblyInfo.vb
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.vbproj.CoreCompileInputs.cache
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.dll
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\refint\testRPGC.dll
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.pdb
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\testRPGC.genruntimeconfig.cache
+I:\testRPGC22\testRPGC\obj\Debug\net6.0\ref\testRPGC.dll
