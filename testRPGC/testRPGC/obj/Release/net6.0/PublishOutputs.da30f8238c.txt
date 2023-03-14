@@ -1,0 +1,5 @@
+E:\testRPGC\testRPGC\bin\Release\net6.0\publish\testRPGC.exe
+E:\testRPGC\testRPGC\bin\Release\net6.0\publish\testRPGC.dll
+E:\testRPGC\testRPGC\bin\Release\net6.0\publish\testRPGC.deps.json
+E:\testRPGC\testRPGC\bin\Release\net6.0\publish\testRPGC.runtimeconfig.json
+E:\testRPGC\testRPGC\bin\Release\net6.0\publish\testRPGC.pdb

@@ -696,6 +696,17 @@ Module Main
         _stateBosslive(1) = _enemy._BossGame(_nomberBoss)._bossLiveMax3
         _enemy._BossGame(_nomberBoss)._BossLive = _enemy._BossGame(_nomberBoss)._bossLiveMax1
         _enemy._BossGame(_nomberBoss)._bossliveStat = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+      Case 4
+        _nomberBoss = 4
+        _stateLiveBoss = 5
+        _stateBosslive(5) = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+        _stateBosslive(4) = _enemy._BossGame(_nomberBoss)._bossLiveMax2
+        _stateBosslive(3) = _enemy._BossGame(_nomberBoss)._bossLiveMax3
+        _stateBosslive(2) = _enemy._BossGame(_nomberBoss)._bossLiveMax4
+        _stateBosslive(1) = _enemy._BossGame(_nomberBoss)._bossLiveMax5
+        _enemy._BossGame(_nomberBoss)._BossLive = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+        _enemy._BossGame(_nomberBoss)._bossliveStat = _enemy._BossGame(_nomberBoss)._bossLiveMax1
+
     End Select
 
     _enemy._BossGame(_nomberBoss)._BossLive = _enemy._BossGame(_nomberBoss)._bossLiveMax1
@@ -1169,7 +1180,7 @@ Module Main
           'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
           _map.BeginMap(_pointX, _pointY)
           Console.WriteLine(" |Используйте ввод клавиш w, a, s, d. Раскладка неважна.                                     ")
-          Console.WriteLine("     |Используйте клавиши действий t, b, p.                                                                        ")
+          Console.WriteLine("     |Используйте клавиши действий t, b, p, m.                                                                        ")
           Console.WriteLine("                                                                                         ")
           Click_Botton(30, 14)
           If _pointX = 29 And _pointY = 13 Then
@@ -1193,10 +1204,10 @@ Module Main
           Click_Botton(49, 15)
           mRand = oRand.Next(1, 130)
 
-          If ((_pointX = 23 Or _pointX = 24 Or _pointX = 25) And _pointY = 15) Then 'Переход на вторую локацию
+          If ((_pointX = 21 Or _pointX = 22 Or _pointX = 23) And _pointY = 15) Then 'Переход на вторую локацию
             _pointSet = "1"
-            _pointX = 26
-            _pointY = 1
+            _pointX = 24
+            _pointY = 2
             _saveMap = 2
             Dim i, j As Integer
             For i = 0 To 16
@@ -1241,10 +1252,10 @@ Module Main
           Click_Botton(49, 15)
           mRand = oRand.Next(1, 130)
 
-          If (_pointX = 25 And _pointY = 1) Then 'Переход на первую локацию.
+          If (_pointX = 23 And _pointY = 1) Then 'Переход на первую локацию.
             _pointSet = "2"
             _pointX = 24
-            _pointY = 14
+            _pointY = 13
             _saveMap = 1
             Dim i, j As Integer
             For i = 0 To 16
@@ -1332,12 +1343,774 @@ Module Main
                 _map._hillStatic(i, j) = _map._hillConst(i, j)
               Next
             Next
+          ElseIf (_pointX = 4 And _pointY = 5) Then 'Битва с боссом.
+            BossFiht(4)
+
           End If
 
           If mRand >= 123 Then
             Console.Clear()
             Fighting(_saveMap)
           End If
+        End While
+      Case 5
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 6
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 7
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 8
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 9
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 10
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 11
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 12
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 13
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 14
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 15
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 16
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 17
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 18
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 19
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 20
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 21
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 22
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 23
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 24
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 25
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 26
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
+        End While
+      Case 27
+        While _pointSet <> "4"
+          _hero.InfoBar(1)
+          Dim oRand = New Random(DateTime.Now.Millisecond)
+          'Console.WriteLine("  " & mRand & _saveMap)
+          'Console.WriteLine("  " & _pointX & "  " & _pointY & "  " & _pointSet)
+          _map.PersonPrint(_hero._h._RPclass, _hero._h._RPrace, _hero._h._lvl)
+          _map.MapSet4(_pointX, _pointY)
+          Console.WriteLine(_map._nameLocation & "                                                                        ")
+          Console.WriteLine("                ╙" & _map._messegLocation & "                                                                                         ")
+          Console.WriteLine()
+          Console.Write("              ")
+          Click_Botton(49, 15)
+          mRand = oRand.Next(1, 130)
+
+          'If ((_pointX = 46 Or _pointX = 47 Or _pointX = 48) And _pointY = 1) Then 'Переход на первую локацию.
+          '  _pointSet = "4"
+          '  _pointX = 3
+          '  _pointY = 14
+          '  _saveMap = 3
+          '  Dim i, j As Integer
+          '  For i = 0 To 16
+          '    For j = 0 To 50
+          '      _map._hillStatic(i, j) = _map._hillConst(i, j)
+          '    Next
+          '  Next
+          'End If
+
+          'If mRand >= 123 Then
+          '  Console.Clear()
+          '  Fighting(_saveMap)
+          'End If
         End While
     End Select
     _pointSet = "v"
@@ -1391,7 +2164,7 @@ Module Main
           _city.Perechen(_hero._Bagcheck(1), _hero._Bagcheck(2), _hero._Bagcheck(3), _hero._Bagcheck(4), _hero._Bagcheck(5), _hero._Bagcheck(6), _hero._Bagcheck(7), _hero._Bagcheck(8), _hero._Bagcheck(9), _hero._Bagcheck(10))
           Console.Clear()
           _hero.InfoBar(0) 'Надо сделать обновление вывода информации персонажа с деньгами.
-          If _saveMap = 2 And _pointX = 38 And _pointY = 8 Then
+          If _saveMap = 2 And _pointX = 39 And _pointY = 8 Then
             _city.VivodCity2()
             Console.Clear()
 

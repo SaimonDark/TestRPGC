@@ -13,7 +13,7 @@
 
   Structure _boss
     Public _nameBoss As String
-    Public _bossDamage, _BossLive, _bossLiveMax1, _bossLiveMax2, _bossLiveMax3, _bossCrit, _bossliveStat As Single
+    Public _bossDamage, _BossLive, _bossLiveMax1, _bossLiveMax2, _bossLiveMax3, _bossLiveMax4, _bossLiveMax5, _bossCrit, _bossliveStat As Single
     Public _colorFB, _colorBB, _colorLiveBB As String
     Public _ExpBoss, _moneyBoss As Integer
   End Structure
@@ -30,7 +30,7 @@
 
   Public Sub _enemyStatsGame()
     'Босс первой локации
-    _BossGame(1)._nameBoss = "Голодный большой тролль [14ур]"
+    _BossGame(1)._nameBoss = "Голодный большой тролль [S]"
     _BossGame(1)._colorFB = "DarkGreen"
     _BossGame(1)._colorBB = "Black"
     _BossGame(1)._colorLiveBB = "DarkGreen"
@@ -44,11 +44,11 @@
 
 
     'Враги первой локации
-    _enemyGame(1, 1)._nameEnemy = " Молодой огр [2ур]"
-    _enemyGame(1, 2)._nameEnemy = " Пробуждённый великан [3ур] "
-    _enemyGame(1, 3)._nameEnemy = " Старый тролль [2ур] "
-    _enemyGame(1, 4)._nameEnemy = " Гнилистыйй энт [5ур] "
-    _enemyGame(1, 5)._nameEnemy = " Снотлинг [4ур] "
+    _enemyGame(1, 1)._nameEnemy = " Молодой огр [E]"
+    _enemyGame(1, 2)._nameEnemy = " Пробуждённый великан [C] "
+    _enemyGame(1, 3)._nameEnemy = " Старый тролль [E] "
+    _enemyGame(1, 4)._nameEnemy = " Гнилистыйй энт [A] "
+    _enemyGame(1, 5)._nameEnemy = " Снотлинг [D] "
     'Количество единиц жизней
     _enemyGame(1, 1)._enemyLiveMax = 1100
     _enemyGame(1, 2)._enemyLiveMax = 1000
@@ -99,11 +99,11 @@
     _enemyGame(1, 5)._moneyEnemy = 25
     '==========================================================================
     'Враги второй локации
-    _enemyGame(2, 1)._nameEnemy = " Огр [4ур] "
-    _enemyGame(2, 2)._nameEnemy = " Безумный варвар [8ур] "
-    _enemyGame(2, 3)._nameEnemy = " Тролль [4ур] "
-    _enemyGame(2, 4)._nameEnemy = " Бронированный огр [9ур] "
-    _enemyGame(2, 5)._nameEnemy = " Скольский вор [6ур] "
+    _enemyGame(2, 1)._nameEnemy = " Огр [E] "
+    _enemyGame(2, 2)._nameEnemy = " Безумный варвар [D] "
+    _enemyGame(2, 3)._nameEnemy = " Тролль [C] "
+    _enemyGame(2, 4)._nameEnemy = " Бронированный огр [A] "
+    _enemyGame(2, 5)._nameEnemy = " Скольский вор [B] "
     'Количество единиц жизней
     _enemyGame(2, 1)._enemyLiveMax = 1500
     _enemyGame(2, 2)._enemyLiveMax = 1100
@@ -153,8 +153,8 @@
     _enemyGame(2, 4)._moneyEnemy = 6
     _enemyGame(2, 5)._moneyEnemy = 40
     '==========================================================================
-    'Босс первой локации
-    _BossGame(3)._nameBoss = "Болотный глава разбойников [22ур]"
+    'Босс второй локации
+    _BossGame(3)._nameBoss = "Болотный глава разбойников [S]"
     _BossGame(3)._colorFB = "Red"
     _BossGame(3)._colorBB = "Black"
     _BossGame(3)._colorLiveBB = "Red"
@@ -167,11 +167,11 @@
     _BossGame(3)._moneyBoss = 250
 
     'Враги третьей локации
-    _enemyGame(3, 1)._nameEnemy = " Ехидный гоблин [7ур] "
-    _enemyGame(3, 2)._nameEnemy = " Хромой громила [10ур]"
-    _enemyGame(3, 3)._nameEnemy = " Заросший голем [7ур] "
-    _enemyGame(3, 4)._nameEnemy = " Разбойник [12ур] "
-    _enemyGame(3, 5)._nameEnemy = " Скиталец [8ур] "
+    _enemyGame(3, 1)._nameEnemy = " Ехидный гоблин [E] "
+    _enemyGame(3, 2)._nameEnemy = " Хромой громила [D]"
+    _enemyGame(3, 3)._nameEnemy = " Заросший голем [C] "
+    _enemyGame(3, 4)._nameEnemy = " Разбойник [A] "
+    _enemyGame(3, 5)._nameEnemy = " Скиталец [B] "
     'Количество единиц жизней
     _enemyGame(3, 1)._enemyLiveMax = 1700
     _enemyGame(3, 2)._enemyLiveMax = 1400
@@ -222,11 +222,11 @@
     _enemyGame(3, 5)._moneyEnemy = 80
     '==========================================================================
     'Враги четвёртой локации
-    _enemyGame(4, 1)._nameEnemy = " Лесной дух [11ур]"
-    _enemyGame(4, 2)._nameEnemy = " Агрессивная дриада [14ур] "
-    _enemyGame(4, 3)._nameEnemy = " Древесный паук [12ур] "
-    _enemyGame(4, 4)._nameEnemy = " Лесной кентавр [15ур] "
-    _enemyGame(4, 5)._nameEnemy = " Змеевик [14ур] "
+    _enemyGame(4, 1)._nameEnemy = " Лесной дух [C]"
+    _enemyGame(4, 2)._nameEnemy = " Агрессивная дриада [D] "
+    _enemyGame(4, 3)._nameEnemy = " Древесный паук [D] "
+    _enemyGame(4, 4)._nameEnemy = " Лесной кентавр [A] "
+    _enemyGame(4, 5)._nameEnemy = " Змеевик [B] "
     'Количество единиц жизней
     _enemyGame(4, 1)._enemyLiveMax = 2100
     _enemyGame(4, 2)._enemyLiveMax = 1700
@@ -276,6 +276,21 @@
     _enemyGame(4, 4)._moneyEnemy = 21
     _enemyGame(4, 5)._moneyEnemy = 115
     '==========================================================================
+    'Демо-бос
+    _BossGame(4)._nameBoss = "Архипротолич Саймон Дарк [UR]"
+    _BossGame(4)._colorFB = "Magenta"
+    _BossGame(4)._colorBB = "Black"
+    _BossGame(4)._colorLiveBB = "Magenta"
+    _BossGame(4)._bossDamage = 120
+    _BossGame(4)._bossCrit = 450
+    _BossGame(4)._bossLiveMax1 = 7200
+    _BossGame(4)._bossLiveMax2 = 11500
+    _BossGame(4)._bossLiveMax3 = 17000
+    _BossGame(4)._bossLiveMax4 = 23000
+    _BossGame(4)._bossLiveMax5 = 32000
+    _BossGame(4)._ExpBoss = 2000
+    _BossGame(4)._moneyBoss = 2500
+
 
   End Sub
 
